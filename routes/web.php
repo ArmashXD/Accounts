@@ -5,7 +5,7 @@ use App\Http\Controllers\Account\EquityController;
 use App\Http\Controllers\Account\ExpenseController;
 use App\Http\Controllers\Account\IncomeController;
 use App\Http\Controllers\Account\LiabilityController;
-use App\Http\Controllers\HomeController;
+use\App\Http\Controllers\MainCategoryController;
 use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -27,6 +27,8 @@ Route::group(['middleware' => 'auth'], function () {
   Route::Resources([
       'users' => UserController::class,
       'roles' => RoleController::class,
+      'main-category' => MainCategoryController::class,
+      'suppliers' => \App\Http\Controllers\SupplierController::class
   ]);
   Route::group(['prefix' => 'account'], function(){
       Route::Resources([

@@ -21,6 +21,8 @@ class EquityObserver
     public function created(Equity $equity)
     {
         //
+        alert()->success('Success',"Equity $equity->name Created");
+
     }
 
     /**
@@ -32,6 +34,7 @@ class EquityObserver
     public function updated(Equity $equity)
     {
         //
+        alert()->success('Success',"Equity $equity->name Updated");
     }
 
     /**
@@ -43,6 +46,7 @@ class EquityObserver
     public function deleted(Equity $equity)
     {
         //
+        alert()->success('Success',"Equity $equity->name Deleted");
     }
 
     /**

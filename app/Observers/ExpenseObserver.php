@@ -21,6 +21,7 @@ class ExpenseObserver
     public function created(Expense $expense)
     {
         //
+        alert()->success('Success',"Expense $expense->name Created");
     }
 
     /**
@@ -32,6 +33,7 @@ class ExpenseObserver
     public function updated(Expense $expense)
     {
         //
+        alert()->success('Success',"Expense $expense->name Updated");
     }
 
     /**
@@ -43,6 +45,7 @@ class ExpenseObserver
     public function deleted(Expense $expense)
     {
         //
+        alert()->success('Success',"Expense $expense->name Deleted");
     }
 
     /**

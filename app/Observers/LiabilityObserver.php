@@ -21,6 +21,7 @@ class LiabilityObserver
     public function created(Liability $liability)
     {
         //
+        alert()->success('Success',"Liability $liability->name Created");
     }
 
     /**
@@ -32,6 +33,7 @@ class LiabilityObserver
     public function updated(Liability $liability)
     {
         //
+        alert()->success('Success',"Liability $liability->name Updated");
     }
 
     /**
@@ -43,6 +45,7 @@ class LiabilityObserver
     public function deleted(Liability $liability)
     {
         //
+        alert()->success('Success',"Liability $liability->name Deleted");
     }
 
     /**

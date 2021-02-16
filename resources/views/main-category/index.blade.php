@@ -7,28 +7,18 @@
                 <p>{{session('success')}}</p>
             </div>
         @endif
+        @if(auth()->user()->hasPermissionTo('create'))
         <div class="col-md-12">
             <div class="card mb-4">
                 <div class="card-body">
-                    <div class="card-title mb-3">Create A New Role</div>
-                    <form method="POST" action="{{route('roles.store')}}">
+                    <div class="card-title mb-3">Create A New Category</div>
+                    <form method="POST" action="{{route('main-category.store')}}">
                         @csrf
                         <div class="row">
                             <div class="col-md-6 form-group mb-3">
-                                <label for="firstName1">Enter Role Name</label>
+                                <label for="firstName1">Enter Category Name</label>
                                 <input class="form-control" id="name" name="name" type="text"
-                                       placeholder="Enter Role Name"/>
-                            </div>
-                            <div class="col-md-6 form-group mb-3" >
-                                <label for="lastName1">Select Permissions</label>
-                                <div class="row">
-                                    @foreach($permissions as $item)
-                                        <div class="col">
-                                        <span class="badge badge-primary">{{$item->name}}</span>
-                                         <input value="{{$item->id}}" type="checkbox" name="permission[]" class="checkbox">
-                                        </div>
-                                    @endforeach
-                                </div>
+                                       placeholder="Enter Name"/>
                             </div>
                             <div class="col-md-12">
                                 <button class="btn btn-primary" type="submit">Submit</button>
@@ -47,17 +37,17 @@
                 </div>
             </div>
         </div>
+            @endif
         <div class="col-md-12 mb-3">
             <div class="card text-left">
                 <div class="card-body">
-                    <h4 class="card-title mb-3">All Roles</h4>
+                    <h4 class="card-title mb-3">All Categories</h4>
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Name</th>
-                                <th scope="col">Permissions</th>
                                 <th scope="col">Created At</th>
                                 <th scope="col">Updated At</th>
                                 <th scope="col">Actions</th>
@@ -67,29 +57,30 @@
                                 $count = 1;
                             @endphp
                             <tbody>
-                            @foreach($roles as $item)
+                            @foreach($categories as $item)
                                 <tr>
                                     <th scope="row">{{$count++}}</th>
                                     <td>{{$item->name}}</td>
-                                    <td>@foreach($item->permissions as $p)
-                                       <span class="badge badge-primary">{{$p->name}}</span>
-                                    @endforeach
-                                    </td>
                                     <td>{{$item->created_at}}</td>
                                     <td>{{$item->updated_at}}</td>
                                     <td>
+                                        @if(auth()->user()->hasPermissionTo('edit'))
                                         <button class="text-success mr-2 btn btn-info" data-toggle="modal"
-                                                data-target="#rolesModal{{$item->id}}" href="#"><i
+                                                data-target="#mainCategory{{$item->id}}" href="#"><i
                                                     class="nav-icon i-Pen-2 font-weight-bold"></i></button>
-                                        <form action="{{route('roles.destroy',$item->id)}}" method="POST">
+                                        @endif
+                                        @if(auth()->user()->hasPermissionTo('delete'))
+                                        <form action="{{route('main-category.destroy',$item->id)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger" href="#"><i
                                                         class="nav-icon i-Close-Window font-weight-bold"></i></button>
+                                        </form>
+                                        @endif
                                     </td>
-                                    </form>
                                 </tr>
-                                <div class="modal fade" id="rolesModal{{$item->id}}" tabindex="-1" role="dialog"
+                                @if(auth()->user()->hasPermissionTo('edit'))
+                                    <div class="modal fade" id="mainCategory{{$item->id}}" tabindex="-1" role="dialog"
                                      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
@@ -102,26 +93,15 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="{{route('roles.update',$item->id)}}" method="POST">
+                                                <form action="{{route('main-category.update',$item->id)}}" method="POST">
                                                     @csrf
                                                     @method('PUT')
                                                     <div class="row">
                                                         <div class="col-md-6 form-group mb-3">
-                                                            <label for="firstName1">Enter Role Name</label>
+                                                            <label for="firstName1">Enter Category Name</label>
                                                             <input class="form-control" id="name"
                                                                    value="{{$item->name}}" name="name" type="text"
-                                                                   placeholder="Enter Role Name"/>
-                                                        </div>
-                                                        <div class="col-md-6 form-group mb-3">
-                                                            <label for="lastName1">Select Permissions</label>
-                                                            <div class="row">
-                                                                @foreach($permissions as $item)
-                                                                    <div class="col">
-                                                                        <span class="badge badge-primary">{{$item->name}}</span>
-                                                                        <input value="{{$item->id}}" type="checkbox" name="permission[]" class="checkbox">
-                                                                    </div>
-                                                                @endforeach
-                                                            </div>
+                                                                   placeholder="Enter Category Name"/>
                                                         </div>
                                                     </div>
                                             </div>
@@ -136,11 +116,12 @@
                                         </div>
                                     </div>
                                 </div>
+                                    @endif
                             @endforeach
                             </tbody>
                         </table>
                     </div>
-                    {{$roles->links()}}
+                    {{$categories->links()}}
                 </div>
             </div>
         </div>

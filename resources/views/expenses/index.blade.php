@@ -7,6 +7,7 @@
                 <p>{{session('success')}}</p>
             </div>
         @endif
+        @if(auth()->user()->hasPermissionTo('create'))
         <div class="col-md-12">
             <div class="card mb-4">
                 <div class="card-body">
@@ -53,6 +54,7 @@
                 </div>
             </div>
         </div>
+        @endif
         <div class="col-md-12 mb-3">
             <div class="card text-left">
                 <div class="card-body">
@@ -83,16 +85,20 @@
                                     <td>{{$item->date}}</td>
                                     <td>{{$item->created_at}}</td>
                                     <td>
+                                        @if(auth()->user()->hasPermissionTo('edit'))
                                         <button class="text-success mr-2 btn btn-info" data-toggle="modal"
                                                 data-target="#expensesModal{{$item->id}}" href="#"><i
                                                 class="nav-icon i-Pen-2 font-weight-bold"></i></button>
+                                        @endif
+                                        @if(auth()->user()->hasPermissionTo('delete'))
                                         <form action="{{route('expenses.destroy',$item->id)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger" href="#"><i
                                                     class="nav-icon i-Close-Window font-weight-bold"></i></button>
+                                        </form>
+                                            @endif
                                     </td>
-                                    </form>
                                 </tr>
                                 <div class="modal fade" id="expensesModal{{$item->id}}" tabindex="-1" role="dialog"
                                      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

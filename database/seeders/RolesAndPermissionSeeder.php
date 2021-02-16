@@ -24,11 +24,12 @@ class RolesAndPermissionSeeder extends Seeder
         Permission::create(['name' => 'delete']);
         Permission::create(['name' => 'show']);
         Permission::create(['name' => 'create']);
+        Permission::create(['name' => 'view']);
+        Permission::create(['name' => 'check']);
 
         // create roles and assign existing permissions
         $role1 = Role::create(['name' => 'user']);
-        $role1->givePermissionTo('edit');
-        $role1->givePermissionTo('delete');
+        $role1->givePermissionTo('show');
 
         $role2 = Role::create(['name' => 'admin']);
         $role2->givePermissionTo('show');
@@ -37,7 +38,14 @@ class RolesAndPermissionSeeder extends Seeder
         $role2->givePermissionTo('delete');
 
         $role3 = Role::create(['name' => 'super-admin']);
-        // gets all permissions via Gate::before rule; see AuthServiceProvider
+        $role3->givePermissionTo('show');
+        $role3->givePermissionTo('create');
+        $role3->givePermissionTo('edit');
+        $role3->givePermissionTo('delete');
+        $role3->givePermissionTo('view');
+        $role3->givePermissionTo('check');
+
+        // gets all permissions
 
         // create demo users
         $user = \App\Models\User::create([

@@ -20,6 +20,7 @@ class IncomeObserver
     public function created(Income $income)
     {
         //
+        alert()->success('Success',"Income $income->name Created");
     }
 
     /**
@@ -31,6 +32,7 @@ class IncomeObserver
     public function updated(Income $income)
     {
         //
+        alert()->success('Success',"Income $income->name Updated");
     }
 
     /**
@@ -42,6 +44,8 @@ class IncomeObserver
     public function deleted(Income $income)
     {
         //
+        alert()->success('Success',"Income $income->name Deleted");
+
     }
 
     /**

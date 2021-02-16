@@ -7,52 +7,55 @@
                 <p>{{session('success')}}</p>
             </div>
         @endif
-        <div class="col-md-12">
-            <div class="card mb-4">
-                <div class="card-body">
-                    <div class="card-title mb-3">Create A New Equity</div>
-                    <form method="POST" action="{{route('equity.store')}}">
-                        @csrf
-                        <div class="row">
-                            <div class="col-md-6 form-group mb-3">
-                                <label for="firstName1">Enter Name</label>
-                                <input class="form-control" id="name" name="name" type="text"
-                                       placeholder="Enter Name"/>
+        @if(auth()->user()->hasPermissionTo('create'))
+            <div class="col-md-12">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <div class="card-title mb-3">Create A New Equity</div>
+                        <form method="POST" action="{{route('equity.store')}}">
+                            @csrf
+                            <div class="row">
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="firstName1">Enter Name</label>
+                                    <input class="form-control" id="name" name="name" type="text"
+                                           placeholder="Enter Name"/>
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="firstName1">Enter Amount</label>
+                                    <input class="form-control" id="name" name="amount" step="0" min="0.00"
+                                           type="number"
+                                           placeholder="Enter Amount"/>
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="firstName1">Enter Date</label>
+                                    <input class="form-control" id="date" name="date" type="date"/>
+                                </div>
+                                <div class="col-md-6 form-group mb-3">
+                                    <label for="lastName1">Select Category</label>
+                                    <select name="category_id" id="" class="form-control">
+                                        @foreach(\App\Models\Category::where('type_id', 5)->get() as $item)
+                                            <option value="{{$item->id}}">{{$item->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-md-12">
+                                    <button class="btn btn-primary" type="submit">Submit</button>
+                                </div>
                             </div>
-                            <div class="col-md-6 form-group mb-3">
-                                <label for="firstName1">Enter Amount</label>
-                                <input class="form-control" id="name" name="amount" step="0" min="0.00" type="number"
-                                       placeholder="Enter Amount"/>
-                            </div>
-                            <div class="col-md-6 form-group mb-3">
-                                <label for="firstName1">Enter Date</label>
-                                <input class="form-control" id="date" name="date" type="date"/>
-                            </div>
-                            <div class="col-md-6 form-group mb-3">
-                                <label for="lastName1">Select Category</label>
-                                <select name="category_id" id="" class="form-control">
-                                    @foreach(\App\Models\Category::where('type_id', 5)->get() as $item)
-                                        <option value="{{$item->id}}">{{$item->name}}</option>
+                        </form>
+                        @if (isset($errors) && count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
                                     @endforeach
-                                </select>
+                                </ul>
                             </div>
-                            <div class="col-md-12">
-                                <button class="btn btn-primary" type="submit">Submit</button>
-                            </div>
-                        </div>
-                    </form>
-                    @if (isset($errors) && count($errors) > 0)
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
+                        @endif
+                    </div>
                 </div>
             </div>
-        </div>
+        @endif
         <div class="col-md-12 mb-3">
             <div class="card text-left">
                 <div class="card-body">
@@ -83,16 +86,22 @@
                                     <td>{{$item->date}}</td>
                                     <td>{{$item->created_at}}</td>
                                     <td>
-                                        <button class="text-success mr-2 btn btn-info" data-toggle="modal"
-                                                data-target="#equityModal{{$item->id}}" href="#"><i
-                                                class="nav-icon i-Pen-2 font-weight-bold"></i></button>
-                                        <form action="{{route('equity.destroy',$item->id)}}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger" href="#"><i
-                                                    class="nav-icon i-Close-Window font-weight-bold"></i></button>
+                                        @if(auth()->user()->hasPermissionTo('edit'))
+                                            <button class="text-success mr-2 btn btn-info" data-toggle="modal"
+                                                    data-target="#equityModal{{$item->id}}" href="#"><i
+                                                        class="nav-icon i-Pen-2 font-weight-bold"></i></button>
+                                        @endif
+                                        @if(auth()->user()->hasPermissionTo('delete'))
+
+                                            <form action="{{route('equity.destroy',$item->id)}}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger" href="#"><i
+                                                            class="nav-icon i-Close-Window font-weight-bold"></i>
+                                                </button>
+                                            </form>
+                                        @endif
                                     </td>
-                                    </form>
                                 </tr>
                                 <div class="modal fade" id="equityModal{{$item->id}}" tabindex="-1" role="dialog"
                                      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -113,17 +122,21 @@
                                                     <div class="row">
                                                         <div class="col-md-6 form-group mb-3">
                                                             <label for="firstName1">Enter Name</label>
-                                                            <input class="form-control" id="name" value="{{$item->name}}" name="name" type="text"
+                                                            <input class="form-control" id="name"
+                                                                   value="{{$item->name}}" name="name" type="text"
                                                                    placeholder="Enter Role Name"/>
                                                         </div>
                                                         <div class="col-md-6 form-group mb-3">
                                                             <label for="firstName1">Enter Amount</label>
-                                                            <input class="form-control" id="name" name="amount" value="{{$item->amount}}" step="0" min="0.00" type="number"
+                                                            <input class="form-control" id="name" name="amount"
+                                                                   value="{{$item->amount}}" step="0" min="0.00"
+                                                                   type="number"
                                                                    placeholder="Enter Amount"/>
                                                         </div>
                                                         <div class="col-md-6 form-group mb-3">
                                                             <label for="firstName1">Enter Date</label>
-                                                            <input class="form-control" id="date" name="date" value="{{$item->date}}" type="date"/>
+                                                            <input class="form-control" id="date" name="date"
+                                                                   value="{{$item->date}}" type="date"/>
                                                         </div>
                                                         <div class="col-md-6 form-group mb-3">
                                                             <label for="lastName1">Select Category</label>
