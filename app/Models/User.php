@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 /**
  * @property integer $id
@@ -15,7 +15,7 @@ use Spatie\Permission\Traits\HasRoles;
  * @property string $created_at
  * @property string $updated_at
  */
-class User extends Model
+class User extends Authenticatable
 {
     use HasRoles;
     /**

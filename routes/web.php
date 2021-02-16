@@ -5,6 +5,7 @@ use App\Http\Controllers\Account\EquityController;
 use App\Http\Controllers\Account\ExpenseController;
 use App\Http\Controllers\Account\IncomeController;
 use App\Http\Controllers\Account\LiabilityController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -19,10 +20,10 @@ use App\Http\Controllers\CategoryController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-
-Route::group(['prefix' => 'dashboard'], function () {
-  Route::view('/','welcome')->name('home');
+Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::group(['middleware' => 'auth'], function () {
+  Route::view('/','welcome')->name('index');
   Route::Resources([
       'users' => UserController::class,
       'roles' => RoleController::class,

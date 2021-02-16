@@ -40,7 +40,7 @@ class AssetController extends Controller
         //
         $asset = new Asset();
         $asset->fill($request->all())->save();
-        return redirect()->back()->with('success','Asset Created');
+        return redirect()->back();
     }
 
     /**
@@ -77,7 +77,7 @@ class AssetController extends Controller
         //
         $asset = Asset::find($id);
         $asset->fill($request->all())->update();
-        return redirect()->back()->with('success',"Asset $asset->name updated");
+        return redirect()->back();
     }
 
     /**
@@ -91,6 +91,6 @@ class AssetController extends Controller
         //
         $asset = Asset::find($id);
         $asset->delete();
-        return redirect()->back()->with('success',"Asset $asset->name Deleted");
+        return redirect()->back();
     }
 }

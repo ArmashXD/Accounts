@@ -15,6 +15,7 @@ class CreateAssetsTable extends Migration
     {
         Schema::create('assets', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->uuid('guid');
             $table->string('name');
             $table->float('amount',36);
             $table->date('date')->nullable();
@@ -23,6 +24,7 @@ class CreateAssetsTable extends Migration
         });
         Schema::create('liabilities', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->uuid('guid');
             $table->string('name');
             $table->float('amount',36);
             $table->date('date')->nullable();
@@ -31,6 +33,7 @@ class CreateAssetsTable extends Migration
         });
         Schema::create('equity', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->uuid('guid');
             $table->string('name');
             $table->float('amount',36);
             $table->date('date')->nullable();
@@ -39,6 +42,7 @@ class CreateAssetsTable extends Migration
         });
         Schema::create('income', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->uuid('guid');
             $table->string('name');
             $table->float('amount',36);
             $table->date('date')->nullable();
@@ -47,6 +51,7 @@ class CreateAssetsTable extends Migration
         });
         Schema::create('expense', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->uuid('guid');
             $table->string('name');
             $table->float('amount',36);
             $table->date('date')->nullable();

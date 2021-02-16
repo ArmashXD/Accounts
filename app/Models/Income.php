@@ -32,7 +32,7 @@ class Income extends Model
     /**
      * @var array
      */
-    protected $fillable = ['category_id', 'name', 'amount', 'date', 'created_at', 'updated_at'];
+    protected $fillable = ['category_id', 'guid','name', 'amount', 'date', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

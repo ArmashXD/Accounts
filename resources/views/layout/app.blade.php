@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600,700,800,900" rel="stylesheet"/>
     <link href="{{asset('css/lite-purple.min.css')}}" rel="stylesheet"/>
     <link href="{{asset('css/perfect-scrollbar.min.css')}}" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css">
 </head>
 
 <body class="text-left">
@@ -176,8 +177,15 @@
                         </div>
                         <a class="dropdown-item">Account settings</a>
                         <a class="dropdown-item">Billing history</a>
-                        <a class="dropdown-item" href="signin.html">Sign out</a>
-                    </div>
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>                    </div>
                 </div>
             </div>
         </div>
@@ -202,7 +210,7 @@
         <div class="sidebar-left-secondary rtl-ps-none" data-perfect-scrollbar="" data-suppress-scroll-x="true">
             <!-- Submenu Dashboards-->
             <ul class="childNav" data-parent="dashboard">
-                <li class="nav-item active"><a href="{{route('home')}}"><i class="nav-icon i-Clock-3"></i><span
+                <li class="nav-item active"><a href="{{route('index')}}"><i class="nav-icon i-Clock-3"></i><span
                                 class="item-name">Home</span></a></li>
             </ul>
             <ul class="childNav" data-parent="uikits">
@@ -380,7 +388,9 @@
     </div>
 </div> --}}
 <!-- ============ Search UI End ============= -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.js"></script>
 <script src="{{asset('js/plugins/jquery-3.3.1.min.js')}}"></script>
+@include('sweetalert::alert')
 <script src="{{asset('js/plugins/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('js/plugins/perfect-scrollbar.min.js')}}"></script>
 <script src="{{asset('js/scripts/script.min.js')}}"></script>

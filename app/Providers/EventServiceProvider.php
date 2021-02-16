@@ -2,10 +2,19 @@
 
 namespace App\Providers;
 
+use App\Models\Asset;
+use App\Models\Equity;
+use App\Models\Expense;
+use App\Models\Income;
+use App\Models\Liability;
+use App\Observers\AssetObserver;
+use App\Observers\EquityObserver;
+use App\Observers\ExpenseObserver;
+use App\Observers\IncomeObserver;
+use App\Observers\LiabilityObserver;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Event;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -28,5 +37,10 @@ class EventServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        Asset::observe(AssetObserver::class);
+        Equity::observe(EquityObserver::class);
+        Expense::observe(ExpenseObserver::class);
+        Income::observe(IncomeObserver::class);
+        Liability::observe(LiabilityObserver::class);
     }
 }
