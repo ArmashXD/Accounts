@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Account;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\MainRequest;
 use App\Models\Asset;
 use Illuminate\Http\Request;
 
@@ -35,7 +36,7 @@ class AssetController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MainRequest $request)
     {
         //
         $asset = new Asset();

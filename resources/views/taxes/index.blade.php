@@ -7,35 +7,23 @@
                 <p>{{session('success')}}</p>
             </div>
         @endif
-        @if(auth()->user()->hasPermissionTo('create'))
-        <div class="col-md-12">
+            @if(auth()->user()->hasPermissionTo('create'))
+            <div class="col-md-12">
             <div class="card mb-4">
                 <div class="card-body">
-                    <div class="card-title mb-3">Create A New Income</div>
-                    <form method="POST" action="{{route('income.store')}}">
+                    <div class="card-title mb-3">Create A New Tax</div>
+                    <form method="POST" action="{{route('taxes.store')}}">
                         @csrf
                         <div class="row">
                             <div class="col-md-6 form-group mb-3">
-                                <label for="firstName1">Enter Name</label>
+                                <label for="firstName1">Enter Tax Name</label>
                                 <input class="form-control" id="name" name="name" type="text"
-                                       placeholder="Enter Name" required/>
+                                       placeholder="Enter Tax Name" required/>
                             </div>
                             <div class="col-md-6 form-group mb-3">
-                                <label for="firstName1">Enter Amount</label>
-                                <input class="form-control" id="name" name="amount" step="0" min="0.00" type="number"
-                                       placeholder="Enter Amount" required/>
-                            </div>
-                            <div class="col-md-6 form-group mb-3">
-                                <label for="firstName1">Enter Date</label>
-                                <input class="form-control" id="date" name="date" type="date" required/>
-                            </div>
-                            <div class="col-md-6 form-group mb-3">
-                                <label for="lastName1">Select Category</label>
-                                <select name="category_id" id="" class="form-control">
-                                    @foreach(\App\Models\Category::where('type_id', 3)->get() as $item)
-                                        <option value="{{$item->id}}">{{$item->name}}</option>
-                                    @endforeach
-                                </select>
+                                <label for="firstName1">Enter Percentage</label>
+                                <input class="form-control" id="percte" name="percentage"  type="number"
+                                       placeholder="Enter Percentage" required/>
                             </div>
                             <div class="col-md-12">
                                 <button class="btn btn-primary" type="submit">Submit</button>
@@ -54,20 +42,18 @@
                 </div>
             </div>
         </div>
-        @endif
+            @endif
         <div class="col-md-12 mb-3">
             <div class="card text-left">
                 <div class="card-body">
-                    <h4 class="card-title mb-3">All Incomes</h4>
+                    <h4 class="card-title mb-3">All Taxes</h4>
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">Name</th>
-                                <th scope="col">Amount</th>
-                                <th scope="col">Category</th>
-                                <th scope="col">Date</th>
+                                <th scope="col">Percentage</th>
                                 <th scope="col">Created At</th>
                                 <th scope="col">Actions</th>
                             </tr>
@@ -76,31 +62,30 @@
                                 $count = 1;
                             @endphp
                             <tbody>
-                            @foreach($incomes as $item)
+                            @foreach($taxes as $item)
                                 <tr>
                                     <th scope="row">{{$count++}}</th>
                                     <td>{{$item->name}}</td>
-                                    <td>{{$item->amount}}</td>
-                                    <td>{{$item->category->name}}</td>
-                                    <td>{{$item->date}}</td>
+                                    <td>{{$item->percentage}} %</td>
                                     <td>{{$item->created_at}}</td>
                                     <td>
                                         @if(auth()->user()->hasPermissionTo('edit'))
+
                                         <button class="text-success mr-2 btn btn-info" data-toggle="modal"
-                                                data-target="#incomesModal{{$item->id}}" href="#"><i
-                                                class="nav-icon i-Pen-2 font-weight-bold"></i></button>
+                                                data-target="#taxesModal{{$item->id}}" href="#"><i
+                                                    class="nav-icon i-Pen-2 font-weight-bold"></i></button>
                                         @endif
                                         @if(auth()->user()->hasPermissionTo('delete'))
-                                        <form action="{{route('income.destroy',$item->id)}}" method="POST">
+                                        <form action="{{route('taxes.destroy',$item->id)}}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger" href="#"><i
-                                                    class="nav-icon i-Close-Window font-weight-bold"></i></button>
+                                                        class="nav-icon i-Close-Window font-weight-bold"></i></button>
                                         </form>
                                             @endif
                                     </td>
                                 </tr>
-                                <div class="modal fade" id="incomesModal{{$item->id}}" tabindex="-1" role="dialog"
+                                <div class="modal fade" id="taxesModal{{$item->id}}" tabindex="-1" role="dialog"
                                      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                         <div class="modal-content">
@@ -113,32 +98,22 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="{{route('income.update',$item->id)}}" method="POST">
+                                                <form action="{{route('taxes.update',$item->id)}}" method="POST">
                                                     @csrf
                                                     @method('PUT')
                                                     <div class="row">
                                                         <div class="col-md-6 form-group mb-3">
-                                                            <label for="firstName1">Enter Name</label>
-                                                            <input class="form-control" id="name" value="{{$item->name}}" name="name" type="text"
-                                                                   placeholder="Enter Name" required/>
+                                                            <label for="firstName1">Enter Tax Name</label>
+                                                            <input class="form-control" id="name"
+                                                                   value="{{$item->name}}" name="name" type="text"
+                                                                   placeholder="Enter Tax Name"/>
                                                         </div>
                                                         <div class="col-md-6 form-group mb-3">
-                                                            <label for="firstName1">Enter Amount</label>
-                                                            <input class="form-control" id="name" name="amount" value="{{$item->amount}}" step="0" min="0.00" type="number"
-                                                                   placeholder="Enter Amount" required/>
+                                                            <label for="firstName1">Enter Percentage</label>
+                                                            <input class="form-control" value="{{$item->percentage}}" id="percte" name="percentage" type="number"
+                                                                   placeholder="Enter Percentage"/>
                                                         </div>
-                                                        <div class="col-md-6 form-group mb-3">
-                                                            <label for="firstName1">Enter Date</label>
-                                                            <input class="form-control" id="date" name="date" value="{{$item->date}}" type="date" required/>
-                                                        </div>
-                                                        <div class="col-md-6 form-group mb-3">
-                                                            <label for="lastName1">Select Category</label>
-                                                            <select name="category_id" id="" class="form-control">
-                                                                @foreach(\App\Models\Category::where('type_id', 3)->get() as $item)
-                                                                    <option value="{{$item->id}}" {{$item->id == $item->category_id ? 'selected' : ''}}>{{$item->name}}</option>
-                                                                @endforeach
-                                                            </select>
-                                                        </div>
+
                                                     </div>
                                             </div>
                                             <div class="modal-footer">
@@ -156,7 +131,7 @@
                             </tbody>
                         </table>
                     </div>
-                    {{$incomes->links()}}
+                    {{$taxes->links()}}
                 </div>
             </div>
         </div>

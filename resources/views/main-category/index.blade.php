@@ -18,7 +18,7 @@
                             <div class="col-md-6 form-group mb-3">
                                 <label for="firstName1">Enter Category Name</label>
                                 <input class="form-control" id="name" name="name" type="text"
-                                       placeholder="Enter Name"/>
+                                       placeholder="Enter Name" required/>
                             </div>
                             <div class="col-md-12">
                                 <button class="btn btn-primary" type="submit">Submit</button>
@@ -101,7 +101,7 @@
                                                             <label for="firstName1">Enter Category Name</label>
                                                             <input class="form-control" id="name"
                                                                    value="{{$item->name}}" name="name" type="text"
-                                                                   placeholder="Enter Category Name"/>
+                                                                   placeholder="Enter Category Name" required/>
                                                         </div>
                                                     </div>
                                             </div>

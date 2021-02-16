@@ -12,46 +12,47 @@ class ExpenseObserver
     {
         $expense->guid = Str::uuid();
     }
+
     /**
      * Handle the Expense "created" event.
      *
-     * @param  \App\Models\Expense  $expense
+     * @param \App\Models\Expense $expense
      * @return void
      */
     public function created(Expense $expense)
     {
         //
-        alert()->success('Success',"Expense $expense->name Created");
+        alert()->success('Success', "Expense $expense->name Created");
     }
 
     /**
      * Handle the Expense "updated" event.
      *
-     * @param  \App\Models\Expense  $expense
+     * @param \App\Models\Expense $expense
      * @return void
      */
     public function updated(Expense $expense)
     {
         //
-        alert()->success('Success',"Expense $expense->name Updated");
+        alert()->success('Success', "Expense $expense->name Updated");
     }
 
     /**
      * Handle the Expense "deleted" event.
      *
-     * @param  \App\Models\Expense  $expense
+     * @param \App\Models\Expense $expense
      * @return void
      */
     public function deleted(Expense $expense)
     {
         //
-        alert()->success('Success',"Expense $expense->name Deleted");
+        alert()->success('Success', "Expense $expense->name Deleted");
     }
 
     /**
      * Handle the Expense "restored" event.
      *
-     * @param  \App\Models\Expense  $expense
+     * @param \App\Models\Expense $expense
      * @return void
      */
     public function restored(Expense $expense)
@@ -62,7 +63,7 @@ class ExpenseObserver
     /**
      * Handle the Expense "force deleted" event.
      *
-     * @param  \App\Models\Expense  $expense
+     * @param \App\Models\Expense $expense
      * @return void
      */
     public function forceDeleted(Expense $expense)

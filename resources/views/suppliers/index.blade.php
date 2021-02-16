@@ -19,26 +19,26 @@
                                 <div class="col-md-6 form-group mb-3">
                                     <label for="firstName1">Enter Name</label>
                                     <input class="form-control" id="name" name="name" type="text"
-                                           placeholder="Enter Name"/>
+                                           placeholder="Enter Name" required/>
                                 </div>
                                 <div class="col-md-6 form-group mb-3">
                                     <label for="firstName1">Enter Phone</label>
                                     <input class="form-control" id="phone" name="phone" step="0" min="0.00"
                                            type="number"
-                                           placeholder="Enter Phone"/>
+                                           placeholder="Enter Phone" required/>
                                 </div>
                                 <div class="col-md-6 form-group mb-3">
                                     <label for="firstName1">Enter Address</label>
-                                    <input class="form-control" id="date" name="address" PLACEHOLDER="Enter Address" type="text"/>
+                                    <input class="form-control" id="date" name="address" required PLACEHOLDER="Enter Address" type="text"/>
                                 </div>
 
                                 <div class="col-md-6 form-group mb-3">
                                     <label for="firstName1">Enter Details</label>
-                                    <input class="form-control" id="date" name="details" placeholder="Enter Details" type="text"/>
+                                    <input class="form-control" id="date" name="details" placeholder="Enter Details" type="text" required/>
                                 </div>
                                 <div class="col-md-6 form-group mb-3">
                                     <label for="firstName1">Enter Previous Credit Balance</label>
-                                    <input class="form-control" id="date" name="previous_credit_balance" placeholder="Enter Number" type="number"/>
+                                    <input class="form-control" id="date" name="previous_credit_balance"  step="0" min="0.00" placeholder="Enter Number" type="number" required/>
                                 </div>
 
                                 <div class="col-md-12">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Account;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\MainRequest;
 use App\Models\Expense;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,7 @@ class ExpenseController extends Controller
     public function index()
     {
         //
-        return view('expenses.index',['expenses' => Expense::paginate(5)]);
+        return view('expenses.index', ['expenses' => Expense::paginate(5)]);
     }
 
     /**
@@ -32,21 +33,21 @@ class ExpenseController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(MainRequest $request)
     {
         //
         $expense = new Expense();
         $expense->fill($request->all())->save();
-        return redirect()->back()->with('success','Expense Created');
+        return redirect()->back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -57,7 +58,7 @@ class ExpenseController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -68,8 +69,8 @@ class ExpenseController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, $id)
@@ -77,13 +78,13 @@ class ExpenseController extends Controller
         //
         $expense = Expense::find($id);
         $expense->fill($request->all())->save();
-        return redirect()->back()->with('success',"Expense $expense->name Updated");
+        return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -91,7 +92,7 @@ class ExpenseController extends Controller
         //
         $expense = Expense::find($id);
         $expense->delete();
-        return redirect()->back()->with('success',"Expense $expense->name Deleted");
+        return redirect()->back();
 
     }
 }

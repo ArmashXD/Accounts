@@ -1,24 +1,21 @@
 <?php
 
-namespace App\Http\Controllers\Account;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Http\Requests\MainRequest;
-use App\Models\Equity;
+use App\Models\Tax;
 use Illuminate\Http\Request;
 
-class EquityController extends Controller
+class TaxController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
         //
-        return view('equities.index', ['equities' => Equity::paginate(5)]);
-
+        return view('taxes.index', ['taxes' => Tax::paginate(5)]);
     }
 
     /**
@@ -35,13 +32,13 @@ class EquityController extends Controller
      * Store a newly created resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Http\Response
      */
-    public function store(MainRequest $request)
+    public function store(Request $request)
     {
         //
-        $equity = new Equity();
-        $equity->fill($request->all())->save();
+        $tax = new Tax();
+        $tax->fill($request->all())->save();
         return redirect()->back();
     }
 
@@ -72,13 +69,13 @@ class EquityController extends Controller
      *
      * @param \Illuminate\Http\Request $request
      * @param int $id
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         //
-        $equity = Equity::find($id);
-        $equity->fill($request->all())->save();
+        $tax = Tax::find($id);
+        $tax->fill($request->all())->update();
         return redirect()->back();
     }
 
@@ -86,14 +83,13 @@ class EquityController extends Controller
      * Remove the specified resource from storage.
      *
      * @param int $id
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
-        $equity = Equity::find($id);
-        $equity->delete();
+        $tax = Tax::find($id);
+        $tax->delete();
         return redirect()->back();
-
     }
 }

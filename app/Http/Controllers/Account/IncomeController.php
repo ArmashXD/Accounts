@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Account;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\MainRequest;
 use App\Models\Income;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,7 @@ class IncomeController extends Controller
     public function index()
     {
         //
-        return view('incomes.index',['incomes' => Income::paginate(5)]);
+        return view('incomes.index', ['incomes' => Income::paginate(5)]);
     }
 
     /**
@@ -32,21 +33,21 @@ class IncomeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MainRequest $request)
     {
         //
         $income = new Income();
         $income->fill($request->all())->save();
-        return redirect()->back()->with('success','Income Created');
+        return redirect()->back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -57,7 +58,7 @@ class IncomeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -68,8 +69,8 @@ class IncomeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -77,13 +78,13 @@ class IncomeController extends Controller
         //
         $income = Income::find($id);
         $income->fill($request->all())->save();
-        return redirect()->back()->with('success',"Income $income->name Updated");
+        return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -91,6 +92,6 @@ class IncomeController extends Controller
         //
         $income = Income::find($id);
         $income->delete();
-        return redirect()->back()->with('success',"Income $income->name Deleted");
+        return redirect()->back();
     }
 }

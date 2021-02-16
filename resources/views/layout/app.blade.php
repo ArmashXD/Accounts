@@ -198,20 +198,24 @@
                             class="nav-item-hold" href="#"><i class="nav-icon i-Bar-Chart"></i><span class="nav-text">Dashboard</span></a>
                     <div class="triangle"></div>
                 </li>
-                <li class="nav-item {{Request::is('dashboard/roles') ? 'active' : ''}}" data-item="uikits"><a
+                <li class="nav-item {{Request::is('roles') ? 'active' : ''}}" data-item="uikits"><a
                             class="nav-item-hold" href="#"><i class="nav-icon i-Library"></i><span class="nav-text">Users {{auth()->user()->hasPermissionTo('view') ? 'And Roles' : ''}}</span></a>
                     <div class="triangle"></div>
                 </li>
-                <li class="nav-item {{Request::is('dashboard/account') ? 'active' : ''}}" data-item="uikits1"><a
+                <li class="nav-item {{Request::is('account') ? 'active' : ''}}" data-item="uikits1"><a
                             class="nav-item-hold" href="#"><i class="nav-icon i-Library"></i><span class="nav-text">Accounts</span></a>
                     <div class="triangle"></div>
                 </li>
-                <li class="nav-item {{Request::is('dashboard/account') ? 'active' : ''}}" data-item="uikits2"><a
+                <li class="nav-item {{Request::is('main-categories') ? 'active' : ''}}" data-item="uikits2"><a
                             class="nav-item-hold" href="#"><i class="nav-icon i-Library"></i><span class="nav-text">Main Categories</span></a>
                     <div class="triangle"></div>
                 </li>
-                <li class="nav-item {{Request::is('dashboard/account') ? 'active' : ''}}" data-item="uikits3"><a
+                <li class="nav-item {{Request::is('suppliers') ? 'active' : ''}}" data-item="uikits3"><a
                             class="nav-item-hold" href="#"><i class="nav-icon i-Library"></i><span class="nav-text">Suppliers</span></a>
+                    <div class="triangle"></div>
+                </li>
+                <li class="nav-item {{Request::is('taxes') ? 'active' : ''}}" data-item="uikits4"><a
+                            class="nav-item-hold" href="#"><i class="nav-icon i-Library"></i><span class="nav-text">Taxes</span></a>
                     <div class="triangle"></div>
                 </li>
             </ul>
@@ -255,6 +259,9 @@
                                 class="item-name">Supplier ledger</span></a></li>
                 <li class="nav-item"><a href="{{route('suppliers.index')}}"><i class="nav-icon i"></i><span
                                 class="item-name">Supplier sales details</span></a></li>
+            </ul>
+            <ul class="childNav" data-parent="uikits4">
+                <li class="nav-item"><a href="{{route('taxes.index')}}"><i class="nav-icon i"></i><span class="item-name">All Taxes</span></a></li>
             </ul>
         </div>
         <div class="sidebar-overlay"></div>

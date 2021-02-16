@@ -17,7 +17,13 @@ class RoleController extends Controller
     public function index()
     {
         //
+        if(auth()->user()->hasRole('super-admin'))
+        {
         return view('roles.index', ['roles' => Role::paginate(5), 'permissions' => Permission::get()]);
+        }
+        else{
+            abort(403);
+        }
     }
 
     /**
@@ -39,7 +45,7 @@ class RoleController extends Controller
     public function store(Request $request)
     {
         //
-        $this->validate($request, [
+        $request->validate([
             'name' => 'required|unique:roles,name',
             'permission' => 'required',
         ]);
@@ -87,7 +93,7 @@ class RoleController extends Controller
     public function update(Request $request, $id)
     {
         //
-        $this->validate($request, [
+        $request->validate([
             'name' => 'required',
             'permission' => 'required',
         ]);

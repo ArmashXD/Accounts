@@ -17,7 +17,7 @@
                             <div class="col-md-6 form-group mb-3">
                                 <label for="firstName1">Enter Role Name</label>
                                 <input class="form-control" id="name" name="name" type="text"
-                                       placeholder="Enter Role Name"/>
+                                       placeholder="Enter Role Name" required/>
                             </div>
                             <div class="col-md-6 form-group mb-3" >
                                 <label for="lastName1">Select Permissions</label>
@@ -25,7 +25,7 @@
                                     @foreach($permissions as $item)
                                         <div class="col">
                                         <span class="badge badge-primary">{{$item->name}}</span>
-                                         <input value="{{$item->id}}" type="checkbox" name="permission[]" class="checkbox">
+                                         <input value="{{$item->id}}" type="checkbox" name="permission[]" class="checkbox" required>
                                         </div>
                                     @endforeach
                                 </div>
@@ -86,8 +86,8 @@
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger" href="#"><i
                                                         class="nav-icon i-Close-Window font-weight-bold"></i></button>
+                                        </form>
                                     </td>
-                                    </form>
                                 </tr>
                                 <div class="modal fade" id="rolesModal{{$item->id}}" tabindex="-1" role="dialog"
                                      aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

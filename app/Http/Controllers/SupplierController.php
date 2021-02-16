@@ -16,7 +16,7 @@ class SupplierController extends Controller
     public function index()
     {
         //
-        return view('suppliers.index',['suppliers' => Supplier::paginate(5)]);
+        return view('suppliers.index', ['suppliers' => Supplier::paginate(5)]);
     }
 
     /**
@@ -32,22 +32,20 @@ class SupplierController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        //        @todo put guid and alerts in observer
         $supplier = new Supplier();
-        $supplier->guid = Str::uuid();
         $supplier->fill($request->all())->save();
-        return redirect()->back()->with('success','Supplier Created');
+        return redirect()->back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -58,7 +56,7 @@ class SupplierController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -69,8 +67,8 @@ class SupplierController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -78,14 +76,14 @@ class SupplierController extends Controller
         //
         $supplier = Supplier::find($id);
         $supplier->fill($request->all())->update();
-        return redirect()->back()->with('success','Supplier Updated');
+        return redirect()->back();
 
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -93,7 +91,7 @@ class SupplierController extends Controller
         //
         $supplier = Supplier::find($id);
         $supplier->delete();
-        return redirect()->back()->with('success','Supplier Deleted');
+        return redirect()->back();
 
     }
 }

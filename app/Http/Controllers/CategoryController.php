@@ -15,13 +15,13 @@ class CategoryController extends Controller
     public function index()
     {
         //
-        return view('category.index',[
-            'categoryAsset' => Category::where('type_id',1)->paginate(5),
-            'categoryLiability' => Category::where('type_id',2)->paginate(5),
-            'categoryIncome' => Category::where('type_id',3)->paginate(5),
-            'categoryExpense' => Category::where('type_id',4)->paginate(5),
-            'categoryEquity' => Category::where('type_id',5)->paginate(5)
-            ]);
+        return view('category.index', [
+            'categoryAsset' => Category::where('type_id', 1)->paginate(5),
+            'categoryLiability' => Category::where('type_id', 2)->paginate(5),
+            'categoryIncome' => Category::where('type_id', 3)->paginate(5),
+            'categoryExpense' => Category::where('type_id', 4)->paginate(5),
+            'categoryEquity' => Category::where('type_id', 5)->paginate(5)
+        ]);
     }
 
     /**
@@ -37,7 +37,7 @@ class CategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -48,13 +48,14 @@ class CategoryController extends Controller
         ]);
         $category = new Category();
         $category->fill($request->all())->save();
-        return redirect()->back()->with('success',"Category added");
+        alert()->success('Success', "Category $category->name Created");
+        return redirect()->back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -65,7 +66,7 @@ class CategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -76,25 +77,26 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\RedirectResponse
      */
     public function update(Request $request, $id)
     {
         //
         $request->validate([
-            'name' => 'unique:categories'
+            'name' => 'required'
         ]);
         $category = Category::find($id);
         $category->fill($request->all())->update();
-        return redirect()->back()->with('success',"Category $category->name Updated");
+        alert()->success('Success', "Category $category->name Updated");
+        return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
@@ -102,6 +104,7 @@ class CategoryController extends Controller
         //
         $category = Category::find($id);
         $category->delete();
-        return redirect()->back()->with('success',"Category $category->name Deleted");
+        alert()->success('Success', "Category $category->name Deleted");
+        return redirect()->back();
     }
 }

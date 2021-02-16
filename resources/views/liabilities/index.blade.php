@@ -18,21 +18,21 @@
                                 <div class="col-md-6 form-group mb-3">
                                     <label for="firstName1">Enter Name</label>
                                     <input class="form-control" id="name" name="name" type="text"
-                                           placeholder="Enter Name"/>
+                                           placeholder="Enter Name" required/>
                                 </div>
                                 <div class="col-md-6 form-group mb-3">
                                     <label for="firstName1">Enter Amount</label>
                                     <input class="form-control" id="name" name="amount" step="0" min="0.00"
                                            type="number"
-                                           placeholder="Enter Amount"/>
+                                           placeholder="Enter Amount" required/>
                                 </div>
                                 <div class="col-md-6 form-group mb-3">
                                     <label for="firstName1">Enter Date</label>
-                                    <input class="form-control" id="date" name="date" type="date"/>
+                                    <input class="form-control" id="date" name="date" type="date" required/>
                                 </div>
                                 <div class="col-md-6 form-group mb-3">
                                     <label for="lastName1">Select Category</label>
-                                    <select name="category_id" id="" class="form-control">
+                                    <select name="category_id" id="" class="form-control" required>
                                         @foreach(\App\Models\Category::where('type_id', 2)->get() as $item)
                                             <option value="{{$item->id}}">{{$item->name}}</option>
                                         @endforeach
@@ -123,23 +123,23 @@
                                                             <label for="firstName1">Enter Name</label>
                                                             <input class="form-control" id="name"
                                                                    value="{{$item->name}}" name="name" type="text"
-                                                                   placeholder="Enter Role Name"/>
+                                                                   placeholder="Enter Liabilities Name" required/>
                                                         </div>
                                                         <div class="col-md-6 form-group mb-3">
                                                             <label for="firstName1">Enter Amount</label>
                                                             <input class="form-control" id="name" name="amount"
                                                                    value="{{$item->amount}}" step="0" min="0.00"
                                                                    type="number"
-                                                                   placeholder="Enter Amount"/>
+                                                                   placeholder="Enter Amount" required/>
                                                         </div>
                                                         <div class="col-md-6 form-group mb-3">
                                                             <label for="firstName1">Enter Date</label>
                                                             <input class="form-control" id="date" name="date"
-                                                                   value="{{$item->date}}" type="date"/>
+                                                                   value="{{$item->date}}" type="date" required/>
                                                         </div>
                                                         <div class="col-md-6 form-group mb-3">
                                                             <label for="lastName1">Select Category</label>
-                                                            <select name="category_id" id="" class="form-control">
+                                                            <select name="category_id" id="" class="form-control" required>
                                                                 @foreach(\App\Models\Category::where('type_id', 2)->get() as $item)
                                                                     <option value="{{$item->id}}" {{$item->id == $item->category_id ? 'selected' : ''}}>{{$item->name}}</option>
                                                                 @endforeach

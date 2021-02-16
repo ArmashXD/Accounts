@@ -18,11 +18,11 @@
                                 <div class="col-md-6 form-group mb-3">
                                     <label for="firstName1">Enter Category Name</label>
                                     <input class="form-control" id="name" name="name" type="text"
-                                           placeholder="Name"/>
+                                           placeholder="Name" required/>
                                 </div>
                                 <div class="col-md-6 form-group mb-3">
                                     <label for="lastName1">Select Type</label>
-                                    <select name="type_id" id="" class="form-control">
+                                    <select name="type_id" id="" class="form-control" required>
                                         @foreach(\App\Models\Type::all() as $item)
                                             <option value="{{$item->id}}">{{$item->name}}</option>
                                         @endforeach

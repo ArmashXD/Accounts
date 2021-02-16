@@ -19,17 +19,17 @@
                                 <div class="col-md-6 form-group mb-3">
                                     <label for="firstName1">Enter Name</label>
                                     <input class="form-control" id="name" name="name" type="text"
-                                           placeholder="Enter Name"/>
+                                           placeholder="Enter Name" required/>
                                 </div>
                                 <div class="col-md-6 form-group mb-3">
                                     <label for="firstName1">Enter Amount</label>
                                     <input class="form-control" id="name" name="amount" step="0" min="0.00"
                                            type="number"
-                                           placeholder="Enter Amount"/>
+                                           placeholder="Enter Amount" required/>
                                 </div>
                                 <div class="col-md-6 form-group mb-3">
                                     <label for="firstName1">Enter Date</label>
-                                    <input class="form-control" id="date" name="date" type="date"/>
+                                    <input class="form-control" id="date" name="date" type="date" required/>
                                 </div>
                                 <div class="col-md-6 form-group mb-3">
                                     <label for="lastName1">Select Category</label>

@@ -28,7 +28,8 @@ Route::group(['middleware' => 'auth'], function () {
       'users' => UserController::class,
       'roles' => RoleController::class,
       'main-category' => MainCategoryController::class,
-      'suppliers' => \App\Http\Controllers\SupplierController::class
+      'suppliers' => \App\Http\Controllers\SupplierController::class,
+      'taxes' => \App\Http\Controllers\TaxController::class
   ]);
   Route::group(['prefix' => 'account'], function(){
       Route::Resources([

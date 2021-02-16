@@ -15,7 +15,7 @@ class MainCategoryController extends Controller
     public function index()
     {
         //
-        return view('main-category.index',['categories' => MainCategory::paginate(5)]);
+        return view('main-category.index', ['categories' => MainCategory::paginate(5)]);
     }
 
     /**
@@ -31,7 +31,7 @@ class MainCategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -39,14 +39,14 @@ class MainCategoryController extends Controller
         //
         $category = new MainCategory();
         $category->fill($request->all())->save();
-        alert()->success('Success',"Category $category->name Created");
+        alert()->success('Success', "Category $category->name Created");
         return redirect()->back();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -57,7 +57,7 @@ class MainCategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -68,8 +68,8 @@ class MainCategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -77,14 +77,14 @@ class MainCategoryController extends Controller
         //
         $category = MainCategory::find($id);
         $category->fill($request->all())->save();
-        alert()->success('Success',"Category $category->name Updated");
+        alert()->success('Success', "Category $category->name Updated");
         return redirect()->back();
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -92,7 +92,7 @@ class MainCategoryController extends Controller
         //
         $category = MainCategory::find($id);
         $category->delete();
-        alert()->success('Success',"Category $category->name Deleted");
+        alert()->success('Success', "Category $category->name Deleted");
         return redirect()->back();
     }
 }
