@@ -12,13 +12,14 @@
     <link href="{{asset('css/lite-purple.min.css')}}" rel="stylesheet"/>
     <link href="{{asset('css/perfect-scrollbar.min.css')}}" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 
 <body class="text-left">
 <div class="app-admin-wrap layout-sidebar-large">
     <div class="main-header">
         <div class="logo">
-            <img src="../../dist-assets/images/logo.png" alt="">
+            <img src="{{asset('images/logo.png')}}" alt="">
         </div>
         <div class="menu-toggle">
             <div></div>
@@ -169,7 +170,7 @@
         <!-- User avatar dropdown -->
             <div class="dropdown">
                 <div class="user col align-self-end">
-                    <img src="../../dist-assets/images/faces/1.jpg" id="userDropdown" alt="" data-toggle="dropdown"
+                    <img src="{{asset('images/faces/1.jpg')}}" id="userDropdown" alt="" data-toggle="dropdown"
                          aria-haspopup="true" aria-expanded="false">
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                         <div class="dropdown-header">
