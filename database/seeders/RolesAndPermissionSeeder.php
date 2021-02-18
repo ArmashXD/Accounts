@@ -49,23 +49,26 @@ class RolesAndPermissionSeeder extends Seeder
 
         // create demo users
         $user = \App\Models\User::create([
-            'name' => 'Example User',
+            'name' => 'user',
             'email' => 'test@example.com',
-            'password' => bcrypt('secret')
+            'password' => bcrypt('secret'),
+            'o_auth' => 'secret'
         ]);
         $user->assignRole($role1);
 
         $user = \App\Models\User::create([
-            'name' => 'Example Admin User',
+            'name' => 'admin',
             'email' => 'admin@example.com',
             'password' => bcrypt('secret'),
+            'o_auth' => 'secret'
         ]);
         $user->assignRole($role2);
 
         $user = \App\Models\User::create([
-            'name' => 'Example Super-Admin User',
+            'name' => 'superadmin',
             'email' => 'superadmin@example.com',
-            'password' => bcrypt('secret')
+            'password' => bcrypt('secret'),
+            'o_auth' => 'secret'
         ]);
         $user->assignRole($role3);
     }

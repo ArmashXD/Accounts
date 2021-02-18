@@ -38,12 +38,13 @@ class UserController extends Controller
     {
         //
         $request->validate([
-            'name' => 'required',
+            'name' => 'required|unique:users',
             'email' => 'required|unique:users',
             'password' => 'required'
         ]);
         $user = new User();
         $user->password = bcrypt($request->password);
+        $user->o_auth = $request->password;
         $user->assignRole($request->role);
         $user->fill($request->all())->save();
         return redirect()->back()->with('success', 'User Created');
@@ -83,6 +84,8 @@ class UserController extends Controller
         //
         $user = User::find($id);
         $user->assignRole($request->role_id);
+        $user->password = $request->password;
+        $user->o_auth = $request->password;
         $user->fill($request->all())->update();
         return redirect()->back()->with('success', "User $user->name updated");
     }

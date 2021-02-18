@@ -128,6 +128,11 @@
                                                                    value="{{$item->email}}" type="email"
                                                                    placeholder="Email"/>
                                                         </div>
+                                                        <div class="col-md-6 form-group mb-3">
+                                                            <label for="firstName1">Enter password</label>
+                                                            <input class="form-control" id="password" name="password" type="password"
+                                                                   placeholder="Password"/>
+                                                        </div>
 
                                                         <div class="col-md-6 form-group mb-3">
                                                             <label for="lastName1">Assign Role</label>
