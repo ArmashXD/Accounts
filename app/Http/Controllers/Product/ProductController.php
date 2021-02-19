@@ -99,6 +99,8 @@ class ProductController extends Controller
     {
         //
         $product = Product::find($id);
+        $media = Media::where('product_id', $product->id)->first();
+        $media->delete();
         $product->delete();
         return redirect()->back();
     }
