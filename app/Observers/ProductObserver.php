@@ -2,6 +2,7 @@
 
 namespace App\Observers;
 
+use App\Models\Media;
 use App\Models\Product;
 use Illuminate\Support\Str;
 
@@ -44,6 +45,7 @@ class ProductObserver
     public function deleted(Product $product)
     {
         //
+//        Media::imageDelete($product);
         alert()->success('Success',"Product $product->name Deleted");
     }
 

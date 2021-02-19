@@ -35,15 +35,31 @@ class Media extends Model
         return $this->belongsTo(Product::class);
     }
 
-    public static function imageUpload(Request $request, Product $product){
+    public static function imageUpload(Request $request, Product $product)
+    {
         foreach ($request->file('images') as $image) {
             $name = $image->getClientOriginalName();
-            $image->move(public_path() . '/images/', $name);
+            $image->move(public_path() . '/images/products', $name);
             $data[] = $name;
         }
         $media = new Media();
         $media->product()->associate($product);
         $media->image_url = json_encode($data);
         $media->save();
+    }
+
+    public static function imageDelete(Product $product)
+    {
+        $media = Media::where('product_id', $product->id)->first();
+        foreach (json_decode($media->image_url) as $image) {
+            if (file_exists(public_path() . '/images/products' . $image)) {
+                $images = public_path() . '/images/' . $image;
+                unlink($images);
+                $media->delete();
+            } else {
+                $media->delete();
+                return redirect('accounts/products');
+            }
+        }
     }
 }

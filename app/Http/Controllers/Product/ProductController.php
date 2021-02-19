@@ -44,6 +44,16 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'tax_id' => 'required',
+            'sale_price' => 'required',
+            'name' => 'required',
+            'serial_number' => 'required',
+            'supplier_price' => 'required',
+            'supplier_id' => 'required',
+            'category_id' => 'required',
+            'images' => 'required'
+        ]);
         $product = new Product();
         $product->fill($request->all())->save();
         if ($request->hasfile('images')) {
@@ -99,8 +109,7 @@ class ProductController extends Controller
     {
         //
         $product = Product::find($id);
-        $media = Media::where('product_id', $product->id)->first();
-        $media->delete();
+        Media::imageDelete($product);
         $product->delete();
         return redirect()->back();
     }

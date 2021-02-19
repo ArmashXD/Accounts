@@ -56,7 +56,7 @@
                                                     class="nav-icon i-Pen-2 font-weight-bold"></i></a>
                                         @endif
                                         @if(auth()->user()->hasPermissionTo('delete'))
-                                            <form action="{{route('products.destroy',$item->id)}}" method="POST">
+                                            <form action="{{route('products.destroy',$item->product->id)}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger" href="#"><i
@@ -102,7 +102,7 @@
 
                                                                     <div class="carousel-item active">
                                                                         <img class="d-block w-100"
-                                                                             src="{{asset('/images/'. $p)}}"/>
+                                                                             src="{{asset('/images/products/'. $p)}}"/>
                                                                     </div>
                                                                 </div>
 
