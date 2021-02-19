@@ -228,6 +228,11 @@
                             class="nav-text">Product</span></a>
                     <div class="triangle"></div>
                 </li>
+                <li class="nav-item {{Request::is('purchase') ? 'active' : ''}}" ><a
+                        class="nav-item-hold" href="{{route('purchase.index')}}"><i class="nav-icon i-Library"></i><span
+                            class="nav-text">Purchases</span></a>
+                    <div class="triangle"></div>
+                </li>
             </ul>
         </div>
         <div class="sidebar-left-secondary rtl-ps-none" data-perfect-scrollbar="" data-suppress-scroll-x="true">
@@ -274,6 +279,7 @@
                 <li class="nav-item"><a href="{{route('products.index')}}"><i class="nav-icon i"></i><span
                             class="item-name">Products</span></a></li>
             </ul>
+
 
         </div>
         <div class="sidebar-overlay"></div>

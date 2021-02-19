@@ -7,6 +7,7 @@ use App\Http\Controllers\Account\IncomeController;
 use App\Http\Controllers\Account\LiabilityController;
 use\App\Http\Controllers\MainCategoryController;
 use App\Http\Controllers\Product\ProductController;
+use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\TaxController;
@@ -44,7 +45,10 @@ Route::group(['middleware' => ['auth']], function () {
           'expenses' => ExpenseController::class,
           'income' => IncomeController::class,
           'units' => UnitController::class,
+          'purchase' => PurchaseController::class,
           'products' => ProductController::class
       ]);
   });
+
+
 });

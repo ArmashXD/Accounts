@@ -20,17 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c1e45ab-02d6-4df6-9454-2ac2bda6cce4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Accounts.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Accounts.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/purchase/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/purchase/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/purchase/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/ForgotPasswordController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SupplierController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SupplierController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,6 +165,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
@@ -177,17 +176,18 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Boossto\Desktop\Accounts\app\Http\Controllers\Product" />
-      <recent name="C:\Users\Boossto\Desktop\Accounts\app\Models" />
-      <recent name="C:\Users\Syed Armash Hussain\Desktop\Accounts\app\Models" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Boossto\Desktop\Accounts\resources\views\unit" />
       <recent name="C:\Users\Boossto\Desktop\Accounts" />
       <recent name="C:\Users\Boossto\Desktop\Accounts\resources\views\liabilities" />
       <recent name="C:\Users\Boossto\Desktop\Accounts\resources\views\incomes" />
       <recent name="C:\Users\Boossto\Desktop\Accounts\resources\views\expenses" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Boossto\Desktop\New folder\Accounts\app\Models" />
+      <recent name="C:\Users\Boossto\Desktop\Accounts\app\Http\Controllers\Product" />
+      <recent name="C:\Users\Boossto\Desktop\Accounts\app\Models" />
+      <recent name="C:\Users\Syed Armash Hussain\Desktop\Accounts\app\Models" />
     </key>
   </component>
   <component name="RunManager">
@@ -219,6 +219,7 @@
       <workItem from="1613657108045" duration="826000" />
       <workItem from="1613658073103" duration="44000" />
       <workItem from="1613658152556" duration="5090000" />
+      <workItem from="1613737929246" duration="10797000" />
     </task>
     <servers />
   </component>
@@ -262,10 +263,15 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1613380723425">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="503" y="267" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1613740804494">
+      <screen x="0" y="0" width="1400" height="1010" />
     </state>
+    <state x="503" y="267" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1400.1010@0.0.1400.1010" timestamp="1613740804494" />
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1613380723425" />
+    <state x="458" y="228" key="NewPhpClassDialog" timestamp="1613742193527">
+      <screen x="0" y="0" width="1400" height="1010" />
+    </state>
+    <state x="458" y="228" key="NewPhpClassDialog/0.0.1400.1010@0.0.1400.1010" timestamp="1613742193527" />
     <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1613666465422">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
