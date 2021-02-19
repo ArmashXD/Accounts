@@ -23,6 +23,18 @@ class ProductObserver
         //
         alert()->success('Success',"Product $product->name Created");
     }
+    /**
+     * Handle the Product "updating" event.
+     *
+     * @param  \App\Models\Product  $product
+     * @return void
+     */
+    public function updating(Product $product)
+    {
+        //
+        Media::imageUpdate($product);
+    }
+
 
     /**
      * Handle the Product "updated" event.
@@ -37,6 +49,17 @@ class ProductObserver
     }
 
     /**
+     * Handle the Product "deleting" event.
+     *
+     * @param  \App\Models\Product  $product
+     * @return void
+     */
+    public function deleting(Product $product)
+    {
+        Media::imageDelete($product);
+    }
+
+    /**
      * Handle the Product "deleted" event.
      *
      * @param  \App\Models\Product  $product
@@ -45,7 +68,6 @@ class ProductObserver
     public function deleted(Product $product)
     {
         //
-//        Media::imageDelete($product);
         alert()->success('Success',"Product $product->name Deleted");
     }
 

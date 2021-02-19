@@ -51,16 +51,18 @@
                                     <td>{{$item->product->created_at}}</td>
                                     <td>
                                         @if(auth()->user()->hasPermissionTo('edit'))
-                                            <a class="text-success mr-2 btn btn-info" data-toggle="modal"
-                                               href="{{route('products.edit',$item->id)}}"><i
-                                                    class="nav-icon i-Pen-2 font-weight-bold"></i></a>
+                                            <a class="text-success mr-2 btn btn-info"
+                                               href="{{route('products.edit',$item->product->id)}}"><i
+                                                        class="nav-icon i-Pen-2 font-weight-bold"></i></a>
                                         @endif
                                         @if(auth()->user()->hasPermissionTo('delete'))
-                                            <form action="{{route('products.destroy',$item->product->id)}}" method="POST">
+                                            <form action="{{route('products.destroy',$item->product->id)}}"
+                                                  method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger" href="#"><i
-                                                        class="nav-icon i-Close-Window font-weight-bold"></i></button>
+                                                            class="nav-icon i-Close-Window font-weight-bold"></i>
+                                                </button>
                                             </form>
                                         @endif
                                     </td>
@@ -97,7 +99,7 @@
                                                     <div class="col-lg-6">
                                                         <div id="carouselExampleSlidesOnly" class="carousel slide"
                                                              data-ride="carousel">
-                                                                @foreach(json_decode($item->image_url) as $p)
+                                                            @foreach(json_decode($item->image_url) as $p)
                                                                 <div class="carousel-inner">
 
                                                                     <div class="carousel-item active">
@@ -106,7 +108,7 @@
                                                                     </div>
                                                                 </div>
 
-                                                                @endforeach
+                                                            @endforeach
                                                         </div>
                                                     </div>
                                                 </div>

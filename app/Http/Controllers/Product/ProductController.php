@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Product;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductRequest;
 use App\Models\MainCategory;
 use App\Models\Media;
 use App\Models\Product;
@@ -41,19 +42,9 @@ class ProductController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
         //
-        $request->validate([
-            'tax_id' => 'required',
-            'sale_price' => 'required',
-            'name' => 'required',
-            'serial_number' => 'required',
-            'supplier_price' => 'required',
-            'supplier_id' => 'required',
-            'category_id' => 'required',
-            'images' => 'required'
-        ]);
         $product = new Product();
         $product->fill($request->all())->save();
         if ($request->hasfile('images')) {
@@ -82,6 +73,10 @@ class ProductController extends Controller
     public function edit($id)
     {
         //
+        return view('product.edit', ['product' => Product::find($id),
+            'media' => Media::where('product_id', $id)->first(),
+            'categories' => MainCategory::all(),
+            'suppliers' => Supplier::all(), 'taxes' => Tax::all()]);
     }
 
     /**
@@ -91,7 +86,7 @@ class ProductController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProductRequest $request, $id)
     {
         //
         $product = Product::find($id);
@@ -109,7 +104,6 @@ class ProductController extends Controller
     {
         //
         $product = Product::find($id);
-        Media::imageDelete($product);
         $product->delete();
         return redirect()->back();
     }

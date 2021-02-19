@@ -35,7 +35,7 @@ class Media extends Model
         return $this->belongsTo(Product::class);
     }
 
-    public static function imageUpload(Request $request, Product $product)
+    public static function imageUpload(Request $request, Model $model)
     {
         foreach ($request->file('images') as $image) {
             $name = $image->getClientOriginalName();
@@ -43,14 +43,14 @@ class Media extends Model
             $data[] = $name;
         }
         $media = new Media();
-        $media->product()->associate($product);
+        $media->product()->associate($model);
         $media->image_url = json_encode($data);
         $media->save();
     }
 
-    public static function imageDelete(Product $product)
+    public static function imageDelete(Model $model)
     {
-        $media = Media::where('product_id', $product->id)->first();
+        $media = Media::where('product_id', $model->id)->first();
         foreach (json_decode($media->image_url) as $image) {
             if (file_exists(public_path() . '/images/products/' . $image)) {
                 $images = public_path() . '/images/products/' . $image;
@@ -62,4 +62,10 @@ class Media extends Model
             }
         }
     }
+
+    public static function imageUpdate(Model $model)
+    {
+
+    }
+
 }
