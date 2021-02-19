@@ -39,7 +39,7 @@ class Media extends Model
     {
         foreach ($request->file('images') as $image) {
             $name = $image->getClientOriginalName();
-            $image->move(public_path() . '/images/products', $name);
+            $image->move(public_path() . '/images/products/', $name);
             $data[] = $name;
         }
         $media = new Media();
@@ -52,8 +52,8 @@ class Media extends Model
     {
         $media = Media::where('product_id', $product->id)->first();
         foreach (json_decode($media->image_url) as $image) {
-            if (file_exists(public_path() . '/images/products' . $image)) {
-                $images = public_path() . '/images/' . $image;
+            if (file_exists(public_path() . '/images/products/' . $image)) {
+                $images = public_path() . '/images/products/' . $image;
                 unlink($images);
                 $media->delete();
             } else {
