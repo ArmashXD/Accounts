@@ -10,31 +10,11 @@
         <div class="col-md-12">
             <div class="card mb-4">
                 <div class="card-body">
-                    <div class="card-title mb-3">Create A New Role</div>
-                    <form method="POST" action="{{route('roles.store')}}">
-                        @csrf
-                        <div class="row">
-                            <div class="col-md-6 form-group mb-3">
-                                <label for="firstName1">Enter Role Name</label>
-                                <input class="form-control" id="name" name="name" type="text"
-                                       placeholder="Enter Role Name" required/>
-                            </div>
-                            <div class="col-md-6 form-group mb-3" >
-                                <label for="lastName1">Select Permissions</label>
-                                <div class="row">
-                                    @foreach($permissions as $item)
-                                        <div class="col">
-                                        <span class="badge badge-primary">{{$item->name}}</span>
-                                         <input value="{{$item->id}}" type="checkbox" name="permission[]" class="checkbox" required>
-                                        </div>
-                                    @endforeach
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <button class="btn btn-primary" type="submit">Submit</button>
-                            </div>
-                        </div>
-                    </form>
+                    <div class="card-title mb-3">Create A New Role
+                        <a href="{{route('roles.create')}}"
+                           class="btn btn-primary float-right">Add Roles</a>
+                    </div>
+
                     @if (isset($errors) && count($errors) > 0)
                         <div class="alert alert-danger">
                             <ul>
@@ -144,5 +124,5 @@
                 </div>
             </div>
         </div>
-    </div>
+
 @endsection

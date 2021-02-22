@@ -20,14 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c1e45ab-02d6-4df6-9454-2ac2bda6cce4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/purchase/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/purchase/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/purchase/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/roles/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SupplierController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SupplierController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RoleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RoleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/RolesAndPermissionSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/RolesAndPermissionSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/product/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/roles/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/roles/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,7 +217,8 @@
       <workItem from="1613657108045" duration="826000" />
       <workItem from="1613658073103" duration="44000" />
       <workItem from="1613658152556" duration="5090000" />
-      <workItem from="1613737929246" duration="10797000" />
+      <workItem from="1613737929246" duration="10958000" />
+      <workItem from="1613999927204" duration="6792000" />
     </task>
     <servers />
   </component>
@@ -272,9 +271,14 @@
       <screen x="0" y="0" width="1400" height="1010" />
     </state>
     <state x="458" y="228" key="NewPhpClassDialog/0.0.1400.1010@0.0.1400.1010" timestamp="1613742193527" />
-    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1613666465422">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="305" y="115" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1614006380216">
+      <screen x="0" y="0" width="1400" height="1010" />
     </state>
+    <state x="305" y="115" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1400.1010@0.0.1400.1010" timestamp="1614006380216" />
+    <state x="449" y="168" width="672" height="657" key="search.everywhere.popup" timestamp="1614006739880">
+      <screen x="0" y="0" width="1400" height="1010" />
+    </state>
+    <state x="449" y="168" width="672" height="657" key="search.everywhere.popup/0.0.1400.1010@0.0.1400.1010" timestamp="1614006739880" />
     <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613666465422" />
   </component>
 </project>

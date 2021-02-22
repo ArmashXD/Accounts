@@ -17,11 +17,9 @@ class RoleController extends Controller
     public function index()
     {
         //
-        if(auth()->user()->hasRole('super-admin'))
-        {
-        return view('roles.index', ['roles' => Role::paginate(5), 'permissions' => Permission::get()]);
-        }
-        else{
+        if (auth()->user()->hasRole('super-admin')) {
+            return view('roles.index', ['roles' => Role::paginate(5), 'permissions' => Permission::get()]);
+        } else {
             abort(403);
         }
     }
@@ -33,7 +31,7 @@ class RoleController extends Controller
      */
     public function create()
     {
-        //
+        return view('roles.create', ['permissions' => Permission::get()]);
     }
 
     /**
@@ -44,14 +42,13 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $request->validate([
             'name' => 'required|unique:roles,name',
-            'permission' => 'required',
+            'permissions' => 'required',
         ]);
         $role = Role::create(['name' => $request->input('name')]);
-        $role->syncPermissions($request->input('permission'));
-        return redirect()->back()->with('success', 'Role Created');
+        $role->syncPermissions($request->input('permissions'));
+        return redirect('roles')->with('success', 'Role Created');
     }
 
     /**
