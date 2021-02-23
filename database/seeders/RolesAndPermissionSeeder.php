@@ -19,13 +19,72 @@ class RolesAndPermissionSeeder extends Seeder
         //// Reset cached roles and permissions
         app()[PermissionRegistrar::class]->forgetCachedPermissions();
 
+        $permissions = [
+            'main-category-edit',
+            'main-category-delete',
+            'main-category-show',
+            'main-category-create',
+            'category-edit',
+            'category-delete',
+            'category-show',
+            'category-create',
+            'asset-create',
+            'asset-show',
+            'asset-delete',
+            'asset-edit',
+            'liability-show',
+            'liability-delete',
+            'liability-edit',
+            'liability-create',
+            'equity-show',
+            'equity-delete',
+            'equity-edit',
+            'equity-create',
+            'income-create',
+            'income-delete',
+            'income-edit',
+            'income-show',
+            'expense-show',
+            'expense-delete',
+            'expense-edit',
+            'expense-create',
+            'supplier-show',
+            'supplier-delete',
+            'supplier-edit',
+            'supplier-create',
+            'ledger-show',
+            'ledger-delete',
+            'ledger-edit',
+            'ledger-create',
+            'tax-show',
+            'tax-delete',
+            'tax-edit',
+            'tax-create',
+            'product-show',
+            'product-delete',
+            'product-edit',
+            'product-create',
+            'unit-show',
+            'unit-delete',
+            'unit-edit',
+            'unit-create',
+            'purchases-show',
+            'purchases-delete',
+            'purchases-edit',
+            'purchases-create',
+            'view',
+            'edit',
+            'delete',
+            'show',
+            'create',
+            'check',
+        ];
+
         // create permissions
-        Permission::create(['name' => 'edit']);
-        Permission::create(['name' => 'delete']);
-        Permission::create(['name' => 'show']);
-        Permission::create(['name' => 'create']);
-        Permission::create(['name' => 'view']);
-        Permission::create(['name' => 'check']);
+        foreach ($permissions as $item)
+        {
+            Permission::create(['name' => $item]);
+        }
 
         // create roles and assign existing permissions
         $role1 = Role::create(['name' => 'user']);
@@ -38,12 +97,7 @@ class RolesAndPermissionSeeder extends Seeder
         $role2->givePermissionTo('delete');
 
         $role3 = Role::create(['name' => 'super-admin']);
-        $role3->givePermissionTo('show');
-        $role3->givePermissionTo('create');
-        $role3->givePermissionTo('edit');
-        $role3->givePermissionTo('delete');
-        $role3->givePermissionTo('view');
-        $role3->givePermissionTo('check');
+        $role3->givePermissionTo(Permission::all());
 
         // gets all permissions
 

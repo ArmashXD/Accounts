@@ -106,7 +106,6 @@
         background-color: #f6f6f6;
         border: none;
         color: #0d0d0d;
-        text-align: center;
         text-decoration: none;
         display: inline-block;
         font-size: 16px;
@@ -207,6 +206,10 @@
 @section('content')
     <div class="wrapper fadeInDown">
         <div id="formContent">
+            <div class="logo">
+                <img src="{{asset('images/logo.png')}}" style="width: 100px; height: 100px" alt="">
+            </div>
+
             <div class="row justify-content-center">
                 <div class="col-md-12">
                     <h4 class="text-center">Login </h4>
