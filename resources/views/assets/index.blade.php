@@ -7,7 +7,7 @@
                 <p>{{session('success')}}</p>
             </div>
         @endif
-        @if(auth()->user()->hasPermissionTo('create'))
+        @if(auth()->user()->hasRole('super-admin') ||auth()->user()->hasPermissionTo('asset-create'))
 
             <div class="col-md-12">
                 <div class="card mb-4">
@@ -87,13 +87,13 @@
                                     <td>{{$item->date}}</td>
                                     <td>{{$item->created_at}}</td>
                                     <td>
-                                        @if(auth()->user()->hasPermissionTo('edit'))
+                                        @if(auth()->user()->hasRole('super-admin') ||auth()->user()->hasPermissionTo('asset-edit'))
 
                                             <button class="text-success mr-2 btn btn-info" data-toggle="modal"
                                                     data-target="#assetsModal{{$item->id}}" href="#"><i
                                                         class="nav-icon i-Pen-2 font-weight-bold"></i></button>
                                         @endif
-                                        @if(auth()->user()->hasPermissionTo('delete'))
+                                        @if(auth()->user()->hasRole('super-admin') ||auth()->user()->hasPermissionTo('asset-delete'))
 
                                             <form action="{{route('assets.destroy',$item->id)}}" method="POST">
                                                 @csrf

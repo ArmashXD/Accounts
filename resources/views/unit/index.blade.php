@@ -7,7 +7,7 @@
                 <p>{{session('success')}}</p>
             </div>
         @endif
-        @if(auth()->user()->hasPermissionTo('create'))
+        @if(auth()->user()->hasRole('super-admin') ||auth()->user()->hasPermissionTo('create'))
             <div class="col-md-12">
                 <div class="card mb-4">
                     <div class="card-body">
@@ -73,12 +73,12 @@
                                     <td>{{$item->created_at}}</td>
                                     <td>{{$item->updated_at}}</td>
                                     <td>
-                                        @if(auth()->user()->hasPermissionTo('edit'))
+                                        @if(auth()->user()->hasRole('super-admin') ||auth()->user()->hasPermissionTo('edit'))
                                             <button class="text-success mr-2 btn btn-info" data-toggle="modal"
                                                     data-target="#mainCategory{{$item->id}}" href="#"><i
                                                     class="nav-icon i-Pen-2 font-weight-bold"></i></button>
                                         @endif
-                                        @if(auth()->user()->hasPermissionTo('delete'))
+                                        @if(auth()->user()->hasRole('super-admin') ||auth()->user()->hasPermissionTo('delete'))
                                             <form action="{{route('units.destroy',$item->id)}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
@@ -88,7 +88,7 @@
                                         @endif
                                     </td>
                                 </tr>
-                                @if(auth()->user()->hasPermissionTo('edit'))
+                                @if(auth()->user()->hasRole('super-admin') ||auth()->user()->hasPermissionTo('edit'))
                                     <div class="modal fade" id="mainCategory{{$item->id}}" tabindex="-1" role="dialog"
                                          aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">

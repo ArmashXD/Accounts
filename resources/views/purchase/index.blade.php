@@ -6,8 +6,8 @@
         <div class="col-md-12 mb-3">
             <div class="card text-left">
                 <div class="card-body">
-                    <h4 class="card-title mb-3">manage purchase <a href="{{route('purchase.create')}}"
-                                                                class="btn btn-primary float-right">Add purchase</a>
+                    <h4 class="card-title mb-3">manage purchase @if(auth()->user()->hasRole('super-admin') || auth()->user()->hasPermissionTo('purchases-create')) <a href="{{route('purchase.create')}}"
+                                                                class="btn btn-primary float-right">Add purchase</a>@endif
                     </h4>
 
                     <div class="table-responsive">
@@ -36,12 +36,12 @@
                                     <td>{{$item->purchase_date}}</td>
                                     <td>{{$item->total}}</td>
                                     <td>
-                                        @if(auth()->user()->hasPermissionTo('edit'))
+                                        @if(auth()->user()->hasRole('super-admin') || auth()->user()->hasPermissionTo('purchases-edit'))
                                             <a class="text-success mr-2 btn btn-info"
                                                href="{{route('purchase.edit',$item->id)}}"><i
                                                     class="nav-icon i-Pen-2 font-weight-bold"></i></a>
                                         @endif
-                                        @if(auth()->user()->hasPermissionTo('delete'))
+                                        @if(auth()->user()->hasRole('super-admin') || auth()->user()->hasPermissionTo('purchases-delete'))
                                             <form action="{{route('purchase.destroy',$item->id)}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')

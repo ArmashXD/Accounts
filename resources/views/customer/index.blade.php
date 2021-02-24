@@ -7,62 +7,16 @@
                 <p>{{session('success')}}</p>
             </div>
         @endif
-        @if(auth()->user()->hasRole('super-admin') || auth()->user()->hasPermissionTo('supplier-create'))
 
-            <div class="col-md-12">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <div class="card-title mb-3">Create A New Supplier</div>
-                        <form method="POST" action="{{route('suppliers.store')}}">
-                            @csrf
-                            <div class="row">
-                                <div class="col-md-6 form-group mb-3">
-                                    <label for="firstName1">Enter Name</label>
-                                    <input class="form-control" id="name" name="name" type="text"
-                                           placeholder="Enter Name" required/>
-                                </div>
-                                <div class="col-md-6 form-group mb-3">
-                                    <label for="firstName1">Enter Phone</label>
-                                    <input class="form-control" id="phone" name="phone" step="0" min="0.00"
-                                           type="number"
-                                           placeholder="Enter Phone" required/>
-                                </div>
-                                <div class="col-md-6 form-group mb-3">
-                                    <label for="firstName1">Enter Address</label>
-                                    <input class="form-control" id="date" name="address" required PLACEHOLDER="Enter Address" type="text"/>
-                                </div>
-
-                                <div class="col-md-6 form-group mb-3">
-                                    <label for="firstName1">Enter Details</label>
-                                    <input class="form-control" id="date" name="details" placeholder="Enter Details" type="text" required/>
-                                </div>
-                                <div class="col-md-6 form-group mb-3">
-                                    <label for="firstName1">Enter Previous Credit Balance</label>
-                                    <input class="form-control" id="date" name="previous_credit_balance"  step="0" min="0.00" placeholder="Enter Number" type="number" required/>
-                                </div>
-
-                                <div class="col-md-12">
-                                    <button class="btn btn-primary" type="submit">Submit</button>
-                                </div>
-                            </div>
-                        </form>
-                        @if (isset($errors) && count($errors) > 0)
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
-                    </div>
-                </div>
-            </div>
-        @endif
         <div class="col-md-12 mb-3">
             <div class="card text-left">
                 <div class="card-body">
-                    <h4 class="card-title mb-3">All Suppliers</h4>
+                    <h4 class="card-title mb-3">All Customers
+                        @if(auth()->user()->hasRole('super-admin') || auth()->user()->hasPermissionTo('customer-create'))
+                            <a href="{{route('customers.create')}}" class="btn btn-primary float-right">Add Customer</a>
+                        @endif
+
+                    </h4>
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
@@ -71,7 +25,6 @@
                                 <th scope="col">Name</th>
                                 <th scope="col">Phone No</th>
                                 <th scope="col">Address</th>
-                                <th scope="col">Details</th>
                                 <th scope="col">Credit Balance</th>
                                 <th scope="col">Actions</th>
                             </tr>
@@ -80,27 +33,26 @@
                                 $count = 1;
                             @endphp
                             <tbody>
-                            @foreach($suppliers as $item)
+                            @foreach($customers as $item)
                                 <tr>
                                     <th scope="row">{{$count++}}</th>
                                     <td>{{$item->name}}</td>
                                     <td>{{$item->phone}}</td>
                                     <td>{{$item->address}}</td>
-                                    <td>{{$item->details}}</td>
                                     <td>{{$item->previous_credit_balance}}</td>
                                     <td>
-                                        @if(auth()->user()->hasRole('super-admin') || auth()->user()->hasPermissionTo('supplier-edit'))
+                                        @if(auth()->user()->hasRole('super-admin') || auth()->user()->hasPermissionTo('customer-edit'))
 
                                             <button class="text-success mr-2 btn btn-info" data-toggle="modal"
                                                     data-target="#supplierModal{{$item->id}}" href="#"><i
-                                                        class="nav-icon i-Pen-2 font-weight-bold"></i></button>
+                                                    class="nav-icon i-Pen-2 font-weight-bold"></i></button>
                                         @endif
-                                        @if(auth()->user()->hasRole('super-admin') || auth()->user()->hasPermissionTo('supplier-delete'))
-                                            <form action="{{route('suppliers.destroy',$item->id)}}" method="POST">
+                                        @if(auth()->user()->hasRole('super-admin') || auth()->user()->hasPermissionTo('customer-delete'))
+                                            <form action="{{route('customers.destroy',$item->id)}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger" href="#"><i
-                                                            class="nav-icon i-Close-Window font-weight-bold"></i>
+                                                        class="nav-icon i-Close-Window font-weight-bold"></i>
                                                 </button>
                                             </form>
                                         @endif
@@ -119,7 +71,7 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="{{route('suppliers.update',$item->id)}}" method="POST">
+                                                <form action="{{route('customers.update',$item->id)}}" method="POST">
                                                     @csrf
                                                     @method('PUT')
                                                     <div class="row">
@@ -137,11 +89,6 @@
                                                         <div class="col-md-6 form-group mb-3">
                                                             <label for="firstName1">Enter Address</label>
                                                             <input class="form-control" id="date" value="{{$item->address}}" name="address" type="text"/>
-                                                        </div>
-
-                                                        <div class="col-md-6 form-group mb-3">
-                                                            <label for="firstName1">Enter Details</label>
-                                                            <input class="form-control" id="date" value="{{$item->details}}"  name="details" type="text"/>
                                                         </div>
                                                         <div class="col-md-6 form-group mb-3">
                                                             <label for="firstName1">Enter Previous Credit Balance</label>
@@ -164,7 +111,7 @@
                             </tbody>
                         </table>
                     </div>
-                    {{$suppliers->links()}}
+                    {{$customers->links()}}
                 </div>
             </div>
         </div>

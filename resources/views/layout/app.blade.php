@@ -195,8 +195,13 @@
     <div class="side-content-wrap">
         <div class="sidebar-left open rtl-ps-none" data-perfect-scrollbar="" data-suppress-scroll-x="true">
             <ul class="navigation-left">
+
                 <li class="nav-item {{Request::is('dashboard') ? 'active' : ''}}" data-item="dashboard"><a
                         class="nav-item-hold" href="#"><i class="nav-icon i-Bar-Chart"></i><span class="nav-text">Dashboard</span></a>
+                    <div class="triangle"></div>
+                </li>
+                <li class="nav-item {{Request::is('suppliers') ? 'active' : ''}}" data-item="uikits3"><a
+                        class="nav-item-hold" href="#"><i class="nav-icon i-Library"></i><span class="nav-text">Purchases</span></a>
                     <div class="triangle"></div>
                 </li>
                 <li class="nav-item {{Request::is('roles') ? 'active' : ''}}" data-item="uikits"><a
@@ -214,10 +219,7 @@
                             class="nav-text">Main Categories</span></a>
                     <div class="triangle"></div>
                 </li>
-                <li class="nav-item {{Request::is('suppliers') ? 'active' : ''}}" data-item="uikits3"><a
-                        class="nav-item-hold" href="#"><i class="nav-icon i-Library"></i><span class="nav-text">Suppliers</span></a>
-                    <div class="triangle"></div>
-                </li>
+
                 <li class="nav-item {{Request::is('taxes') ? 'active' : ''}}" ><a
                         class="nav-item-hold" href="{{route('taxes.index')}}"><i class="nav-icon i-Library"></i><span
                             class="nav-text">Taxes</span></a>
@@ -228,11 +230,12 @@
                             class="nav-text">Product</span></a>
                     <div class="triangle"></div>
                 </li>
-                <li class="nav-item {{Request::is('purchase') ? 'active' : ''}}" ><a
-                        class="nav-item-hold" href="{{route('purchase.index')}}"><i class="nav-icon i-Library"></i><span
-                            class="nav-text">Purchases</span></a>
+                <li class="nav-item {{Request::is('customers') ? 'active' : ''}}" data-item="uikits6"><a
+                        class="nav-item-hold" href="#"><i class="nav-icon i-Library"></i><span
+                            class="nav-text">Customers</span></a>
                     <div class="triangle"></div>
                 </li>
+
             </ul>
         </div>
         <div class="sidebar-left-secondary rtl-ps-none" data-perfect-scrollbar="" data-suppress-scroll-x="true">
@@ -265,12 +268,15 @@
             </ul>
 
             <ul class="childNav" data-parent="uikits3">
+                <li class="nav-item"><a href="{{route('purchase.index')}}"><i class="nav-icon i"></i><span
+                            class="item-name">Purchases</span></a></li>
                 <li class="nav-item"><a href="{{route('suppliers.index')}}"><i class="nav-icon i"></i><span
                             class="item-name">Add Supplier</span></a></li>
                 <li class="nav-item"><a href="{{route('suppliers.index')}}"><i class="nav-icon i"></i><span
                             class="item-name">Supplier ledger</span></a></li>
                 <li class="nav-item"><a href="{{route('suppliers.index')}}"><i class="nav-icon i"></i><span
                             class="item-name">Supplier sales details</span></a></li>
+
             </ul>
 
             <ul class="childNav" data-parent="uikits5">
@@ -278,6 +284,14 @@
                             class="item-name">Unit</span></a></li>
                 <li class="nav-item"><a href="{{route('products.index')}}"><i class="nav-icon i"></i><span
                             class="item-name">Products</span></a></li>
+            </ul>
+            <ul class="childNav" data-parent="uikits6">
+                <li class="nav-item"><a href="{{route('customers.index')}}"><i class="nav-icon i"></i><span
+                            class="item-name">Manage Customers</span></a></li>
+                <li class="nav-item"><a href="{{route('customers.create')}}"><i class="nav-icon i"></i><span
+                            class="item-name">Add Customers</span></a></li>
+                <li class="nav-item"><a href="{{route('customers.credit')}}"><i class="nav-icon i"></i><span
+                            class="item-name"> Credit Customers</span></a></li>
             </ul>
 
 

@@ -5,6 +5,7 @@ use App\Http\Controllers\Account\EquityController;
 use App\Http\Controllers\Account\ExpenseController;
 use App\Http\Controllers\Account\IncomeController;
 use App\Http\Controllers\Account\LiabilityController;
+use App\Http\Controllers\CustomerController;
 use\App\Http\Controllers\MainCategoryController;
 use App\Http\Controllers\Product\ProductController;
 use App\Http\Controllers\PurchaseController;
@@ -46,9 +47,9 @@ Route::group(['middleware' => ['auth']], function () {
           'income' => IncomeController::class,
           'units' => UnitController::class,
           'purchase' => PurchaseController::class,
-          'products' => ProductController::class
+          'products' => ProductController::class,
+          'customers'=> CustomerController::class
       ]);
+      Route::get('account/credit-customer',[CustomerController::class, 'credit'])->name('customers.credit');
   });
-
-
 });

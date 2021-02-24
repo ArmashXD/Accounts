@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Asset;
+use App\Models\Customer;
 use App\Models\Equity;
 use App\Models\Expense;
 use App\Models\Income;
@@ -13,6 +14,7 @@ use App\Models\Supplier;
 use App\Models\Tax;
 use App\Models\Unit;
 use App\Observers\AssetObserver;
+use App\Observers\CustomerObserver;
 use App\Observers\EquityObserver;
 use App\Observers\ExpenseObserver;
 use App\Observers\IncomeObserver;
@@ -56,6 +58,7 @@ class EventServiceProvider extends ServiceProvider
         MainCategory::observe(MainCategoryObserver::class);
         Supplier::observe(SupplierObserver::class);
         Unit::observe(UnitObserver::class);
+        Customer::observe(CustomerObserver::class);
         Product::observe(ProductObserver::class);
     }
 }

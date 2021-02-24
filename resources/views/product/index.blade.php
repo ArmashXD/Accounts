@@ -6,8 +6,11 @@
         <div class="col-md-12 mb-3">
             <div class="card text-left">
                 <div class="card-body">
-                    <h4 class="card-title mb-3">All Products <a href="{{route('products.create')}}"
+                    <h4 class="card-title mb-3">All Products
+                        @if(auth()->user()->hasRole('super-admin') ||auth()->user()->hasPermissionTo('product-edit'))
+                            <a href="{{route('products.create')}}"
                                                                 class="btn btn-primary float-right">Add Product</a>
+                            @endif
                     </h4>
 
                     <div class="table-responsive">
@@ -50,12 +53,12 @@
                                     <td>{{$item->product->mainCategory->name}}</td>
                                     <td>{{$item->product->created_at}}</td>
                                     <td>
-                                        @if(auth()->user()->hasPermissionTo('edit'))
+                                        @if(auth()->user()->hasRole('super-admin') ||auth()->user()->hasPermissionTo('product-edit'))
                                             <a class="text-success mr-2 btn btn-info" data-toggle="modal"
                                                href="{{route('products.edit',$item->id)}}"><i
                                                     class="nav-icon i-Pen-2 font-weight-bold"></i></a>
                                         @endif
-                                        @if(auth()->user()->hasPermissionTo('delete'))
+                                        @if(auth()->user()->hasRole('super-admin') || auth()->user()->hasPermissionTo('product-delete'))
                                             <form action="{{route('products.destroy',$item->id)}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')

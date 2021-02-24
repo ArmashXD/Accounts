@@ -47,6 +47,7 @@
                                 $count = 1;
                             @endphp
                             <tbody>
+
                             @foreach($roles as $item)
                                 <tr>
                                     <th scope="row">{{$count++}}</th>
