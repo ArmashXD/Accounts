@@ -6,6 +6,7 @@ use App\Http\Controllers\Account\ExpenseController;
 use App\Http\Controllers\Account\IncomeController;
 use App\Http\Controllers\Account\LiabilityController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\HomeController;
 use\App\Http\Controllers\MainCategoryController;
 use App\Http\Controllers\Product\ProductController;
 use App\Http\Controllers\PurchaseController;
@@ -27,7 +28,7 @@ use App\Http\Controllers\CategoryController;
 |
 */
 Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::group(['middleware' => ['auth']], function () {
   Route::view('/','welcome')->name('index');
   Route::Resources([

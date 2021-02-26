@@ -92,4 +92,5 @@ class PurchaseController extends Controller
         alert()->success('Success', "Purchase $purchase->name Deleted");
         return redirect()->back();
     }
+
 }

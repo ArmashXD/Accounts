@@ -20,27 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c1e45ab-02d6-4df6-9454-2ac2bda6cce4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/customer/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/customer/credit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/customer/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/RolesAndPermissionSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/RolesAndPermissionSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/assets/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/assets/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/category/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/category/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/equities/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/equities/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/expenses/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/expenses/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/incomes/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/incomes/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/liabilities/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/liabilities/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/main-category/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/main-category/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/product/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/purchase/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/purchase/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/roles/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/roles/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/suppliers/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/suppliers/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/taxes/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/taxes/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/unit/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/unit/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PurchaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PurchaseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -237,7 +221,13 @@
       <workItem from="1613658073103" duration="44000" />
       <workItem from="1613658152556" duration="5090000" />
       <workItem from="1614070855727" duration="3351000" />
-      <workItem from="1614173352930" duration="7835000" />
+      <workItem from="1614173352930" duration="8430000" />
+      <workItem from="1614258305633" duration="3697000" />
+      <workItem from="1614264605573" duration="50000" />
+      <workItem from="1614264939266" duration="824000" />
+      <workItem from="1614265919757" duration="394000" />
+      <workItem from="1614346468143" duration="6907000" />
+      <workItem from="1614354975922" duration="743000" />
     </task>
     <servers />
   </component>
@@ -281,15 +271,19 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614179217914">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614346858568">
       <screen x="0" y="0" width="1400" height="1010" />
     </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1400.1010@0.0.1400.1010" timestamp="1614179217914" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1400.1010@0.0.1400.1010" timestamp="1614346858568" />
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614177701081" />
-    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1614181593109">
+    <state x="383" y="228" key="NewPhpClassDialog" timestamp="1614258766186">
       <screen x="0" y="0" width="1400" height="1010" />
     </state>
-    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1400.1010@0.0.1400.1010" timestamp="1614181593109" />
+    <state x="383" y="228" key="NewPhpClassDialog/0.0.1400.1010@0.0.1400.1010" timestamp="1614258766186" />
+    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1614348480300">
+      <screen x="0" y="0" width="1400" height="1010" />
+    </state>
+    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1400.1010@0.0.1400.1010" timestamp="1614348480300" />
     <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1614177701081" />
   </component>
 </project>

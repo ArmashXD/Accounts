@@ -2,6 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Controller;
+use App\Models\MainCategory;
+use App\Models\Media;
+use App\Models\Product;
+use App\models\Purchase;
+use App\Models\Supplier;
+use App\Models\Tax;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +30,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $products = Product::all();
+        return view('home',['products' ,$products  ]);
     }
+
 }
