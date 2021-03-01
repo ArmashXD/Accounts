@@ -30,8 +30,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
-        return view('home',['products' ,$products  ]);
+        $productData = Product::select(\DB::raw("COUNT(*) as count"))
+            ->whereYear('created_at', date('Y'))
+            ->groupBy(\DB::raw("Month(created_at)"))
+            ->pluck('count');
+
+        $taxData = Tax::select(\DB::raw("COUNT(*) as count"))
+        ->whereYear('created_at', date('Y'))
+        ->groupBy(\DB::raw("Month(created_at)"))
+        ->pluck('count');
+
+        return view('welcome',compact('productData', 'taxData'));
     }
 
 }

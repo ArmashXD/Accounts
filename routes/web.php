@@ -28,9 +28,8 @@ use App\Http\Controllers\CategoryController;
 |
 */
 Auth::routes();
-Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::group(['middleware' => ['auth']], function () {
-  Route::view('/','welcome')->name('index');
+  Route::get('/',[HomeController::class,'index'])->name('index');
   Route::Resources([
       'users' => UserController::class,
       'roles' => RoleController::class,

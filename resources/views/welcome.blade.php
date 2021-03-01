@@ -46,7 +46,7 @@
             <div class="card mb-4">
                 <div class="card-body p-0">
                     <h5 class="card-title m-0 p-3">taxes </h5>
-                    <div id="echart4" style="height: 300px"></div>
+                    <div id="container1"></div>
                 </div>
             </div>
         </div>
@@ -54,7 +54,7 @@
             <div class="card mb-4">
                 <div class="card-body p-0">
                     <h5 class="card-title m-0 p-3 ">Products  </h5>
-                    <div id="echart5" style="height: 300px"></div>
+                    <div id="container"></div>
                 </div>
             </div>
         </div>
@@ -471,6 +471,105 @@
             </div>
         </div>
     </div>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script type="text/javascript">
+        var userData = <?php echo json_encode($productData)?>;
+        var taxData = <?php echo json_encode($taxData)?>;
+
+        Highcharts.chart('container', {
+            title: {
+                text: 'New Product Growth, 2020'
+            },
+            subtitle: {
+                text: 'Source: positronx.io'
+            },
+            xAxis: {
+                categories: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
+                    'October', 'November', 'December'
+                ]
+            },
+            yAxis: {
+                title: {
+                    text: 'Number of New Products'
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+            },
+            plotOptions: {
+                series: {
+                    allowPointSelect: true
+                }
+            },
+            series: [{
+                name: 'New Products',
+                data: userData
+            }],
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        legend: {
+                            layout: 'horizontal',
+                            align: 'center',
+                            verticalAlign: 'bottom'
+                        }
+                    }
+                }]
+            }
+        });
+
+        Highcharts.chart('container1', {
+            title: {
+                text: 'New Tax Growth, 2020'
+            },
+            subtitle: {
+                text: 'Source: positronx.io'
+            },
+            xAxis: {
+                categories: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
+                    'October', 'November', 'December'
+                ]
+            },
+            yAxis: {
+                title: {
+                    text: 'Number of New Tax'
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle'
+            },
+            plotOptions: {
+                series: {
+                    allowPointSelect: true
+                }
+            },
+            series: [{
+                name: 'New Taxes',
+                data: taxData
+            }],
+            responsive: {
+                rules: [{
+                    condition: {
+                        maxWidth: 500
+                    },
+                    chartOptions: {
+                        legend: {
+                            layout: 'horizontal',
+                            align: 'center',
+                            verticalAlign: 'bottom'
+                        }
+                    }
+                }]
+            }
+        });
+    </script>
 @endsection
 <!-- end of row-->
 <!-- end of main-content -->
