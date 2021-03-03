@@ -11,6 +11,7 @@ use App\Http\Controllers\HomeController;
 use\App\Http\Controllers\MainCategoryController;
 use App\Http\Controllers\Product\ProductController;
 use App\Http\Controllers\PurchaseController;
+use App\Http\Controllers\ReturnController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\TaxController;
@@ -53,7 +54,8 @@ Route::group(['middleware' => ['auth']], function () {
           'products' => ProductController::class,
           'customers'=> CustomerController::class,
           'bank'=> BankController::class,
-          'transaction'=>TransactionController::class
+          'transaction'=>TransactionController::class,
+          'return' => ReturnController::class
       ]);
       Route::get('account/credit-customer',[CustomerController::class, 'credit'])->name('customers.credit');
   });

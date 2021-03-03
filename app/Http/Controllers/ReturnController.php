@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Bank;
-use App\Models\Transaction;
+use App\models\Purchase;
+use App\Models\Returns;
+use App\Models\Supplier;
 use Illuminate\Http\Request;
 
-class TransactionController extends Controller
+class ReturnController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +16,7 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        return view('transaction.index', ['transaction' =>Transaction::all(),'bank' => Bank::all()]);
+        return view('return.index',['returns'=>Returns::all()]);
     }
 
     /**
@@ -25,7 +26,7 @@ class TransactionController extends Controller
      */
     public function create()
     {
-        return view('transaction.create', ['transaction' => Transaction::all(),'bank' => Bank::all()]);
+        //
     }
 
     /**
@@ -36,10 +37,7 @@ class TransactionController extends Controller
      */
     public function store(Request $request)
     {
-        $transaction = new transaction();
-        $transaction->fill($request->all())->save();
-        alert()->success('Success', "transaction $transaction->name Created");
-        return redirect('account/transaction');
+        //
     }
 
     /**
@@ -61,7 +59,7 @@ class TransactionController extends Controller
      */
     public function edit($id)
     {
-        return view('transaction.edit',['transaction'=>Transaction::find($id),'bank'=>Bank::all()]);
+        //
     }
 
     /**
@@ -73,10 +71,7 @@ class TransactionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $transaction = Transaction::find($id);
-        $transaction->fill($request->all())->update();
-        alert()->success('Success', "transaction $transaction->name updated");
-        return redirect('account/transaction');
+        //
     }
 
     /**
@@ -87,9 +82,6 @@ class TransactionController extends Controller
      */
     public function destroy($id)
     {
-        $transaction = Transaction::find($id);
-        $transaction->delete();
-        alert()->success('Success', "transaction $transaction->name Deleted");
-        return redirect()->back();
+        //
     }
 }

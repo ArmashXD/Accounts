@@ -37,13 +37,13 @@
                                     <td>{{$item->amount}}</td>
                                     <td>{{$item->description}}</td>
                                     <td>
-                                        @if(auth()->user()->hasRole('super-admin') || auth()->user()->hasPermissionTo('bank-edit'))
+                                        @if(auth()->user()->hasRole('super-admin') || auth()->user()->hasPermissionTo('transaction-edit'))
                                             <a class="text-success mr-2 btn btn-info"
-                                               href="{{route('bank.edit',$item->id)}}"><i
+                                               href="{{route('transaction.edit',$item->id)}}"><i
                                                     class="nav-icon i-Pen-2 font-weight-bold"></i></a>
                                         @endif
-                                        @if(auth()->user()->hasRole('super-admin') || auth()->user()->hasPermissionTo('bank-delete'))
-                                            <form action="{{route('bank.destroy',$item->id)}}" method="POST">
+                                        @if(auth()->user()->hasRole('super-admin') || auth()->user()->hasPermissionTo('transaction-delete'))
+                                            <form action="{{route('transaction.destroy',$item->id)}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger" href="#"><i

@@ -30,7 +30,7 @@
                         </div>
                         <div class="col-md-6 form-group mb-3">
                             <label for="firstName1">Signature Picture</label>
-                            <input type="file" class="form-control" name="image_url" placeholder="select image">
+                            <input type="file" class="form-control" name="image" placeholder="select image">
                         </div>
                         <div class="col-md-12">
                             <button class="btn btn-primary" type="submit">Submit</button>

@@ -20,15 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c1e45ab-02d6-4df6-9454-2ac2bda6cce4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/bank/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/bank/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/bank/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/transaction/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/transaction/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/transaction/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/return/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/return/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/return/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BankController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BankController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Bank.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Bank.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/bank/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/bank/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/bank/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/bank/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/bank/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/bank/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/transaction/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/transaction/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/transaction/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/transaction/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -178,19 +182,19 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Boossto\Desktop\New folder (2)\Accounts\app\Models" />
-      <recent name="C:\Users\Boossto\Desktop\New folder\New folder\Accounts\app\Models" />
-      <recent name="C:\Users\Boossto\Desktop\Accounts\app\Http\Controllers\Product" />
-      <recent name="C:\Users\Boossto\Desktop\Accounts\app\Models" />
-      <recent name="C:\Users\Syed Armash Hussain\Desktop\Accounts\app\Models" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Boossto\Desktop\Accounts\resources\views\unit" />
       <recent name="C:\Users\Boossto\Desktop\Accounts" />
       <recent name="C:\Users\Boossto\Desktop\Accounts\resources\views\liabilities" />
       <recent name="C:\Users\Boossto\Desktop\Accounts\resources\views\incomes" />
       <recent name="C:\Users\Boossto\Desktop\Accounts\resources\views\expenses" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Boossto\Desktop\New folder\Accounts\app\Models" />
+      <recent name="C:\Users\Boossto\Desktop\New folder (2)\Accounts\app\Models" />
+      <recent name="C:\Users\Boossto\Desktop\New folder\New folder\Accounts\app\Models" />
+      <recent name="C:\Users\Boossto\Desktop\Accounts\app\Http\Controllers\Product" />
+      <recent name="C:\Users\Boossto\Desktop\Accounts\app\Models" />
     </key>
   </component>
   <component name="RunManager">
@@ -232,6 +236,7 @@
       <workItem from="1614354975922" duration="743000" />
       <workItem from="1614615165784" duration="1408000" />
       <workItem from="1614688823237" duration="14471000" />
+      <workItem from="1614777046100" duration="12059000" />
     </task>
     <servers />
   </component>
@@ -275,20 +280,28 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614701714814">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614780750374">
+      <screen x="0" y="0" width="1400" height="1010" />
     </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1400.1010@0.0.1400.1010" timestamp="1614346858568" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1400.1010@0.0.1400.1010" timestamp="1614780750374" />
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614701714814" />
+    <state x="100" y="100" width="1200" height="810" key="DiffContextDialog" timestamp="1614778932913">
+      <screen x="0" y="0" width="1400" height="1010" />
+    </state>
+    <state x="100" y="100" width="1200" height="810" key="DiffContextDialog/0.0.1400.1010@0.0.1400.1010" timestamp="1614778932913" />
     <state x="525" y="235" key="NewPhpClassDialog" timestamp="1614692500660">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="383" y="228" key="NewPhpClassDialog/0.0.1400.1010@0.0.1400.1010" timestamp="1614258766186" />
     <state x="525" y="235" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614692500660" />
-    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1614348480300">
+    <state x="305" y="115" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1614781404373">
       <screen x="0" y="0" width="1400" height="1010" />
     </state>
-    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1400.1010@0.0.1400.1010" timestamp="1614348480300" />
+    <state x="305" y="115" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1400.1010@0.0.1400.1010" timestamp="1614781404373" />
+    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1614788454946">
+      <screen x="0" y="0" width="1400" height="1010" />
+    </state>
+    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1400.1010@0.0.1400.1010" timestamp="1614788454946" />
     <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1614177701081" />
   </component>
 </project>

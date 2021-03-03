@@ -240,6 +240,11 @@
                             class="nav-text">Bank</span></a>
                     <div class="triangle"></div>
                 </li>
+                <li class="nav-item {{Request::is('bank') ? 'active' : ''}}" data-item="uikits8"><a
+                        class="nav-item-hold" href="{{route('bank.index')}}"><i class="nav-icon i-Library"></i><span
+                            class="nav-text">Return</span></a>
+                    <div class="triangle"></div>
+                </li>
 
             </ul>
         </div>
@@ -303,6 +308,15 @@
                             class="item-name">Bank</span></a></li>
                 <li class="nav-item"><a href="{{route('transaction.index')}}"><i class="nav-icon i"></i><span
                             class="item-name">Bank Transaction</span></a></li>
+
+            </ul>
+            <ul class="childNav" data-parent="uikits8">
+                <li class="nav-item"><a href="{{route('return.index')}}"><i class="nav-icon i"></i><span
+                            class="item-name">Return</span></a></li>
+                <li class="nav-item"><a href="{{route('return.index')}}"><i class="nav-icon i"></i><span
+                            class="item-name">Stock Return</span></a></li>
+                <li class="nav-item"><a href="{{route('return.index')}}"><i class="nav-icon i"></i><span
+                            class="item-name">Supplier Return</span></a></li>
 
             </ul>
 
