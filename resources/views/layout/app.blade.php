@@ -235,6 +235,11 @@
                             class="nav-text">Customers</span></a>
                     <div class="triangle"></div>
                 </li>
+                <li class="nav-item {{Request::is('bank') ? 'active' : ''}}" data-item="uikits7"><a
+                        class="nav-item-hold" href="{{route('bank.index')}}"><i class="nav-icon i-Library"></i><span
+                            class="nav-text">Bank</span></a>
+                    <div class="triangle"></div>
+                </li>
 
             </ul>
         </div>
@@ -292,6 +297,13 @@
                             class="item-name">Add Customers</span></a></li>
                 <li class="nav-item"><a href="{{route('customers.credit')}}"><i class="nav-icon i"></i><span
                             class="item-name"> Credit Customers</span></a></li>
+            </ul>
+            <ul class="childNav" data-parent="uikits7">
+                <li class="nav-item"><a href="{{route('bank.index')}}"><i class="nav-icon i"></i><span
+                            class="item-name">Bank</span></a></li>
+                <li class="nav-item"><a href="{{route('transaction.index')}}"><i class="nav-icon i"></i><span
+                            class="item-name">Bank Transaction</span></a></li>
+
             </ul>
 
 

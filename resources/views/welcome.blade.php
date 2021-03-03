@@ -50,11 +50,11 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-6 col-md-12">
-            <div class="card mb-4">
+        <div class="col-lg-6 col-md-12" >
+            <div class="card mb-4" >
                 <div class="card-body p-0">
                     <h5 class="card-title m-0 p-3 ">Products  </h5>
-                    <div id="container"></div>
+                    <div id="container" ></div>
                 </div>
             </div>
         </div>
@@ -478,42 +478,56 @@
 
         Highcharts.chart('container', {
             title: {
+                color:'rgb(102,51,153)',
+                smooth: true,
                 text: 'New Product Growth, 2020'
             },
-            subtitle: {
-                text: 'Source: positronx.io'
-            },
+
             xAxis: {
+                color:'rgb(102,51,153)',
+                smooth: true,
                 categories: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
                     'October', 'November', 'December'
                 ]
             },
             yAxis: {
                 title: {
+                    color:'rgb(102,51,153)',
+                    smooth: true,
                     text: 'Number of New Products'
                 }
             },
             legend: {
+                color:'rgb(102,51,153)',
+                smooth: true,
                 layout: 'vertical',
                 align: 'right',
                 verticalAlign: 'middle'
             },
             plotOptions: {
                 series: {
+                    color:'rgb(102,51,153)',
+                    smooth: true,
                     allowPointSelect: true
                 }
             },
             series: [{
+                color:'rgb(102,51,153)',
+                smooth: true,
                 name: 'New Products',
                 data: userData
             }],
             responsive: {
                 rules: [{
                     condition: {
+                        color:'rgb(102,51,153)',
+                        smooth: true,
                         maxWidth: 500
                     },
                     chartOptions: {
                         legend: {
+                            color:'rgb(102,51,153)',
+                            smooth: true,
                             layout: 'horizontal',
                             align: 'center',
                             verticalAlign: 'bottom'
@@ -525,42 +539,47 @@
 
         Highcharts.chart('container1', {
             title: {
+                color:'rgb(102,51,153)',
                 text: 'New Tax Growth, 2020'
             },
-            subtitle: {
-                text: 'Source: positronx.io'
-            },
             xAxis: {
+                color:'rgb(102,51,153)',
                 categories: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
                     'October', 'November', 'December'
                 ]
             },
             yAxis: {
                 title: {
+                    fontColor:'rgb(102,51,153)',
                     text: 'Number of New Tax'
                 }
             },
             legend: {
+                color:'rgb(102,51,153)',
                 layout: 'vertical',
                 align: 'right',
                 verticalAlign: 'middle'
             },
             plotOptions: {
                 series: {
+                    color:'rgb(102,51,153)',
                     allowPointSelect: true
                 }
             },
             series: [{
+                color:'rgb(102,51,153)',
                 name: 'New Taxes',
                 data: taxData
             }],
             responsive: {
                 rules: [{
                     condition: {
+                        color:'rgb(102,51,153)',
                         maxWidth: 500
                     },
                     chartOptions: {
                         legend: {
+                            color:'rgb(102,51,153)',
                             layout: 'horizontal',
                             align: 'center',
                             verticalAlign: 'bottom'
