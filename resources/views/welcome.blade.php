@@ -63,13 +63,16 @@
                 <div class="card-body p-0 dropdown">
                     <h5 class="card-title m-0 p-3 dropdown-toggle" data-toggle="dropdown" >See Tables
                         <span class="caret"></span></h5>
-                    <ul class="dropdown-menu dropdown-menu-right card-body">
-                        <li  data-toggle="collapse" data-target="#demo">
-                            Products</li>
+                    <ul class="dropdown-menu dropdown-menu-right card-body" >
+                    <button style="border:hidden ; color:purple; background-color:white">
+                        <li  data-toggle="collapse" data-target="#demo" >
+                            Products</li></button>
+                            <button style="border:hidden ; color:purple; background-color:white">
                         <li data-toggle="collapse" data-target="#demo1">
-                            Taxes</li>
+                           <span> Taxes</span></li></button>
+                           <button style="border:hidden ; color:purple; background-color:white">
                         <li data-toggle="collapse" data-target="#demo2">
-                            Purchases</li>
+                            <span>Purchases</span></li></button>    
                     </ul>
                 </div>
                     <div id="demo" class="collapse card-title m-0 p-3 card-body">

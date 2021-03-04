@@ -8,7 +8,7 @@ use App\Http\Controllers\Account\LiabilityController;
 use App\Http\Controllers\BankController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\HomeController;
-use\App\Http\Controllers\MainCategoryController;
+use App\Http\Controllers\MainCategoryController;
 use App\Http\Controllers\Product\ProductController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\ReturnController;
@@ -20,6 +20,8 @@ use App\Http\Controllers\UnitController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\LockController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -55,8 +57,10 @@ Route::group(['middleware' => ['auth']], function () {
           'customers'=> CustomerController::class,
           'bank'=> BankController::class,
           'transaction'=>TransactionController::class,
-          'return' => ReturnController::class
+          'return' => ReturnController::class,
+          
       ]);
       Route::get('account/credit-customer',[CustomerController::class, 'credit'])->name('customers.credit');
+      Route::get('account/lock-index',[LockController::class,'index'])->name('lock.index');
   });
 });

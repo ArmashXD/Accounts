@@ -13,6 +13,7 @@
     <link href="{{asset('css/perfect-scrollbar.min.css')}}" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
 </head>
 
 <body class="text-left">
@@ -81,6 +82,11 @@
         </div>
         <div style="margin: auto"></div>
         <div class="header-part-right">
+        <!-- locks screen toggle -->
+        <a href="{{route('lock.index')}}"><i class="fas fa-lock header-icon d-none d-sm-inline-block" style="color:purple"></i></a>
+        
+        
+                
             <!-- Full screen toggle -->
             <i class="i-Full-Screen header-icon d-none d-sm-inline-block" data-fullscreen></i>
         {{--            <!-- Grid menu Dropdown -->--}}
@@ -191,7 +197,9 @@
                 </div>
             </div>
         </div>
+        
     </div>
+    
     <div class="side-content-wrap">
         <div class="sidebar-left open rtl-ps-none" data-perfect-scrollbar="" data-suppress-scroll-x="true">
             <ul class="navigation-left">
