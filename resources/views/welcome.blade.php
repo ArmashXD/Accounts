@@ -72,7 +72,7 @@
                            <span> Taxes</span></li></button>
                            <button style="border:hidden ; color:purple; background-color:white">
                         <li data-toggle="collapse" data-target="#demo2">
-                            <span>Purchases</span></li></button>    
+                            <span>Purchases</span></li></button>
                     </ul>
                 </div>
                     <div id="demo" class="collapse card-title m-0 p-3 card-body">
@@ -475,7 +475,9 @@
         </div>
     </div>
     <script src="https://code.highcharts.com/highcharts.js"></script>
+
     <script type="text/javascript">
+
         var userData = <?php echo json_encode($productData)?>;
         var taxData = <?php echo json_encode($taxData)?>;
 

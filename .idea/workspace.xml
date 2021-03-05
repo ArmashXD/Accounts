@@ -20,20 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c1e45ab-02d6-4df6-9454-2ac2bda6cce4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/return/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/return/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/return/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BankController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BankController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TransactionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Bank.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Bank.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/bank/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/bank/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/bank/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/bank/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/bank/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/bank/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LockController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LockController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/transaction/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/transaction/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/transaction/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/transaction/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/lock/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/lock/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/.gitignore" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,6 +231,7 @@
       <workItem from="1614615165784" duration="1408000" />
       <workItem from="1614688823237" duration="14471000" />
       <workItem from="1614777046100" duration="12059000" />
+      <workItem from="1614946665882" duration="13243000" />
     </task>
     <servers />
   </component>

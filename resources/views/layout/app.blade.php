@@ -7,13 +7,13 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>Dashboard v2 | Gull Admin Template</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Accounts</title>
     <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600,700,800,900" rel="stylesheet"/>
     <link href="{{asset('css/lite-purple.min.css')}}" rel="stylesheet"/>
     <link href="{{asset('css/perfect-scrollbar.min.css')}}" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-
 </head>
 
 <body class="text-left">
@@ -80,13 +80,20 @@
                 <i class="search-icon text-muted i-Magnifi-Glass1"></i>
             </div>
         </div>
+
         <div style="margin: auto"></div>
+
         <div class="header-part-right">
         <!-- locks screen toggle -->
-        <a href="{{route('lock.index')}}"><i class="fas fa-lock header-icon d-none d-sm-inline-block" style="color:purple"></i></a>
-        
-        
-                
+            <button class="btn btn-primary" id="btnLock" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#exampleModalCenter" ><i class="fas fa-lock"> </i>
+            </button>
+
+{{--            </i></button><script>--}}
+{{--                window.history.forward();--}}
+{{--                function noBack() {--}}
+{{--                    window.history.forward();--}}
+{{--                }--}}
+{{--            </script>--}}
             <!-- Full screen toggle -->
             <i class="i-Full-Screen header-icon d-none d-sm-inline-block" data-fullscreen></i>
         {{--            <!-- Grid menu Dropdown -->--}}
@@ -193,13 +200,59 @@
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
+
                     </div>
                 </div>
             </div>
         </div>
-        
+
     </div>
-    
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Screen is Locked!
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                        </a>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+                    </h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                        <div class="bg-text">
+                            <h1><i class="fas fa-lock"></i></h1>
+                            <h1 style="font-size:50px"></h1>
+                            <p>For Unlock enter Password</p>
+
+                            <input id="password" style="" type="password"
+                                   class="form-control  @error('password') is-invalid @enderror"
+                                   name="password" required autocomplete="current-password" placeholder="password">
+                            <p id="msg"></p>
+                            <br>
+
+
+                        </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button class="btn btn-success btn-block" onclick="getMessage()">Unlock!
+                        <i class="fa fa-unlock" aria-hidden="true"></i>
+                    </button>                </div>
+            </div>
+
+
+        </div>
+    </div>
     <div class="side-content-wrap">
         <div class="sidebar-left open rtl-ps-none" data-perfect-scrollbar="" data-suppress-scroll-x="true">
             <ul class="navigation-left">
@@ -284,7 +337,6 @@
                 <li class="nav-item"><a href="{{route('expenses.index')}}"><i class="nav-icon i"></i><span
                             class="item-name">Expenses</span></a></li>
             </ul>
-
             <ul class="childNav" data-parent="uikits3">
                 <li class="nav-item"><a href="{{route('purchase.index')}}"><i class="nav-icon i"></i><span
                             class="item-name">Purchases</span></a></li>
@@ -484,6 +536,29 @@
 <!-- ============ Search UI End ============= -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.js"></script>
 <script src="{{asset('js/plugins/jquery-3.3.1.min.js')}}"></script>
+<script>
+    function getMessage() {
+        $.ajax({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            type:'POST',
+            url:'{{url('lock-index')}}',
+            success:function(data) {
+                if(data.true == true){
+                    console.log('asdasd');
+                    {{--window.location.href = "{{url('/')}}";--}}
+                }
+                $("#msg").html(data.msg);
+            }
+        });
+    }
+    $(document).ready(function() {
+        setTimeout(function() {
+            $('#btnLock').click();
+        }, 300000); // milliseconds
+    });
+</script>
 @include('sweetalert::alert')
 <script src="{{asset('js/plugins/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('js/plugins/perfect-scrollbar.min.js')}}"></script>
