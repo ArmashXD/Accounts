@@ -24,14 +24,9 @@ class LockController extends Controller
         $password = $request->password;
 
         if(\Hash::check($password, \Auth::user()->password)){
-            $request->session()->forget('locked');
+            dd('asd');
             return response()->json(array('success' => false,
                 'true' => 'true',
-            ), 200);
-        }
-        else{
-            return response()->json(array('success' => false,
-                'msg' => 'Password is Incorrect!',
             ), 200);
         }
     }

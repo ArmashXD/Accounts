@@ -11,9 +11,9 @@
         <div class="col-md-12 mb-3">
             <div class="card text-left">
                 <div class="card-body">
-                    <h4 class="card-title mb-3">All Customers
+                    <h4 class="card-title mb-3">All Credit Customers
                         @if(auth()->user()->hasRole('super-admin') || auth()->user()->hasPermissionTo('customers-create'))
-                            <a href="{{route('customers.credit')}}" class="btn btn-primary float-right">Customer Credit</a>
+                            <a href="{{route('customers.create')}}" class="btn btn-primary float-right"> add Customer </a>
                         @endif
 
                     </h4>
@@ -24,7 +24,6 @@
 
                                 <th scope="col">Name</th>
                                 <th scope="col">Phone No</th>
-                                <th scope="col">Address</th>
                                 <th scope="col">Credit Balance</th>
                                 <th scope="col">Actions</th>
                             </tr>
@@ -37,7 +36,6 @@
                                 <tr>
                                     <td>{{$item->name}}</td>
                                     <td>{{$item->phone}}</td>
-                                    <td>{{$item->address}}</td>
                                     <td>{{$item->previous_credit_balance}}</td>
                                     <td>
                                         @if(auth()->user()->hasRole('super-admin') || auth()->user()->hasPermissionTo('customers-edit'))

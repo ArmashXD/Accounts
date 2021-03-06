@@ -25,7 +25,6 @@
                                 <th scope="col">Name</th>
                                 <th scope="col">Phone No</th>
                                 <th scope="col">Address</th>
-                                <th scope="col">Credit Balance</th>
                                 <th scope="col">Actions</th>
                             </tr>
                             </thead>
@@ -39,7 +38,6 @@
                                     <td>{{$item->name}}</td>
                                     <td>{{$item->phone}}</td>
                                     <td>{{$item->address}}</td>
-                                    <td>{{$item->previous_credit_balance}}</td>
                                     <td>
                                         @if(auth()->user()->hasRole('super-admin') || auth()->user()->hasPermissionTo('customer-edit'))
 

@@ -15,6 +15,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
+<style>
+.modal-backdrop.show {
+    opacity: 0.9;
+}</style>
 
 <body class="text-left">
 <div class="app-admin-wrap layout-sidebar-large">
@@ -205,31 +209,32 @@
                 </div>
             </div>
         </div>
-
     </div>
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Screen is Locked!
-                        <a class="dropdown-item" href="{{ route('logout') }}"
+                    <p class="modal-title" id="exampleModalLongTitle">Screen is Locked!<h5><i class="fas fa-lock"></i></h5>
+                    
+                    <button type="button"  style="margin-left:200px; border:hidden " class="btn btn-outline-danger">
+                    <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
                         </a>
+                    </button>
+                   
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
-                    </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    </p>
+                   
                 </div>
                 <div class="modal-body">
 
                         <div class="bg-text">
-                            <h1><i class="fas fa-lock"></i></h1>
+                            
                             <h1 style="font-size:50px"></h1>
                             <p>For Unlock enter Password</p>
 
@@ -243,8 +248,7 @@
                         </div>
 
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <div class="modal-footer">                   
                     <button class="btn btn-success btn-block" onclick="getMessage()">Unlock!
                         <i class="fa fa-unlock" aria-hidden="true"></i>
                     </button>                </div>
@@ -546,7 +550,6 @@
             url:'{{url('lock-index')}}',
             success:function(data) {
                 if(data.true == true){
-                    console.log('asdasd');
                     {{--window.location.href = "{{url('/')}}";--}}
                 }
                 $("#msg").html(data.msg);

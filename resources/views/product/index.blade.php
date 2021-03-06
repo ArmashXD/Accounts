@@ -54,8 +54,8 @@
                                     <td>{{$item->product->created_at}}</td>
                                     <td>
                                         @if(auth()->user()->hasRole('super-admin') ||auth()->user()->hasPermissionTo('product-edit'))
-                                            <a class="text-success mr-2 btn btn-info" data-toggle="modal"
-                                               href="{{route('products.edit',$item->id)}}"><i
+                                            <a class="text-success mr-2 btn btn-info" 
+                                               href="{{route('products.edit',$item->product->id)}}"><i
                                                     class="nav-icon i-Pen-2 font-weight-bold"></i></a>
                                         @endif
                                         @if(auth()->user()->hasRole('super-admin') || auth()->user()->hasPermissionTo('product-delete'))
@@ -118,7 +118,7 @@
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">
                                                     Close
                                                 </button>
-                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                                
                                             </div>
                                         </div>
                                     </div>

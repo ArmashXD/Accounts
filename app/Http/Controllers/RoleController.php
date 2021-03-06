@@ -18,7 +18,7 @@ class RoleController extends Controller
     {
         //
         if (auth()->user()->hasRole('super-admin')) {
-            return view('roles.index', ['roles' => Role::paginate(5), 'permissions' => Permission::get()]);
+            return view('roles.index', ['roles' => Role::without('super-admin')->paginate(5), 'permissions' => Permission::get()]);
         } else {
             abort(403);
         }

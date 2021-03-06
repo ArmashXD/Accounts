@@ -16,7 +16,7 @@
                         </div>
                         <div class="col-md-6 form-group mb-3">
                             <label for="lastName1">Select Bank name</label>
-                            <select name="bank_id" id="" class="form-control">
+                            <select name="bank_id" id="" class="form-control" required>
                                 @foreach($bank as $item)
                                     <option value="{{$item->id}}">{{$item->name}}</option>
                                 @endforeach
@@ -25,12 +25,12 @@
 
                         <div class="col-md-6 form-group mb-3">
                             <label for="firstName1">Withdraw / Deposite ID</label>
-                            <input class="form-control" id="date" name="dep_id" type="text" placeholder="Enter account number" required/>
+                            <input class="form-control" id="date" name="dep_id" type="number" placeholder="Enter account number" required/>
                         </div>
 
                         <div class="col-md-6 form-group mb-3">
                             <label for="firstName1">Amount</label>
-                            <input class="form-control" id="date" name="amount"  type="text"
+                            <input class="form-control" id="date" name="amount"  type="number"
                                    placeholder="Enter branch name" required/>
                         </div>
                         <div class="col-md-6 form-group mb-3">

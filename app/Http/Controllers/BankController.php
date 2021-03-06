@@ -44,7 +44,7 @@ class BankController extends Controller
                 $bank->image_url = $image->getClientOriginalName();
             }
         $bank->fill($request->all())->save();
-        return redirect('account/transaction');
+        return redirect('account/bank');
     }
 
     /**

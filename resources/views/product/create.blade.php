@@ -4,7 +4,11 @@
 <div class="container">
     <div class="card mb-4">
         <div class="card-body">
-            <div class="card-title mb-3">Create A New Product</div>
+
+            <div class="card-title mb-3">Create A New Product
+            <a href="{{route('products.index')}}"
+                class="btn btn-primary float-right">See Products</a></div>
+           
             <form enctype="multipart/form-data" method="POST" action="{{route('products.store')}}">
                 @csrf
                 <div class="row">
@@ -26,7 +30,7 @@
 
                     <div class="col-md-6 form-group mb-3">
                         <label for="firstName1">Enter Serial Number</label>
-                        <input class="form-control" id="name" name="serial_number"  type="text"
+                        <input class="form-control" id="name" name="serial_number"  type="number"
                                placeholder="Enter Sale Price" required/>
                     </div>
                     <div class="col-md-6 form-group mb-3">
@@ -67,7 +71,7 @@
                     </div>
                     <div class="col-md-6 form-group mb-3">
                         <label>Select Images</label>
-                        <input type="file" class="form-control" name="images[]" placeholder="address" multiple>
+                        <input type="file" class="form-control" name="images[]" required placeholder="address" multiple>
                     </div>
                     <div class="col-md-12">
                         <button class="btn btn-primary" type="submit">Submit</button>

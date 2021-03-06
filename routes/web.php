@@ -61,7 +61,7 @@ Route::group(['middleware' => ['auth']], function () {
 
       ]);
       Route::get('credit-customer',[CustomerController::class, 'credit'])->name('customers.credit');
-      Route::get('lock-index',[LockController::class,'lockscreen'])->name('lock.index');
+    //   Route::get('lock-index',[LockController::class,'lockscreen'])->name('lock.index');
 
   });
     Route::post('lock-index',[LockController::class,'unlock'])->name('lock.index');
