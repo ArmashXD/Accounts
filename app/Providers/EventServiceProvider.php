@@ -49,16 +49,5 @@ class EventServiceProvider extends ServiceProvider
     public function boot()
     {
         //
-        Asset::observe(AssetObserver::class);
-        Equity::observe(EquityObserver::class);
-        Expense::observe(ExpenseObserver::class);
-        Income::observe(IncomeObserver::class);
-        Liability::observe(LiabilityObserver::class);
-        Tax::observe(TaxObserver::class);
-        MainCategory::observe(MainCategoryObserver::class);
-        Supplier::observe(SupplierObserver::class);
-        Unit::observe(UnitObserver::class);
-        Customer::observe(CustomerObserver::class);
-        Product::observe(ProductObserver::class);
     }
 }

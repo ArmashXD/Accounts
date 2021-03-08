@@ -13,6 +13,7 @@ use App\Http\Controllers\Product\ProductController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\ReturnController;
 use App\Http\Controllers\RoleController;
+use App\Http\Controllers\SaleController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\TaxController;
 use App\Http\Controllers\TransactionController;
@@ -58,12 +59,14 @@ Route::group(['middleware' => ['auth']], function () {
           'bank'=> BankController::class,
           'transaction'=>TransactionController::class,
           'return' => ReturnController::class,
+          'sale' => SaleController::class,
 
       ]);
       Route::get('credit-customer',[CustomerController::class, 'credit'])->name('customers.credit');
-    //   Route::get('lock-index',[LockController::class,'lockscreen'])->name('lock.index');
+
 
   });
+    Route::get('lock-index',[LockController::class,'lockscreen'])->name('lock.index');
     Route::post('lock-index',[LockController::class,'unlock'])->name('lock.index');
 
 });

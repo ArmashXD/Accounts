@@ -23,7 +23,7 @@
                                 <div class="col-md-6 form-group mb-3">
                                     <label>Select Type</label>
                                     <select name="type_id" id="" class="form-control" required>
-                                        @foreach(\App\Models\Type::where('id',6)->get() as $item)
+                                        @foreach(\App\Models\Type::all() as $item)
                                             <option value="{{$item->id}}">{{$item->name}}</option>
                                         @endforeach
                                     </select>

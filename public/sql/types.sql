@@ -1,1 +1,1 @@
-INSERT INTO `types` (`name`) VALUES ('assets'),('liabilities'),('income'),('expense'),('equity'),('products')
+INSERT INTO `types` (`name`) VALUES ('assets'),('liabilities'),('income'),('expense'),('equity'),('products'), ('sales')

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use http\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -28,6 +29,7 @@ class LockController extends Controller
             return response()->json(array('success' => false,
                 'true' => 'true',
             ), 200);
+
         }
     }
 }

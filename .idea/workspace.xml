@@ -20,14 +20,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c1e45ab-02d6-4df6-9454-2ac2bda6cce4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/sales/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/sales/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/sales/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BankController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BankController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LockController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LockController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Asset.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Asset.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Customer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Equity.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Equity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Expense.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Expense.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Income.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Income.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Liability.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Liability.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/MainCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/MainCategory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Supplier.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Supplier.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Tax.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Tax.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Unit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Unit.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/sql/types.sql" beforeDir="false" afterPath="$PROJECT_DIR$/public/sql/types.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/lock/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/lock/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/product/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/product/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/unit/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/unit/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/logs/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,19 +192,19 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Boossto\Desktop\New folder\nabeel\Accounts\app\Models" />
+      <recent name="C:\Users\Boossto\Desktop\New folder\Accounts\app\Models" />
+      <recent name="C:\Users\Boossto\Desktop\New folder (2)\Accounts\app\Models" />
+      <recent name="C:\Users\Boossto\Desktop\New folder\New folder\Accounts\app\Models" />
+      <recent name="C:\Users\Boossto\Desktop\Accounts\app\Http\Controllers\Product" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Boossto\Desktop\Accounts\resources\views\unit" />
       <recent name="C:\Users\Boossto\Desktop\Accounts" />
       <recent name="C:\Users\Boossto\Desktop\Accounts\resources\views\liabilities" />
       <recent name="C:\Users\Boossto\Desktop\Accounts\resources\views\incomes" />
       <recent name="C:\Users\Boossto\Desktop\Accounts\resources\views\expenses" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Boossto\Desktop\New folder\Accounts\app\Models" />
-      <recent name="C:\Users\Boossto\Desktop\New folder (2)\Accounts\app\Models" />
-      <recent name="C:\Users\Boossto\Desktop\New folder\New folder\Accounts\app\Models" />
-      <recent name="C:\Users\Boossto\Desktop\Accounts\app\Http\Controllers\Product" />
-      <recent name="C:\Users\Boossto\Desktop\Accounts\app\Models" />
     </key>
   </component>
   <component name="RunManager">
@@ -232,6 +248,7 @@
       <workItem from="1614688823237" duration="14471000" />
       <workItem from="1614777046100" duration="12059000" />
       <workItem from="1614946665882" duration="13243000" />
+      <workItem from="1615207276948" duration="13191000" />
     </task>
     <servers />
   </component>
@@ -275,10 +292,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1614780750374">
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615213703068">
       <screen x="0" y="0" width="1400" height="1010" />
     </state>
-    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1400.1010@0.0.1400.1010" timestamp="1614780750374" />
+    <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1400.1010@0.0.1400.1010" timestamp="1615213703068" />
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614701714814" />
     <state x="100" y="100" width="1200" height="810" key="DiffContextDialog" timestamp="1614778932913">
       <screen x="0" y="0" width="1400" height="1010" />
@@ -293,10 +310,14 @@
       <screen x="0" y="0" width="1400" height="1010" />
     </state>
     <state x="305" y="115" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1400.1010@0.0.1400.1010" timestamp="1614781404373" />
-    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1614788454946">
+    <state x="356" y="235" key="run.anything.popup" timestamp="1615218757759">
       <screen x="0" y="0" width="1400" height="1010" />
     </state>
-    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1400.1010@0.0.1400.1010" timestamp="1614788454946" />
+    <state x="356" y="235" key="run.anything.popup/0.0.1400.1010@0.0.1400.1010" timestamp="1615218757759" />
+    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1615218847736">
+      <screen x="0" y="0" width="1400" height="1010" />
+    </state>
+    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1400.1010@0.0.1400.1010" timestamp="1615218847736" />
     <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1614177701081" />
   </component>
 </project>

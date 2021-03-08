@@ -215,7 +215,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <p class="modal-title" id="exampleModalLongTitle">Screen is Locked!<h5><i class="fas fa-lock"></i></h5>
-                    
+
                     <button type="button"  style="margin-left:200px; border:hidden " class="btn btn-outline-danger">
                     <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
@@ -223,18 +223,18 @@
                             {{ __('Logout') }}
                         </a>
                     </button>
-                   
+
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                             @csrf
                         </form>
                     </p>
-                   
+
                 </div>
                 <div class="modal-body">
 
                         <div class="bg-text">
-                            
+
                             <h1 style="font-size:50px"></h1>
                             <p>For Unlock enter Password</p>
 
@@ -248,7 +248,7 @@
                         </div>
 
                 </div>
-                <div class="modal-footer">                   
+                <div class="modal-footer">
                     <button class="btn btn-success btn-block" onclick="getMessage()">Unlock!
                         <i class="fa fa-unlock" aria-hidden="true"></i>
                     </button>                </div>
@@ -310,7 +310,11 @@
                             class="nav-text">Return</span></a>
                     <div class="triangle"></div>
                 </li>
-
+                <li class="nav-item {{Request::is('sales') ? 'active' : ''}}" data-item="uikits9"><a
+                        class="nav-item-hold" href="#"><i class="nav-icon i-Library"></i><span
+                            class="nav-text">Sales</span></a>
+                    <div class="triangle"></div>
+                </li>
             </ul>
         </div>
         <div class="sidebar-left-secondary rtl-ps-none" data-perfect-scrollbar="" data-suppress-scroll-x="true">
@@ -383,7 +387,13 @@
                             class="item-name">Supplier Return</span></a></li>
 
             </ul>
+            <ul class="childNav" data-parent="uikits9">
+                <li class="nav-item"><a href="{{route('sale.index')}}"><i class="nav-icon i"></i><span
+                            class="item-name">Sales</span></a></li>
+                <li class="nav-item"><a href="{{route('sale.create')}}"><i class="nav-icon i"></i><span
+                            class="item-name">Create Sales</span></a></li>
 
+            </ul>
 
         </div>
         <div class="sidebar-overlay"></div>

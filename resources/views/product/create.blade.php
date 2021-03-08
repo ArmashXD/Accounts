@@ -8,7 +8,7 @@
             <div class="card-title mb-3">Create A New Product
             <a href="{{route('products.index')}}"
                 class="btn btn-primary float-right">See Products</a></div>
-           
+
             <form enctype="multipart/form-data" method="POST" action="{{route('products.store')}}">
                 @csrf
                 <div class="row">
@@ -73,6 +73,7 @@
                         <label>Select Images</label>
                         <input type="file" class="form-control" name="images[]" required placeholder="address" multiple>
                     </div>
+                    <input type="hidden" value="1" name="unit_id">
                     <div class="col-md-12">
                         <button class="btn btn-primary" type="submit">Submit</button>
                     </div>
