@@ -20,29 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c1e45ab-02d6-4df6-9454-2ac2bda6cce4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/sales/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/sales/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/sales/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BankController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BankController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LockController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LockController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Asset.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Asset.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Customer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Customer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Equity.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Equity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Expense.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Expense.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Income.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Income.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Liability.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Liability.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/MainCategory.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/MainCategory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Supplier.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Supplier.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Tax.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Tax.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Unit.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Unit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/sql/types.sql" beforeDir="false" afterPath="$PROJECT_DIR$/public/sql/types.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/product/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/product/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/unit/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/unit/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SaleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SaleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sales/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sales/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -186,7 +166,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../../xampp/htdocs/ecommerce" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -248,7 +228,8 @@
       <workItem from="1614688823237" duration="14471000" />
       <workItem from="1614777046100" duration="12059000" />
       <workItem from="1614946665882" duration="13243000" />
-      <workItem from="1615207276948" duration="13191000" />
+      <workItem from="1615207276948" duration="14180000" />
+      <workItem from="1615386536478" duration="7222000" />
     </task>
     <servers />
   </component>
@@ -301,6 +282,10 @@
       <screen x="0" y="0" width="1400" height="1010" />
     </state>
     <state x="100" y="100" width="1200" height="810" key="DiffContextDialog/0.0.1400.1010@0.0.1400.1010" timestamp="1614778932913" />
+    <state x="480" y="260" key="FileChooserDialogImpl" timestamp="1615278958490">
+      <screen x="0" y="0" width="1400" height="1010" />
+    </state>
+    <state x="480" y="260" key="FileChooserDialogImpl/0.0.1400.1010@0.0.1400.1010" timestamp="1615278958490" />
     <state x="525" y="235" key="NewPhpClassDialog" timestamp="1614692500660">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -314,10 +299,10 @@
       <screen x="0" y="0" width="1400" height="1010" />
     </state>
     <state x="356" y="235" key="run.anything.popup/0.0.1400.1010@0.0.1400.1010" timestamp="1615218757759" />
-    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1615218847736">
+    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1615391866508">
       <screen x="0" y="0" width="1400" height="1010" />
     </state>
-    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1400.1010@0.0.1400.1010" timestamp="1615218847736" />
+    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1400.1010@0.0.1400.1010" timestamp="1615391866508" />
     <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1614177701081" />
   </component>
 </project>

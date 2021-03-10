@@ -9,79 +9,102 @@
                     <a href="{{route('sale.index')}}"
                        class="btn btn-primary float-right">See Sales</a></div>
 
+
                 <form enctype="multipart/form-data" method="POST" action="{{route('sale.store')}}">
                     @csrf
+
                     <div class="row">
-
                         <div class="col-md-6 form-group mb-3">
-                            <label for="firstName1">Customer Name</label>
-                            <select name="customer_id" id="" class="form-control">
+                            <label for="firstName1">Customer</label>
+                            <select name="customer_id" id="customer_id" class="form-control">
+                                <option value="">Please Select Cusomter</option>
                                 @foreach($customers as $item)
-                                    <option value="{{$item->id}}">{{$item->name}}</option>
+                                    <option value="{{$item->id}}"
+                                            data-price="{{ $item->sale_price }}">{{$item->name}}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="col-md-6 form-group mb-3">
-                            <label for="firstName1">Enter Date</label>
-                            <input class="form-control" id="date" name="date" type="date" placeholder="Enter Product Model" required/>
+                            <label for="firstName1">Date</label>
+                            <input class="form-control" id="name" name="date" type="date"
+                                   placeholder="Enter date" required/>
                         </div>
                         <div class="col-md-6 form-group mb-3">
-                            <label for="firstName1">Item information</label>
-                            <select name="product_id" id="product_id"  class="form-control">
-                                @foreach($products as $item)
-                                    <option value="">Please Select Product</option>
-                                    <option value="{{$item->id}}" data-price="{{ $item->sale_price }}">{{$item->name}}</option>
-                                @endforeach
-                            </select>
+                            <label for="firstName1">Enter Details</label>
+                            <input class="form-control" id="details" name="details" type="text"
+                                   placeholder="Enter invoice details" required/>
+                        </div>
+                        <table class="table" id="products_table">
+                            <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Rate</th>
+                                <th>Discount</th>
+                                <th>Total</th>
+                                <th>Tax</th>
+                                <th>Unit</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr id="product0">
+                                <td>
+                                    <select name="product_id[]" id="product_id" class="form-control">
+                                        <option value="">Please Select Product</option>
+                                        @foreach($products as $item)
+                                            <option value="{{$item->id}}"
+                                                    data-price="{{ $item->sale_price }}">{{$item->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="number" name="quantity[]" class="form-control" value="1"/>
+                                </td>
+                                <td><input class="form-control" id="rate" name="rate[]" type="number"
+                                           placeholder="Enter Rate" required/></td>
+                                <td>
+                                    <input class="form-control" id="discount" name="discount[]" type="number"
+                                           placeholder="Enter discount %" required/>
+                                </td>
+                                <td>
+                                    <input class="form-control" id="total" name="total[]" type="number"
+                                           placeholder="Enter Total" required/>
+                                </td>
+                                <td>
+                                    <select name="tax_id[]" id="tax_id" class="form-control">
+                                        <option value="">Please Select Tax</option>
+                                        @foreach($taxes as $item)
+                                            <option value="{{$item->id}}"
+                                                    data-price="{{$item->percentage}}">{{$item->percentage}} %
+                                            </option>
+                                        @endforeach
+                                    </select>
+                                </td>
+                                <td>
+                                    <select name="unit_id[]" id="unit_id[]" class="form-control">
+                                        <option value="">Please Select Unit</option>
+                                        @foreach(\App\Models\Unit::where('type_id', 7)->get() as $item)
+                                            <option value="{{$item->id}}">{{$item->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr id="product1"></tr>
+                            </tbody>
+                        </table>
+                        <div class="col-md-6 form-group mb-3">
+                            <button id="add_row" class="btn btn-success float-left"><i class="fa fa-plus"></i></button>
                         </div>
                         <div class="col-md-6 form-group mb-3">
-                            <label for="firstName1">Enter Quantity</label>
-                            <input class="form-control" id="name" name="quantity"  type="number"
-                                   placeholder="Enter Quantity" required/>
-                        </div>
-                        <div class="col-md-6 form-group mb-3">
-                            <label for="firstName1">Enter Rate</label>
-                            <input class="form-control" id="rate" name="rate" type="number"
-                                   placeholder="Enter Rate" required/>
-                        </div>
 
-                        <div class="col-md-6 form-group mb-3">
-                            <label for="lastName1">Discount %</label>
-                            <input class="form-control" id="discount" name="discount" type="number"
-                                   placeholder="Enter discount %" required/>
-                        </div>
-                        <div class="col-md-6 form-group mb-3">
-                            <label for="firstName1">Enter Tax</label>
-                            <select name="tax_id" id="tax_id" class="form-control">
-                                @foreach($taxes as $item)
-                                    <option value="">Please Select Tax</option>
-                                    <option value="{{$item->id}}" data-price="{{$item->percentage}}">{{$item->percentage}} %</option>
-                                @endforeach
-                            </select>
-                        </div>
-
-                        <div class="col-md-6 form-group mb-3">
-                            <label for="lastName1">Total</label>
-                            <input class="form-control" id="total" name="total" type="number"
-                                   placeholder="Enter Total" required/>
-                        </div>
-                        <div class="col-md-6 form-group mb-3">
-                            <label for="lastName1">Invoice Details </label>
-                            <input class="form-control" id="name" name="details" type="text"
-                                   placeholder="Enter Invoice Details" required/>
-                        </div>
-                        <div class="col-md-6 form-group mb-3">
-                            <label for="lastName1">Units </label>
-                            <select name="unit_id" id="unit_id" class="form-control">
-                                @foreach(\App\Models\Unit::where('type_id', 7)->get() as $item)
-                                    <option value="">Please Select Unit</option>
-                                    <option value="{{$item->id}}">{{$item->name}}</option>
-                                @endforeach
-                            </select>
+                            <button id='delete_row' class="float-right btn btn-danger"><i class="fa fa-trash"></i>
+                            </button>
                         </div>
                         <div class="col-md-12">
-                            <button class="btn btn-primary" type="submit">Submit</button>
+                            <button class="btn btn-primary float-right" type="submit">Submit</button>
                         </div>
+
+
                     </div>
                 </form>
                 @if (isset($errors) && count($errors) > 0)
@@ -99,16 +122,41 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
-        $('#product_id').on('change',function(){
-            var price = $(this).children('option:selected').data('price')
-            $('#rate').val(price)
-        })
-        $("input").on("change", function() {
-            var ret = parseInt($("#rate").val()) - parseInt($("#discount").val() || '0')
-            $("#total").val(ret)
-        })
 
+        $(document).ready(function () {
+            let row_number = 1;
+            $('#product_id').on('change', function () {
+                var price = $(this).children('option:selected').data('price')
+                $('#rate').val(price)
+            })
+            $('#tax_id').on('change', function () {
+                var tax = $(this).children('option:selected').data('price')
+                $("input").on("change", function () {
+                    var ret = parseInt(tax) + parseInt($("#rate").val()) - parseInt($("#discount").val()  || '0')
+                    $("#total").val(ret)
+                })
+            })
+
+            $("#add_row").click(function (e) {
+                e.preventDefault();
+                let new_row_number = row_number - 1;
+                $('#product' + row_number).html($('#product' + new_row_number).html()).find('td:first-child');
+                $('#products_table').append('<tr id="product' + (row_number + 1) + '"></tr>');
+                row_number++;
+
+            });
+
+            $("#delete_row").click(function (e) {
+                e.preventDefault();
+                if (row_number > 1) {
+                    $("#product" + (row_number - 1)).html('');
+                    row_number--;
+                }
+            });
+        });
 
     </script>
 
 @endsection
+
+
