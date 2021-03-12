@@ -17,16 +17,16 @@
                         <div class="row">
                             <div class="col-md-6 form-group mb-3">
                                 <label for="firstName1">Enter User name</label>
-                                <input class="form-control" id="name" name="name" type="text" placeholder="Name"/>
+                                <input class="form-control" id="name" name="name" type="text" placeholder="Name" required/>
                             </div>
                             <div class="col-md-6 form-group mb-3">
                                 <label for="firstName1">Enter email</label>
-                                <input class="form-control" id="email" name="email" type="email" placeholder="Email"/>
+                                <input class="form-control" id="email" name="email" type="email" placeholder="Email" required/>
                             </div>
                             <div class="col-md-6 form-group mb-3">
                                 <label for="firstName1">Enter password</label>
                                 <input class="form-control" id="password" name="password" type="password"
-                                       placeholder="Password"/>
+                                       placeholder="Password" required/>
                             </div>
 
                             <div class="col-md-6 form-group mb-3">

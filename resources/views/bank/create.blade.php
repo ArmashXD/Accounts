@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('content')
-    <div class="container">
+    <div class="row">
         <div class="card mb-4">
             <div class="card-body">
                 <form enctype="multipart/form-data" method="POST" action="{{route('bank.store')}}">
@@ -20,7 +20,7 @@
 
                         <div class="col-md-6 form-group mb-3">
                             <label for="firstName1">Account Number</label>
-                            <input class="form-control" id="date" name="ac_number" type="text" placeholder="Enter account number" required/>
+                            <input class="form-control" id="number" name="ac_number" type="number" placeholder="Enter account number" required/>
                         </div>
 
                         <div class="col-md-6 form-group mb-3">
@@ -30,7 +30,7 @@
                         </div>
                         <div class="col-md-6 form-group mb-3">
                             <label for="firstName1">Signature Picture</label>
-                            <input type="file" class="form-control" name="image" placeholder="select image">
+                            <input type="file" class="form-control" name="image" placeholder="select image" required>
                         </div>
                         <div class="col-md-12">
                             <button class="btn btn-primary" type="submit">Submit</button>

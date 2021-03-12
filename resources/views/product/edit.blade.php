@@ -1,14 +1,14 @@
 @extends('layout.app')
 
 @section('content')
-<div class="container">
+<div class="row">
     <div class="card mb-4">
         <div class="card-body">
 
             <div class="card-title mb-3">Edit Product
             <a href="{{route('products.index')}}"
                 class="btn btn-primary float-right">See Products</a></div>
-           
+
             <form enctype="multipart/form-data" method="POST" action="{{route('products.update',$product->id)}}">
                 @method('PUT')
                 @csrf
@@ -72,7 +72,7 @@
                     </div>
                     <div class="col-md-6 form-group mb-3">
                         <label>Select Images</label>
-                     
+
                         <input type="file" class="form-control" name="images[]" required placeholder="address" multiple>
                     </div>
                     <div class="col-md-12">

@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('content')
-    <div class="container">
+    <div class="row">
         <div class="card mb-4">
             <div class="card-body">
                 <div class="card-title mb-3">Add purchase<a href="{{route('suppliers.index')}}"
@@ -24,7 +24,7 @@
                         </div>
                         <div class="col-md-6 form-group mb-3">
                             <label for="example-date-input">Purchase Date</label>
-                            <input class="form-control" id="name" name="purchase_date" type="date"
+                            <input class="form-control" id="date" name="purchase_date" type="date"
                                    placeholder="Purchase Date" required/>
                         </div>
 

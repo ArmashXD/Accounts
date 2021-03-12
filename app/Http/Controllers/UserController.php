@@ -40,7 +40,7 @@ class UserController extends Controller
         //
         $request->validate([
             'name' => 'required|unique:users',
-            'email' => 'required|unique:users',
+            'email' => 'required|regex:/(.+)@(.+)\.(.+)/i',
             'password' => 'required'
         ]);
         $user = new User();
@@ -48,7 +48,8 @@ class UserController extends Controller
         $user->o_auth = $request->password;
         $user->assignRole($request->role);
         $user->fill($request->all())->save();
-        return redirect()->back()->with('success', 'User Created');
+        alert()->success('Success', "User $user->name Created");
+        return redirect()->back();
     }
 
     /**

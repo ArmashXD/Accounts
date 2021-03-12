@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('content')
-    <div class="container">
+    <div class="row">
 
         <div class="col-md-12 mb-3">
             <div class="card text-left">
@@ -22,8 +22,9 @@
                                 <th scope="col">Customer Name</th>
                                 <th scope="col">Total Amount</th>
                                 <th scope="col">Item Information</th>
-                                <th scope="col">Actions</th>
                                 <th scope="col">Date</th>
+                                <th scope="col">Actions</th>
+
                             </tr>
                             </thead>
                             @php
@@ -41,7 +42,7 @@
                                     <td>
                                         @if(auth()->user()->hasRole('super-admin') ||auth()->user()->hasPermissionTo('sale-edit'))
                                             <a class="text-success mr-2 btn btn-info"
-                                               href="{{route('sale.edit',$sale->product->id)}}"><i
+                                               href="{{route('sale.edit',$sale)}}"><i
                                                     class="nav-icon i-Pen-2 font-weight-bold"></i></a>
                                         @endif
                                         @if(auth()->user()->hasRole('super-admin') || auth()->user()->hasPermissionTo('sale-delete'))

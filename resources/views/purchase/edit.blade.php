@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('content')
-    <div class="container">
+    <div class="row">
         <div class="card mb-4">
             <div class="card-body">
                 <div class="card-title mb-3">edit purchase<a href="{{route('suppliers.index')}}"

@@ -62,13 +62,11 @@
                                 <th scope="col">Actions</th>
                             </tr>
                             </thead>
-                            @php
-                                $count = 1;
-                            @endphp
+
                             <tbody>
                             @foreach($units as $item)
                                 <tr>
-                                    <th scope="row">{{$count++}}</th>
+                                    <th scope="row">{{$item->id}}</th>
                                     <td>{{$item->name}}</td>
                                     <td>{{$item->created_at}}</td>
                                     <td>{{$item->updated_at}}</td>

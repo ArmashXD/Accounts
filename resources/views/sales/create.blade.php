@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('content')
-    <div class="container">
+    <div class="row">
         <div class="card mb-4">
             <div class="card-body">
 
@@ -42,6 +42,7 @@
                                 <th>Rate</th>
                                 <th>Discount</th>
                                 <th>Total</th>
+                                <th>Total + Tax</th>
                                 <th>Tax</th>
                                 <th>Unit</th>
                             </tr>
@@ -58,7 +59,7 @@
                                     </select>
                                 </td>
                                 <td>
-                                    <input type="number" name="quantity[]" class="form-control" value="1"/>
+                                    <input type="number" name="quantity[]" id="qty" class="form-control" />
                                 </td>
                                 <td><input class="form-control" id="rate" name="rate[]" type="number"
                                            placeholder="Enter Rate" required/></td>
@@ -67,15 +68,20 @@
                                            placeholder="Enter discount %" required/>
                                 </td>
                                 <td>
-                                    <input class="form-control" id="total" name="total[]" type="number"
-                                           placeholder="Enter Total" required/>
+                                    <input class="form-control" id="sum" name="" type="number"
+                                           placeholder="Total " required  disabled/>
                                 </td>
                                 <td>
-                                    <select name="tax_id[]" id="tax_id" class="form-control">
+                                    <input class="form-control" id="total" name="total[]" type="number"
+                                           placeholder="Total + Tax" required />
+                                </td>
+
+                                <td>
+                                    <select name="tax_id[]"  id="tax_id" class="form-control">
                                         <option value="">Please Select Tax</option>
                                         @foreach($taxes as $item)
                                             <option value="{{$item->id}}"
-                                                    data-price="{{$item->percentage}}">{{$item->percentage}} %
+                                                    data-price="{{$item->percentage}}">{{$item->percentage}}
                                             </option>
                                         @endforeach
                                     </select>
@@ -124,19 +130,24 @@
     <script>
 
         $(document).ready(function () {
+
             let row_number = 1;
             $('#product_id').on('change', function () {
                 var price = $(this).children('option:selected').data('price')
                 $('#rate').val(price)
+                $('#qty, #rate').on('change', function(){
+                    var qty = parseFloat($('#qty').val()) || 0;
+                    var rate = parseFloat($('#rate').val()) || 0;
+                    $('#sum').val(qty * rate);
+                });
             })
             $('#tax_id').on('change', function () {
                 var tax = $(this).children('option:selected').data('price')
                 $("input").on("change", function () {
-                    var ret = parseInt(tax) + parseInt($("#rate").val()) - parseInt($("#discount").val()  || '0')
-                    $("#total").val(ret)
+                    var ret = parseInt(tax) + parseInt($("#sum").val()) - parseInt($("#discount").val()  || '0')
+                    $("#tot al").val(ret)
                 })
             })
-
             $("#add_row").click(function (e) {
                 e.preventDefault();
                 let new_row_number = row_number - 1;
@@ -155,6 +166,14 @@
             });
         });
 
+
+        $(function(){
+            $('#value1, #value2').keyup(function(){
+                var value1 = parseFloat($('#value1').val()) || 0;
+                var value2 = parseFloat($('#value2').val()) || 0;
+                $('#sum').val(value1 * value2);
+            });
+        });
     </script>
 
 @endsection

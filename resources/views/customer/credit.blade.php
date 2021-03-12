@@ -12,7 +12,7 @@
             <div class="card text-left">
                 <div class="card-body">
                     <h4 class="card-title mb-3">All Credit Customers
-                        @if(auth()->user()->hasRole('super-admin') || auth()->user()->hasPermissionTo('customers-create'))
+                        @if(auth()->user()->hasRole('super-admin') || auth()->user()->hasPermissionTo('customer-create'))
                             <a href="{{route('customers.create')}}" class="btn btn-primary float-right"> add Customer </a>
                         @endif
 
@@ -38,13 +38,13 @@
                                     <td>{{$item->phone}}</td>
                                     <td>{{$item->previous_credit_balance}}</td>
                                     <td>
-                                        @if(auth()->user()->hasRole('super-admin') || auth()->user()->hasPermissionTo('customers-edit'))
+                                        @if(auth()->user()->hasRole('super-admin') || auth()->user()->hasPermissionTo('customer-edit'))
 
                                             <button class="text-success mr-2 btn btn-info" data-toggle="modal"
                                                     data-target="#supplierModal{{$item->id}}" href="#"><i
                                                     class="nav-icon i-Pen-2 font-weight-bold"></i></button>
                                         @endif
-                                        @if(auth()->user()->hasRole('super-admin') || auth()->user()->hasPermissionTo('customers-delete'))
+                                        @if(auth()->user()->hasRole('super-admin') || auth()->user()->hasPermissionTo('customer-delete'))
                                             <form action="{{route('customers.destroy',$item->id)}}" method="POST">
                                                 @csrf
                                                 @method('DELETE')

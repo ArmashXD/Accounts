@@ -259,6 +259,25 @@
 
                                 </td>
                             </tr>
+                            <tr>
+                                <td>
+                                    Sales
+                                </td>
+                                <td>
+                                    <div class="row">
+                                        @foreach(\Spatie\Permission\Models\Permission::where('name','LIKE','%sale%')->get() as $item)
+
+                                            <div class="form-check form-check-inline col-md-1">
+                                                <input class="form-check-input" name="permissions[]" type="checkbox"
+                                                       id="inlineCheckbox1" value="{{$item->id}}">
+                                                <span class="badge badge-primary" for="inlineCheckbox1"
+                                                      style="font-size: 0.60rem">{{$item->name}}</span>
+                                            </div>
+                                        @endforeach
+                                    </div>
+
+                                </td>
+                            </tr>
                             </tbody>
                         </table>
                         <div class="col-md-12">

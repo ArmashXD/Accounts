@@ -89,10 +89,10 @@ class SaleController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Sale $sale)
     {
-        return view('sales.index', ['sales' => Sale::find($id), 'products' => Product::all(), 'units' => Unit::all(),
-            'customers' => Customer::all(), 'taxs' => Tax::all()]);
+        return view('sales.edit', ['sale' => $sale, 'products' => Product::all(), 'units' => Unit::all(),
+            'customers' => Customer::all(), 'taxes' => Tax::all()]);
     }
 
     /**
@@ -104,7 +104,10 @@ class SaleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $sale = sale::find($id);
+        $sale->fill($request->all())->update();
+        alert()->success('Success', "sale $sale->name Updated");
+        return redirect()->back();
     }
 
     /**

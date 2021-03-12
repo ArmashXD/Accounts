@@ -260,9 +260,9 @@
     <div class="side-content-wrap">
         <div class="sidebar-left open rtl-ps-none" data-perfect-scrollbar="" data-suppress-scroll-x="true">
             <ul class="navigation-left">
-
-                <li class="nav-item {{Request::is('dashboard') ? 'active' : ''}}" data-item="dashboard"><a
-                        class="nav-item-hold" href="#"><i class="nav-icon i-Bar-Chart"></i><span class="nav-text">Dashboard</span></a>
+                <li class="nav-item {{Request::is('dashboard') ? 'active' : ''}}"><a
+                        class="nav-item-hold" href="{{route('index')}}"><i class="nav-icon i-Library"></i>
+                        <span class="nav-text">Dashboard</span></a>
                     <div class="triangle"></div>
                 </li>
                 <li class="nav-item {{Request::is('suppliers') ? 'active' : ''}}" data-item="uikits3"><a
@@ -310,8 +310,8 @@
                             class="nav-text">Return</span></a>
                     <div class="triangle"></div>
                 </li>
-                <li class="nav-item {{Request::is('sales') ? 'active' : ''}}" data-item="uikits9"><a
-                        class="nav-item-hold" href="#"><i class="nav-icon i-Library"></i><span
+                <li class="nav-item {{Request::is('sales') ? 'active' : ''}}" ><a
+                        class="nav-item-hold" href="{{route('sale.index')}}"><i class="nav-icon i-Library"></i><span
                             class="nav-text">Sales</span></a>
                     <div class="triangle"></div>
                 </li>
@@ -319,10 +319,10 @@
         </div>
         <div class="sidebar-left-secondary rtl-ps-none" data-perfect-scrollbar="" data-suppress-scroll-x="true">
             <!-- Submenu Dashboards-->
-            <ul class="childNav" data-parent="dashboard">
-                <li class="nav-item active"><a href="{{route('index')}}"><i class="nav-icon i-Clock-3"></i><span
-                            class="item-name">Home</span></a></li>
-            </ul>
+{{--            <ul class="childNav" data-parent="dashboard">--}}
+{{--                <li class="nav-item active"><a href="{{route('index')}}"><i class="nav-icon i-Clock-3"></i><span--}}
+{{--                            class="item-name">Home</span></a></li>--}}
+{{--            </ul>--}}
             <ul class="childNav" data-parent="uikits">
                 @if(auth()->user()->hasPermissionTo('view'))
                     <li class="nav-item"><a href="{{route('roles.index')}}"><i class="nav-icon i"></i><span
@@ -349,8 +349,6 @@
                 <li class="nav-item"><a href="{{route('purchase.index')}}"><i class="nav-icon i"></i><span
                             class="item-name">Purchases</span></a></li>
                 <li class="nav-item"><a href="{{route('suppliers.index')}}"><i class="nav-icon i"></i><span
-                            class="item-name">Add Supplier</span></a></li>
-                <li class="nav-item"><a href="{{route('suppliers.index')}}"><i class="nav-icon i"></i><span
                             class="item-name">Supplier ledger</span></a></li>
                 <li class="nav-item"><a href="{{route('suppliers.index')}}"><i class="nav-icon i"></i><span
                             class="item-name">Supplier sales details</span></a></li>
@@ -366,8 +364,6 @@
             <ul class="childNav" data-parent="uikits6">
                 <li class="nav-item"><a href="{{route('customers.index')}}"><i class="nav-icon i"></i><span
                             class="item-name">Manage Customers</span></a></li>
-                <li class="nav-item"><a href="{{route('customers.create')}}"><i class="nav-icon i"></i><span
-                            class="item-name">Add Customers</span></a></li>
                 <li class="nav-item"><a href="{{route('customers.credit')}}"><i class="nav-icon i"></i><span
                             class="item-name"> Credit Customers</span></a></li>
             </ul>
@@ -385,13 +381,6 @@
                             class="item-name">Stock Return</span></a></li>
                 <li class="nav-item"><a href="{{route('return.index')}}"><i class="nav-icon i"></i><span
                             class="item-name">Supplier Return</span></a></li>
-
-            </ul>
-            <ul class="childNav" data-parent="uikits9">
-                <li class="nav-item"><a href="{{route('sale.index')}}"><i class="nav-icon i"></i><span
-                            class="item-name">Sales</span></a></li>
-                <li class="nav-item"><a href="{{route('sale.create')}}"><i class="nav-icon i"></i><span
-                            class="item-name">Create Sales</span></a></li>
 
             </ul>
 
@@ -571,7 +560,10 @@
             $('#btnLock').click();
         }, 300000); // milliseconds
     });
+
 </script>
+
+
 @include('sweetalert::alert')
 <script src="{{asset('js/plugins/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('js/plugins/perfect-scrollbar.min.js')}}"></script>

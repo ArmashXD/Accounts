@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('content')
-    <div class="container">
+    <div class="row">
         <div class="card mb-4">
             <div class="card-body">
                 <form enctype="multipart/form-data" method="POST" action="{{route('transaction.store')}}">

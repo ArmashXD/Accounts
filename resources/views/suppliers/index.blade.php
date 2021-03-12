@@ -38,7 +38,7 @@
                                 </div>
                                 <div class="col-md-6 form-group mb-3">
                                     <label for="firstName1">Enter Previous Credit Balance</label>
-                                    <input class="form-control" id="date" name="previous_credit_balance"  step="0" min="0.00" placeholder="Enter Number" type="number" required/>
+                                    <input class="form-control" id="number" name="previous_credit_balance"  step="0" min="0.00" placeholder="Enter Number" type="number" required/>
                                 </div>
 
                                 <div class="col-md-12">
@@ -76,13 +76,11 @@
                                 <th scope="col">Actions</th>
                             </tr>
                             </thead>
-                            @php
-                                $count = 1;
-                            @endphp
+
                             <tbody>
                             @foreach($suppliers as $item)
                                 <tr>
-                                    <th scope="row">{{$count++}}</th>
+                                    <th scope="row">{{$item->id}}</th>
                                     <td>{{$item->name}}</td>
                                     <td>{{$item->phone}}</td>
                                     <td>{{$item->address}}</td>
