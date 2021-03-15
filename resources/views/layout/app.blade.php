@@ -310,6 +310,11 @@
                             class="nav-text">Return</span></a>
                     <div class="triangle"></div>
                 </li>
+                <li class="nav-item {{Request::is('gatecheck') ? 'active' : ''}}" data-item="uikits9"><a
+                        class="nav-item-hold" href="#"><i class="nav-icon i-Library"></i><span
+                            class="nav-text">Gate Check</span></a>
+                    <div class="triangle"></div>
+                </li>
                 <li class="nav-item {{Request::is('sales') ? 'active' : ''}}" ><a
                         class="nav-item-hold" href="{{route('sale.index')}}"><i class="nav-icon i-Library"></i><span
                             class="nav-text">Sales</span></a>
@@ -382,6 +387,12 @@
                 <li class="nav-item"><a href="{{route('return.index')}}"><i class="nav-icon i"></i><span
                             class="item-name">Supplier Return</span></a></li>
 
+            </ul>
+            <ul class="childNav" data-parent="uikits9">
+                <li class="nav-item"><a href="{{route('gateIn.index')}}"><i class="nav-icon i"></i><span
+                            class="item-name">Gate In</span></a></li>
+                <li class="nav-item"><a href="{{route('gateOut.index')}}"><i class="nav-icon i"></i><span
+                            class="item-name">Gate Out</span></a></li>
             </ul>
 
         </div>

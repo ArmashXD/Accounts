@@ -19,6 +19,7 @@ class CreatePurchasesTable extends Migration
             $table->string('details');
             $table->date('purchase_date',36);
             $table->float('invoice_number',36);
+            $table->string('code');
             $table->unsignedBigInteger('supplier_id');
             $table->float('quantity',36);
             $table->float('rate',36);

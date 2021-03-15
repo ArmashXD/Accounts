@@ -145,7 +145,7 @@
                 var tax = $(this).children('option:selected').data('price')
                 $("input").on("change", function () {
                     var ret = parseInt(tax) + parseInt($("#sum").val()) - parseInt($("#discount").val()  || '0')
-                    $("#tot al").val(ret)
+                    $("#total").val(ret)
                 })
             })
             $("#add_row").click(function (e) {

@@ -7,6 +7,8 @@ use App\Http\Controllers\Account\IncomeController;
 use App\Http\Controllers\Account\LiabilityController;
 use App\Http\Controllers\BankController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\GateinController;
+use App\Http\Controllers\GateoutController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MainCategoryController;
 use App\Http\Controllers\Product\ProductController;
@@ -60,7 +62,8 @@ Route::group(['middleware' => ['auth']], function () {
           'transaction'=>TransactionController::class,
           'return' => ReturnController::class,
           'sale' => SaleController::class,
-
+          'gateIn'=> GateinController::class,
+          'gateOut'=>GateoutController::class,
       ]);
       Route::get('credit-customer',[CustomerController::class, 'credit'])->name('customers.credit');
 
@@ -68,5 +71,5 @@ Route::group(['middleware' => ['auth']], function () {
   });
     Route::get('lock-index',[LockController::class,'lockscreen'])->name('lock.index');
     Route::post('lock-index',[LockController::class,'unlock'])->name('lock.index');
-
+Route::get('gatein-card',[GateinController::class,'card'])->name('gatein.card');
 });
