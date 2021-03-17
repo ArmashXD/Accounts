@@ -17,6 +17,7 @@
                                 <th scope="col">#</th>
                                 <th scope="col">Invoice No.</th>
                                 <th scope="col">Purchase ID</th>
+                                <th scope="col">Purchase Code</th>
                                 <th scope="col">Supplier Name</th>
                                 <th scope="col">Purchase Date </th>
                                 <th scope="col">Total Amount</th>
@@ -32,6 +33,7 @@
                                     <td>{{$item->id}}</td>
                                     <td>{{$item->invoice_number}}</td>
                                     <td>{{rand(0, 99999)}}</td>
+                                    <td>{{$item->code}}</td>
                                     <td>{{$item->name}}</td>
                                     <td>{{$item->purchase_date}}</td>
                                     <td>{{$item->total}}</td>

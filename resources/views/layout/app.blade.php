@@ -89,10 +89,10 @@
 
         <div class="header-part-right">
         <!-- locks screen toggle -->
-            <button class="btn btn-primary" id="btnLock" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#exampleModalCenter" ><i class="fas fa-lock"> </i>
-            </button>
+            <a href="{{route('lock.index')}}" class="btn btn-primary"><i class="fas fa-lock">
 
-{{--            </i></button><script>--}}
+            </i></a>
+{{--            <script>--}}
 {{--                window.history.forward();--}}
 {{--                function noBack() {--}}
 {{--                    window.history.forward();--}}
@@ -210,53 +210,53 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <p class="modal-title" id="exampleModalLongTitle">Screen is Locked!<h5><i class="fas fa-lock"></i></h5>
+{{--    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">--}}
+{{--        <div class="modal-dialog modal-dialog-centered" role="document">--}}
+{{--            <div class="modal-content">--}}
+{{--                <div class="modal-header">--}}
+{{--                    <p class="modal-title" id="exampleModalLongTitle">Screen is Locked!<h5><i class="fas fa-lock"></i></h5>--}}
 
-                    <button type="button"  style="margin-left:200px; border:hidden " class="btn btn-outline-danger">
-                    <a class="dropdown-item" href="{{ route('logout') }}"
-                           onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                            {{ __('Logout') }}
-                        </a>
-                    </button>
-
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </p>
-
-                </div>
-                <div class="modal-body">
-
-                        <div class="bg-text">
-
-                            <h1 style="font-size:50px"></h1>
-                            <p>For Unlock enter Password</p>
-
-                            <input id="password" style="" type="password"
-                                   class="form-control  @error('password') is-invalid @enderror"
-                                   name="password" required autocomplete="current-password" placeholder="password">
-                            <p id="msg"></p>
-                            <br>
+{{--                    <button type="button"  style="margin-left:200px; border:hidden " class="btn btn-outline-danger">--}}
+{{--                    <a class="dropdown-item" href="{{ route('logout') }}"--}}
+{{--                           onclick="event.preventDefault();--}}
+{{--                                                     document.getElementById('logout-form').submit();">--}}
+{{--                            {{ __('Logout') }}--}}
+{{--                        </a>--}}
+{{--                    </button>--}}
 
 
-                        </div>
+{{--                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">--}}
+{{--                            @csrf--}}
+{{--                        </form>--}}
+{{--                    </p>--}}
 
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-success btn-block" onclick="getMessage()">Unlock!
-                        <i class="fa fa-unlock" aria-hidden="true"></i>
-                    </button>                </div>
-            </div>
+{{--                </div>--}}
+{{--                <div class="modal-body">--}}
+
+{{--                        <div class="bg-text">--}}
+
+{{--                            <h1 style="font-size:50px"></h1>--}}
+{{--                            <p>For Unlock enter Password</p>--}}
+
+{{--                            <input id="password" style="" type="password"--}}
+{{--                                   class="form-control  @error('password') is-invalid @enderror"--}}
+{{--                                   name="password" required autocomplete="current-password" placeholder="password">--}}
+{{--                            <p id="msg"></p>--}}
+{{--                            <br>--}}
 
 
-        </div>
-    </div>
+{{--                        </div>--}}
+
+{{--                </div>--}}
+{{--                <div class="modal-footer">--}}
+{{--                    <button class="btn btn-success btn-block" onclick="getMessage()">Unlock!--}}
+{{--                        <i class="fa fa-unlock" aria-hidden="true"></i>--}}
+{{--                    </button>                </div>--}}
+{{--            </div>--}}
+
+
+{{--        </div>--}}
+{{--    </div>--}}
     <div class="side-content-wrap">
         <div class="sidebar-left open rtl-ps-none" data-perfect-scrollbar="" data-suppress-scroll-x="true">
             <ul class="navigation-left">

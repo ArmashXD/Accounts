@@ -16,6 +16,7 @@
                                 <option value="">Please Select Cusomter</option>
                                 @foreach($customers as $item)
                                     <option value="{{$item->id}}"
+                                            {{$item->id == $sale->customer_id ? 'selected' : ''}}
                                             data-price="{{ $item->sale_price }}">{{$item->name}}</option>
                                 @endforeach
                             </select>
@@ -36,6 +37,7 @@
                             <option value="">Please Select Product</option>
                             @foreach($products as $item)
                                 <option value="{{$item->id}}"
+                                        {{$item->id == $sale->product_id ? 'selected' : ''}}
                                         data-price="{{ $item->sale_price }}">{{$item->name}}</option>
                             @endforeach
                         </select>
@@ -56,7 +58,7 @@
                                 </div>
                                     <div class="col-md-6 form-group mb-3">
                                         <label for="firstName1">total</label>
-                                        <input class="form-control" value="{{$sale->total}}" id="total" name="total" type="text"
+                                        <input class="form-control" value="{{$sale->total}}" id="total" name="total" type="number"
                                                placeholder="Total + Tax" required />
                                     </div>
                         <div class="col-md-6 form-group mb-3">
@@ -65,6 +67,7 @@
                                 <option value="">Please Select Tax</option>
                                 @foreach($taxes as $item)
                                     <option value="{{$item->id}}"
+                                            {{$item->id == $sale->tax_id ? 'selected' : ''}}
                                             data-price="{{$item->percentage}}">{{$item->percentage}} %
                                     </option>
                                 @endforeach
@@ -75,7 +78,7 @@
                                 <select name="unit_id" id="unit_id" class="form-control" required>
                                     <option value="">Please Select Unit</option>
                                     @foreach(\App\Models\Unit::where('type_id', 7)->get() as $item)
-                                        <option value="{{$item->id}}">{{$item->name}}</option>
+                                        <option value="{{$item->id}}" {{$item->id == $sale->unit_id ? 'selected' : ''}}>{{$item->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -100,37 +103,35 @@
         <script>
 
             $(document).ready(function () {
-                let row_number = 1;
+                // let row_number = 1;
                 $('#product_id').on('change', function () {
                     var price = $(this).children('option:selected').data('price')
                     $('#rate').val(price)
                 })
                 $('#tax_id').on('change', function () {
                     var tax = $(this).children('option:selected').data('price')
-
-                    $("input").on("change", function () {
-                        var ret = parseInt(tax) + parseInt($("#rate").val()) - parseInt($("#discount").val()  || '0')
-                        $("#total").val(ret)
-                    })
+                })
+                $("input").on("change", function () {
+                    var ret = parseInt(tax) + parseInt($("#rate").val()) - parseInt($("#discount").val() * parseInt($("#qty").val())  || '0')
+                    $("#total").val(ret)
                 })
 
-
-                $("#add_row").click(function (e) {
-                    e.preventDefault();
-                    let new_row_number = row_number - 1;
-                    $('#product' + row_number).html($('#product' + new_row_number).html()).find('td:first-child');
-                    $('#products_table').append('<tr id="product' + (row_number + 1) + '"></tr>');
-                    row_number++;
-
-                });
-
-                $("#delete_row").click(function (e) {
-                    e.preventDefault();
-                    if (row_number > 1) {
-                        $("#product" + (row_number - 1)).html('');
-                        row_number--;
-                    }
-                });
+                // $("#add_row").click(function (e) {
+                //     e.preventDefault();
+                //     let new_row_number = row_number - 1;
+                //     $('#product' + row_number).html($('#product' + new_row_number).html()).find('td:first-child');
+                //     $('#products_table').append('<tr id="product' + (row_number + 1) + '"></tr>');
+                //     row_number++;
+                //
+                // });
+                //
+                // $("#delete_row").click(function (e) {
+                //     e.preventDefault();
+                //     if (row_number > 1) {
+                //         $("#product" + (row_number - 1)).html('');
+                //         row_number--;
+                //     }
+                // });
             });
 
         </script>

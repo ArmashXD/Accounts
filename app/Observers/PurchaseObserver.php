@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Observers;
-use App\Models\Purhcase;
+use App\Models\Purchase;
 use Illuminate\Support\Str;
 
 class PurchaseObserver
@@ -9,7 +9,7 @@ class PurchaseObserver
     //
     public function creating(Purchase $purchase)
     {
-//        $sale->code = "SL-" . str_pad($sale->id + 1, 8, "0", STR_PAD_LEFT);
+//
         $purchase->code ="PR-" . Str::random(7);
     }
 

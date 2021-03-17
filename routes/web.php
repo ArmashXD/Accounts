@@ -66,10 +66,10 @@ Route::group(['middleware' => ['auth']], function () {
           'gateOut'=>GateoutController::class,
       ]);
       Route::get('credit-customer',[CustomerController::class, 'credit'])->name('customers.credit');
-
-
+      Route::post('store-out-get',[GateoutController::class, 'storeOutSession'])->name('session.getOut');
+      Route::post('store-in-get',[GateinController::class, 'storeInSession'])->name('session.getIn');
   });
-//    Route::get('lock-index',[LockController::class,'lockscreen'])->name('lock.index');
-//    Route::post('lock-index',[LockController::class,'unlock'])->name('lock.index');
-Route::get('gatein-card',[GateinController::class,'card'])->name('gatein.card');
+    Route::get('login/locked', [LockController::class,'lockscreen'])->middleware('auth')->name('lock.index');
+    Route::post('login/locked', [LockController::class,'unlock'])->name('lock.index-post');
+
 });

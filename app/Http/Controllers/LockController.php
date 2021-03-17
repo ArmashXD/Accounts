@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use http\Message;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Auth;
 
 class LockController extends Controller
 {
@@ -15,9 +15,11 @@ class LockController extends Controller
 
     public function lockscreen()
     {
+        if(Auth::check()){
+            \Session::put('locked', true);
 
-        Session::put('locked', 'true');
-        return view('lock.index');
+            return view('lock.index');
+        }
     }
 
     public function unlock(Request $request)
@@ -25,11 +27,8 @@ class LockController extends Controller
         $password = $request->password;
 
         if(\Hash::check($password, \Auth::user()->password)){
-            dd('asd');
-            return response()->json(array('success' => false,
-                'true' => 'true',
-            ), 200);
-
+            return redirect('/');
         }
+        return redirect()->back();
     }
 }
