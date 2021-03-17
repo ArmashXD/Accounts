@@ -1,7 +1,7 @@
 @extends('layout.app')
 
 @section('content')
-    <div class="container">
+    <div class="row">
 
         <div class="col-md-12 mb-3">
             <div class="card text-left">
@@ -18,28 +18,25 @@
                             <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Customer Name</th>
                                 <th scope="col">Invoice Number</th>
                                 <th scope="col">Purchase ID</th>
-                                <th scope="col">Supplier Name</th>
+                                <th scope="col">Sale ID</th>
                                 <th scope="col">Total Amount</th>
+                                <th scope="col">Quantity</th>
                                 <th scope="col">Created At</th>
                                 <th scope="col">Actions</th>
                             </tr>
                             </thead>
-                            @php
-                                $count = 1;
-                            @endphp
                             <tbody>
                             @foreach($returns as $item)
                                 <tr>
                                     <td>{{$item->id}}</td>
-                                    <td>{{$item->customer_name}}</td>
-                                    <td>{{$item->invoice_number}}</td>
+                                    <td>{{$item->code}}</td>
                                     <td>{{$item->purchase_id}}</td>
-                                    <td>{{$item->supplier_name}}</td>
-                                    <td>{{$item->created_at}}</td>
+                                    <td>{{$item->sale_id}}</td>
                                     <td>{{$item->total}}</td>
+                                    <td>{{$item->quantity}}</td>
+                                    <td>{{$item->created_at}}</td>
                                     <td>
                                         @if(auth()->user()->hasRole('super-admin') ||auth()->user()->hasPermissionTo('return-edit'))
                                             <a class="text-success mr-2 btn btn-info" data-toggle="modal"

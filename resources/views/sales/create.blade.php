@@ -41,10 +41,9 @@
                                 <th>Quantity</th>
                                 <th>Rate</th>
                                 <th>Discount</th>
-                                <th>Total</th>
-                                <th>Total + Tax</th>
                                 <th>Tax</th>
                                 <th>Unit</th>
+                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -67,14 +66,7 @@
                                     <input class="form-control" id="discount" name="discount[]" type="number"
                                            placeholder="Enter discount %" required/>
                                 </td>
-                                <td>
-                                    <input class="form-control" id="sum" name="" type="number"
-                                           placeholder="Total " required  disabled/>
-                                </td>
-                                <td>
-                                    <input class="form-control" id="total" name="total[]" type="number"
-                                           placeholder="Total + Tax" required />
-                                </td>
+
 
                                 <td>
                                     <select name="tax_id[]"  id="tax_id" class="form-control">
@@ -94,7 +86,11 @@
                                         @endforeach
                                     </select>
                                 </td>
+                                <input class="form-control" id="discount" name="total[]" type="number"
+                                       placeholder="Enter discount %" required/>
                             </tr>
+
+
                             <tr id="product1"></tr>
                             </tbody>
                         </table>
@@ -128,52 +124,42 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script>
-
-        $(document).ready(function () {
-
             let row_number = 1;
-            $('#product_id').on('change', function () {
-                var price = $(this).children('option:selected').data('price')
-                $('#rate').val(price)
-                $('#qty, #rate').on('change', function(){
-                    var qty = parseFloat($('#qty').val()) || 0;
-                    var rate = parseFloat($('#rate').val()) || 0;
-                    $('#sum').val(qty * rate);
-                });
-            })
-            $('#tax_id').on('change', function () {
-                var tax = $(this).children('option:selected').data('price')
-                $("input").on("change", function () {
-                    var ret = parseInt(tax) + parseInt($("#sum").val()) - parseInt($("#discount").val()  || '0')
-                    $("#total").val(ret)
-                })
-            })
             $("#add_row").click(function (e) {
                 e.preventDefault();
                 let new_row_number = row_number - 1;
                 $('#product' + row_number).html($('#product' + new_row_number).html()).find('td:first-child');
                 $('#products_table').append('<tr id="product' + (row_number + 1) + '"></tr>');
                 row_number++;
-
             });
-
+            $('#product_id').on('change', function () {
+                var price = $(this).children('option:selected').data('price')
+                $('#rate').val(price)
+            })
             $("#delete_row").click(function (e) {
                 e.preventDefault();
                 if (row_number > 1) {
                     $("#product" + (row_number - 1)).html('');
                     row_number--;
                 }
-            });
         });
+            // $('#tax_id').on('change', function () {
+            //     var tax = $(this).children('option:selected').data('price')
+            //     $("input").on("change", function () {
+            //         var ret = parseInt(tax) + parseInt($("#sum").val()) - parseInt($("#discount").val()  || '0')
+            //         $("#total").val(ret)
+            //     })
+            // })
 
 
-        $(function(){
-            $('#value1, #value2').keyup(function(){
-                var value1 = parseFloat($('#value1').val()) || 0;
-                var value2 = parseFloat($('#value2').val()) || 0;
-                $('#sum').val(value1 * value2);
-            });
-        });
+
+            // // $(function(){
+            // //     $('#value1, #value2').keyup(function(){
+            // //         var value1 = parseFloat($('#value1').val()) || 0;
+            // //         var value2 = parseFloat($('#value2').val()) || 0;
+            // //         $('#sum').val(value1 * value2);
+            // //     });
+            // // });
     </script>
 
 @endsection

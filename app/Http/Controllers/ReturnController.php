@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\models\Purchase;
+
+use App\Models\Product;
+use App\Models\Purchase;
+use App\Models\Sale;
 use App\Models\Returns;
-use App\Models\Supplier;
 use Illuminate\Http\Request;
 
 class ReturnController extends Controller
@@ -16,7 +18,7 @@ class ReturnController extends Controller
      */
     public function index()
     {
-        return view('return.index',['returns'=>Returns::all()]);
+        return view('return.index', ['returns'=>Returns::all(), 'product' =>Product::all(),'sale'=>Sale::all()]);
     }
 
     /**
@@ -26,7 +28,7 @@ class ReturnController extends Controller
      */
     public function create()
     {
-        //
+        return view('return.create', ['returns'=>Returns::all(), 'product' =>Product::all(),'sale'=>Sale::all()]);
     }
 
     /**
@@ -37,7 +39,10 @@ class ReturnController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $return = new Returns();
+        $return->fill($request->all())->save();
+        alert()->success('Success', "Return $return->id Created");
+        return redirect()->back();
     }
 
     /**
@@ -59,7 +64,7 @@ class ReturnController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('purchase.edit', ['returns'=>Returns::find($id),'purchase'=>Purchase::all(),'sale' => Sale::all()]);
     }
 
     /**
@@ -71,7 +76,10 @@ class ReturnController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $return = Returns::find($id);
+        $return->fill($request->all())->update();
+        alert()->success('Success', "Return $return->id Updated");
+        return redirect()->back();
     }
 
     /**
@@ -82,6 +90,9 @@ class ReturnController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $return = Returns::find($id);
+        $return->delete();
+        alert()->success('Success', "Return $return->id Deleted");
+        return redirect()->back();
     }
 }

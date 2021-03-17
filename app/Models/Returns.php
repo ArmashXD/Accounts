@@ -6,15 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property integer $id
- * @property integer $supplier_id
- * @property integer $purchase_id
- * @property string $customer_name
- * @property integer $invoice_number
+ * @property integer $sale_id
+ * @property integer $product_id
+ * @property integer $sale_number
  * @property float $total
+ * @property float $quantity
  * @property string $created_at
  * @property string $updated_at
- * @property Purchase $purchase
- * @property Supplier $supplier
+ * @property Product $product
+ * @property Sale $sale
  */
 class Returns extends Model
 {
@@ -28,27 +28,21 @@ class Returns extends Model
     /**
      * @var array
      */
-    protected $fillable = ['supplier_id', 'purchase_id', 'customer_id', 'invoice_number', 'total', 'created_at', 'updated_at'];
+    protected $fillable = ['sale_id', 'product_id', 'sale_number', 'total', 'quantity', 'created_at', 'updated_at'];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function customer()
+    public function product()
     {
-        return $this->belongsTo('App\Models\Customer');
-    }
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function purchase()
-    {
-        return $this->belongsTo('App\Models\Purchase');
+        return $this->belongsTo('App\Product');
     }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function supplier()
+    public function sale()
     {
-        return $this->belongsTo('App\Supplier');
+        return $this->belongsTo('App\Sale');
     }
 }

@@ -8,6 +8,8 @@ use App\Models\Tax;
 use App\Models\Unit;
 use App\Models\Sale;
 use Illuminate\Http\Request;
+use Validator;
+use App\DynamicField;
 
 class SaleController extends Controller
 {
@@ -41,35 +43,70 @@ class SaleController extends Controller
     public function store(Request $request)
     {
         $sale = new Sale();
+        if($request->ajax())
+        {
+            $sale = array(
+                'unit_id.*'  => 'required',
+                'product_id.*'  => 'required',
+                 'quantity.*'  => 'required',
+                 'rate.*'  => 'required',
+                 'tax_id.*'  => 'required',
+                 'discount.*'  => 'required',
+            );
+           $unit_id = $request->unit_id;
+            $product_id = $request->product_id;
+            $quantity = $request->quantity;
+            $rate = $request->rate;
+            $tax_id = $request->tax_id;
+            $discount = $request->discount;
+            $total =$request->rate * $request->quantity;
 
-        foreach ($request->input('unit_id', []) as $unit) {
-            $sale->date = $request->get('date');
-            $sale->customer_id = $request->get('customer_id');
-            $sale->details = $request->get('details');
-            $sale->unit_id = $unit;
-        }
-        foreach ($request->input('product_id', []) as $product) {
-            $sale->product_id = $product;
-        }
-        foreach ($request->input('quantity', []) as $quantity) {
-            $sale->quantity = $quantity;
-
-        }
-        foreach ($request->input('rate', []) as $rate) {
-            $sale->rate = $rate;
-
-        }
-        foreach ($request->input('tax_id', []) as $tax) {
-            $sale->tax_id = $tax;
-        }
-        foreach ($request->input('discount', []) as $discount) {
-            $sale->discount = $discount;
-        }
-        foreach ($request->input('total', []) as $total) {
-            $sale->total = $total;
+            for($count = 0; $count < count($unit_id); $count++)
+            {
+                $sale = array(
+                    'unit_id' => $unit_id[$count],
+                    'product_id'  => $product_id[$count],
+                    'quantity' => $quantity[$count],
+                    'rate'  => $rate[$count],
+                     'tax_id' => $tax_id[$count],
+                    'discount'  => $discount[$count],
+                     'total' => $total[$count]
+                );
+                $insert_data[] = $sale;
+            }
+            DynamicField::insert($insert_data);
         }
         $sale->save();
         return redirect()->back();
+//
+//        foreach ($request->input('unit_id', []) as $unit) {
+//            $sale->date = $request->get('date');
+//            $sale->customer_id = $request->get('customer_id');
+//            $sale->details = $request->get('details');
+//            $sale->unit_id = $unit;
+//        }
+//        foreach ($request->input('product_id', []) as $product) {
+//            $sale->product_id = $product;
+//        }
+//        foreach ($request->input('quantity', []) as $quantity) {
+//            $sale->quantity = $quantity;
+//
+//        }
+//        foreach ($request->input('rate', []) as $rate) {
+//            $sale->rate = $rate;
+//
+//        }
+//        foreach ($request->input('tax_id', []) as $tax) {
+//            $sale->tax_id = $tax;
+//        }
+//        foreach ($request->input('discount', []) as $discount) {
+//            $sale->discount = $discount;
+//        }
+////        foreach ( 'total'as $total) {
+//
+//            $sale->total =$request->$rate * $request->$quantity;
+////        }
+////
     }
 
     /**
