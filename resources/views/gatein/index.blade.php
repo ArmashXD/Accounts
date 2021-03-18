@@ -28,19 +28,19 @@
                             </thead>
                             <tbody>
 
-                            @foreach($gatein as $item)
+                            @foreach($gatein as $gate)
                                 <tr>
-                                    <td>{{$item->id}}</td>
-                                    <td>{{$item->invoice_number}}</td>
-                                    <td>{{$item->purchase_id}}</td>
-                                    <td>{{$item->name}}</td>
-                                    <td>{{$item->purchase_date}}</td>
-                                    <td>{{$item->details}}</td>
-                                    <td>{{$item->supplier_id}}</td>
-                                    <td>{{$item->item_information}}</td>
-                                    <td>{{$item->quantity}}</td>
-                                    <td>{{$item->rate}}</td>
-                                    <td>{{$item->total}}</td>
+                                    <td>{{$gate->id}}</td>
+                                    <td>{{$gate->invoice_number}}</td>
+                                    <td>{{$gate->purchase_id}}</td>
+                                    <td>{{$gate->name}}</td>
+                                    <td>{{$gate->purchase_date}}</td>
+                                    <td>{{$gate->details}}</td>
+                                    <td>{{$gate->supplier_id}}</td>
+                                    <td>{{$gate->item_information}}</td>
+                                    <td>{{$gate->quantity}}</td>
+                                    <td>{{$gate->rate}}</td>
+                                    <td>{{$gate->total}}</td>
                                     <td>
                                         </form>
                                     </td>
@@ -111,11 +111,7 @@
                                         <td><input type="text" value="{{$item->total}}" name="total"
                                                    style="border: hidden"></td>
                                         <td>
-                                            @foreach($gatein as $get)
-
-                                                <button class="btn btn-primary" type="submit" {{$item->id == $get->id ? 'selected' : ''}}>Add To Get In</button>
-                                            @endforeach
-
+                                            <button class="btn btn-primary" type="submit" {{$item->id == $id ? 'disabled' : ''}} >Add To Get In</button>
                                         </td>
                                     </tr>
 

@@ -92,6 +92,7 @@
                             <tbody>
                             @foreach($sale as $item)
                                 <form action="{{route('session.getOut')}}" method="POST">
+
                                     @csrf
                                     <tr>
                                         <td><input type="text" value="{{$item->id}}" readonly style="border: hidden"
@@ -122,19 +123,19 @@
                                         <td><input type="text" value="{{$item->total}}" name="total"
                                                    style="border: hidden"></td>
                                         <td>
-                                            @foreach($gateout as $get)
-                                            <button class="btn btn-primary" type="submit" {{$item->id == $get->sale_id ? 'disabled' : ''}} >Add To Get In</button>
+                                            @foreach($gateout as $gate )
+                                            <button class="btn btn-primary" type="submit" {{$item->id == $gate->id ? 'disabled' : ''}}>Add To Get In</button>
                                             @endforeach
-
                                         </td>
                                     </tr>
+                            </form>
+
                             @endforeach
                             </tbody>
 
                             <div class="float-right">
-                                <button class="btn btn-primary" type="submit">Export To PDF</button>
+                                <button class="btn btn-primary" type="submit" >Export To PDF</button>
                             </div>
-                            </form>
 
                             </tbody>
                             <tfoot>
