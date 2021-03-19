@@ -29,7 +29,8 @@ class GateoutController extends Controller
      */
     public function storeOutSession(Request $request)
     {
-        $data = [
+        $reset = [
+//            'id' => $request->get('id'),
             'sale_id' => $request->get('sale_id'),
             'code' => $request->get('code'),
             'sale_date' => $request->get('sale_date'),
@@ -43,9 +44,14 @@ class GateoutController extends Controller
             'rate' => $request->get('rate'),
             'total' => $request->get('total')
         ];
-
-        Session::push('data', $data);
+//        dd($reset);
+        Session::push('reset', $reset);
         return redirect()->route('gateOut.create');
+    }
+    public function downloadPDF(){
+        set_time_limit(600);
+        $pdf = PDF::loadview('gateOut.pdf');
+        return $pdf->download('GateOut.pdf');
     }
 
     public function create()
@@ -61,6 +67,7 @@ class GateoutController extends Controller
      */
     public function store(Request $request)
     {
+//        $id = $request->get('id');
         $sale_id = $request->get('sale_id');
         $code = $request->get('code');
         $sale_date = $request->get('sale_date');
@@ -75,6 +82,7 @@ class GateoutController extends Controller
         $total = $request->get('total');
         for ($i = 0; $i < collect($request->get('code'))->count(); $i++) {
             GateOut::insert([
+//                'id' => $id[$i],
                 'sale_id' => $sale_id[$i],
                 'details' => $details[$i],
                 'code' => $code[$i],
@@ -90,7 +98,7 @@ class GateoutController extends Controller
                 'created_at' => Carbon::now()
             ]);
         }
-        Session::remove('data');
+        Session::remove('reset');
         return redirect()->back();
     }
 

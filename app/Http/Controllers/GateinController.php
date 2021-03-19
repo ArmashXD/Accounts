@@ -8,7 +8,8 @@ use Carbon\Carbon;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
-
+use PDF;
+use DB;
 
 class GateinController extends Controller
 {
@@ -32,6 +33,7 @@ class GateinController extends Controller
     public function storeInSession(Request $request)
     {
         $data = [
+            'id' => $request->get('id'),
             'purchase_id' => $request->get('purchase_id'),
             'invoice_number' => $request->get('invoice_number'),
             'purchase_date' => $request->get('purchase_date'),
@@ -43,11 +45,15 @@ class GateinController extends Controller
             'rate' => $request->get('rate'),
             'total' => $request->get('total')
         ];
-
+//dd($data);
         Session::push('data', $data);
         return redirect()->route('gateIn.create');
     }
-
+    public function downloadPDF(){
+        set_time_limit(600);
+            $pdf = PDF::loadview('gatein.pdf');
+        return $pdf->download('GateIn.pdf');
+    }
 
     public function create()
     {
@@ -62,6 +68,7 @@ class GateinController extends Controller
      */
     public function store(Request $request)
     {
+        $id = $request->get('id');
         $purchase_id = $request->get('purchase_id');
         $invoice_number = $request->get('invoice_number');
         $purchase_date = $request->get('purchase_date');
@@ -74,6 +81,7 @@ class GateinController extends Controller
         $total = $request->get('total');
         for ($i = 0; $i < collect($request->get('invoice_number'))->count(); $i++) {
             GateIn::insert([
+                'id' => $id[$i],
                 'purchase_id' => $purchase_id[$i],
                 'details' => $details[$i],
                 'invoice_number' => $invoice_number[$i],
@@ -87,10 +95,43 @@ class GateinController extends Controller
                 'created_at' => Carbon::now()
             ]);
         }
+
         Session::remove('data');
         return redirect()->back();
     }
+
+
+
+
+
 //
+//    public function createPDF() {
+//        // retreive all records from db
+//        $item = GateIn::all();
+//        // share data to view
+//        view()->share('gatein',$item);
+//        $pdf = PDF::loadView('pdf_view', $item);
+//        // download PDF file with download method
+//        return $pdf->download('pdf_file.pdf');
+//    }
+//    function pdf()
+//    {
+//        $pdf = \App::make('dompdf.wrapper');
+//        $pdf->loadHTML($this->convert_customer_data_to_html());
+//        return $pdf->stream();
+//    }
+//
+//    function convert_customer_data_to_html()
+//    {
+//        $gatein = $this->get_customer_data();
+//        $output = '<h3 align="center">Customer Data</h3><table width="100%" style="border-collapse: collapse; border: 0px;"> <tr><th style="border: 1px solid; padding:12px;" width="20%">Name</th><th style="border: 1px solid; padding:12px;" width="30%">Address</th> <th style="border: 1px solid; padding:12px;" width="15%">City</th><th style="border: 1px solid; padding:12px;" width="15%">Postal Code</th> <th style="border: 1px solid; padding:12px;" width="20%">Country</th></tr>';
+//        foreach($gatein as $item)
+//        {
+//            $output .= ' <tr><td style="border: 1px solid; padding:12px;">'.$item->CustomerName.'</td> <td style="border: 1px solid; padding:12px;">'.$item->Address.'</td> <td style="border: 1px solid; padding:12px;">'.$item->City.'</td> <td style="border: 1px solid; padding:12px;">'.$item->PostalCode.'</td> <td style="border: 1px solid; padding:12px;">'.$item->Country.'</td> </tr>';
+//        }
+//        $item .= '</table>';
+//        return $item;
+//    }
 
     /**
      * Display the specified resource.

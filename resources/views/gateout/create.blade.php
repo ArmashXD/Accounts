@@ -7,12 +7,14 @@
             <div class="card text-left">
                 <div class="card-body">
                     <h4 class="card-title mb-3">All GateOut </h4>
+                    <a class="btn btn-primary float-right mb-2" href="{{ url('download/pdf') }}">Export to PDF</a>
                     <div class="table-responsive">
                         <form method="POST" action="{{route('gateOut.store')}}">
                             @csrf
                             <table class="table">
                                 <thead>
                                 <tr>
+{{--                                    <th>#</th>--}}
                                     <th scope="col">Sale ID</th>
                                     <th scope="col">Code</th>
                                     <th scope="col">Sale Date </th>
@@ -28,14 +30,23 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+
                                 <form action="{{route('gateOut.store')}}">
-                                    @if(Session::get('data') == null)
+                                    @if(Session::get('reset') == null)
                                         <tr>
                                             <td>No Gate ins</td>
                                         </tr>
                                     @else
-                                        @forelse(Session::get('data') as $item)
+{{--                                        {{Session::get('data')}}--}}
+{{--                                        @php--}}
+{{--                                            $count = 1;--}}
+{{--                                        @endphp--}}
+                                        @forelse(Session::get('reset') as $item)
                                             <tr>
+{{--                                                <td>--}}
+{{--                                                    <input type="text" value="{{$count++}}" style="border: hidden"--}}
+{{--                                                           name="id[]">--}}
+{{--                                                </td>--}}
                                                 <td>
                                                     <input type="text" value="{{$item['sale_id']}}" style="border: hidden"
                                                            name="sale_id[]">
@@ -73,7 +84,7 @@
                                             <p>No Gate In</p>
                                         @endforelse
 
-                                        <button class="btn btn-primary float-right mb-2" type="submit">Add To Get In</button>
+                                        <button class="btn btn-primary float-right mb-2" type="submit">Add To Get Out</button>
                                 </form>
                                 @endif
 

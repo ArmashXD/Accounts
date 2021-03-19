@@ -28,6 +28,8 @@ class LockController extends Controller
 
         if(\Hash::check($password, \Auth::user()->password)){
             return redirect('/');
+        }else{
+            alert()->success('Success', "Purchase  Updated");
         }
         return redirect()->back();
     }

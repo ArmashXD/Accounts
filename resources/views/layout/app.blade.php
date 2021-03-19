@@ -3,6 +3,7 @@
 
 
 <meta http-equiv="content-type" content="text/html;charset=utf-8"/><!-- /Added by HTTrack -->
+
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
@@ -92,12 +93,13 @@
             <a href="{{route('lock.index')}}" class="btn btn-primary"><i class="fas fa-lock">
 
             </i></a>
-{{--            <script>--}}
-{{--                window.history.forward();--}}
-{{--                function noBack() {--}}
-{{--                    window.history.forward();--}}
-{{--                }--}}
-{{--            </script>--}}
+
+            <script>
+                window.history.forward();
+                function noBack() {
+                    window.history.forward();
+                }
+            </script>
             <!-- Full screen toggle -->
             <i class="i-Full-Screen header-icon d-none d-sm-inline-block" data-fullscreen></i>
         {{--            <!-- Grid menu Dropdown -->--}}
@@ -261,62 +263,62 @@
         <div class="sidebar-left open rtl-ps-none" data-perfect-scrollbar="" data-suppress-scroll-x="true">
             <ul class="navigation-left">
                 <li class="nav-item {{Request::is('dashboard') ? 'active' : ''}}"><a
-                        class="nav-item-hold" href="{{route('index')}}"><i class="nav-icon i-Library"></i>
+                        class="nav-item-hold" href="{{route('index')}}"><i class="nav-icon fa fa-home"></i>
                         <span class="nav-text">Dashboard</span></a>
                     <div class="triangle"></div>
                 </li>
                 <li class="nav-item {{Request::is('suppliers') ? 'active' : ''}}" data-item="uikits3"><a
-                        class="nav-item-hold" href="#"><i class="nav-icon i-Library"></i><span class="nav-text">Purchases</span></a>
+                        class="nav-item-hold" href="#"><i class="fas fa-barcode-read fa-2x" aria-hidden="true"></i><span class="nav-text">Purchases</span></a>
                     <div class="triangle"></div>
                 </li>
                 <li class="nav-item {{Request::is('roles') ? 'active' : ''}}" data-item="uikits"><a
-                        class="nav-item-hold" href="#"><i class="nav-icon i-Library"></i><span
+                        class="nav-item-hold" href="#"><i class="fas fa-user fa-2x" aria-hidden="true"></i><span
                             class="nav-text">Users {{auth()->user()->hasPermissionTo('view') ? 'And Roles' : ''}}</span></a>
                     <div class="triangle"></div>
                 </li>
                 <li class="nav-item {{Request::is('account') ? 'active' : ''}}" data-item="uikits1"><a
-                        class="nav-item-hold" href="#"><i class="nav-icon i-Library"></i><span
+                        class="nav-item-hold" href="#"><i class="fas fa-credit-card fa-2x" aria-hidden="true"></i><span
                             class="nav-text">Accounts</span></a>
                     <div class="triangle"></div>
                 </li>
                 <li class="nav-item {{Request::is('main-category') ? 'active' : ''}}"><a
-                        class="nav-item-hold" href="{{route('main-category.index')}}"><i class="nav-icon i-Library"></i><span
+                        class="nav-item-hold" href="{{route('main-category.index')}}"><i class="fa fa-list fa-2x" aria-hidden="true"></i><span
                             class="nav-text">Main Categories</span></a>
                     <div class="triangle"></div>
                 </li>
 
                 <li class="nav-item {{Request::is('taxes') ? 'active' : ''}}" ><a
-                        class="nav-item-hold" href="{{route('taxes.index')}}"><i class="nav-icon i-Library"></i><span
+                        class="nav-item-hold" href="{{route('taxes.index')}}"><i class="nav-icon fas fa-coins"></i><span
                             class="nav-text">Taxes</span></a>
                     <div class="triangle"></div>
                 </li>
                 <li class="nav-item {{Request::is('products') ? 'active' : ''}}" data-item="uikits5"><a
-                        class="nav-item-hold" href="#"><i class="nav-icon i-Library"></i><span
+                        class="nav-item-hold" href="#"><i class="nav-icon fas fa-box-check"></i><span
                             class="nav-text">Product</span></a>
                     <div class="triangle"></div>
                 </li>
                 <li class="nav-item {{Request::is('customers') ? 'active' : ''}}" data-item="uikits6"><a
-                        class="nav-item-hold" href="#"><i class="nav-icon i-Library"></i><span
+                        class="nav-item-hold" href="#"><i class="fas fa-child fa-2x"></i><span
                             class="nav-text">Customers</span></a>
                     <div class="triangle"></div>
                 </li>
                 <li class="nav-item {{Request::is('bank') ? 'active' : ''}}" data-item="uikits7"><a
-                        class="nav-item-hold" href="{{route('bank.index')}}"><i class="nav-icon i-Library"></i><span
+                        class="nav-item-hold" href="{{route('bank.index')}}"><i class="nav-icon fas fa-archway"></i><span
                             class="nav-text">Bank</span></a>
                     <div class="triangle"></div>
                 </li>
                 <li class="nav-item {{Request::is('return') ? 'active' : ''}}" ><a
-                        class="nav-item-hold" href="{{route('return.index')}}"><i class="nav-icon i-Library"></i><span
+                        class="nav-item-hold" href="{{route('return.index')}}"><i class="nav-icon fas fa-money-bill"></i><span
                             class="nav-text">Return</span></a>
                     <div class="triangle"></div>
                 </li>
                 <li class="nav-item {{Request::is('gatecheck') ? 'active' : ''}}" data-item="uikits9"><a
-                        class="nav-item-hold" href="#"><i class="nav-icon i-Library"></i><span
+                        class="nav-item-hold" href="#"><i class="nav-icon fas fa-torii-gate"></i><span
                             class="nav-text">Gate Check</span></a>
                     <div class="triangle"></div>
                 </li>
                 <li class="nav-item {{Request::is('sales') ? 'active' : ''}}" ><a
-                        class="nav-item-hold" href="{{route('sale.index')}}"><i class="nav-icon i-Library"></i><span
+                        class="nav-item-hold" href="{{route('sale.index')}}"><i class="nav-icon fas fa-shipping-fast"></i><span
                             class="nav-text">Sales</span></a>
                     <div class="triangle"></div>
                 </li>

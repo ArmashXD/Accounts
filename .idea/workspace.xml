@@ -20,186 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c1e45ab-02d6-4df6-9454-2ac2bda6cce4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/gatein/pdf.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/gateout/pdf.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GateinController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GateinController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GateoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GateoutController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PurchaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PurchaseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/css/img/tour/cross.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/css/plugins/apexcharts.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/css/plugins/cropper.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/css/plugins/datatables.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/css/plugins/dropzone.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/css/plugins/hopscotch.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/css/plugins/ladda-themeless.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/css/plugins/nuslider.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/css/plugins/perfect-scrollbar.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/css/plugins/quill.bubble.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/css/plugins/quill.snow.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/css/plugins/smart.wizard/smart_wizard.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/css/plugins/smart.wizard/smart_wizard_theme_arrows.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/css/plugins/smart.wizard/smart_wizard_theme_circles.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/css/plugins/smart.wizard/smart_wizard_theme_dots.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/css/plugins/sweetalert2.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/css/plugins/toastr.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/css/themes/lite-purple.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/dist-assets/images/page-bg-bottom.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/fonts/iconsmind/iconsmind.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/fonts/iconsmind/iconsmind4906.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/fonts/iconsmind/iconsmind4906.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/fonts/iconsmind/iconsmind4906.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/fonts/iconsmind/iconsmind4906.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/faces/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/faces/10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/faces/12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/faces/13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/faces/15.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/faces/16.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/faces/17.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/faces/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/faces/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/faces/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/faces/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/faces/9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/logo.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/master-card.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/paypal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/photo-long-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/photo-long-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/photo-wide-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/photo-wide-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/photo-wide-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/photo-wide-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/products/headphone-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/products/headphone-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/products/headphone-3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/products/headphone-4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/products/iphone-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/products/iphone-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/products/speaker-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/products/watch-1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/products/weather-2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/products/weather.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/images/visa.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/plugins/apexcharts.dataseries.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/plugins/apexcharts.dataseries.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/plugins/apexcharts.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/plugins/bootstrap.bundle.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/plugins/cropper.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/plugins/datatables.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/plugins/dropzone.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/plugins/echarts.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/plugins/hopscotch.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/plugins/jquery-3.3.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/plugins/jquery.smartWizard.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/plugins/ladda.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/plugins/nuslider.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/plugins/perfect-scrollbar.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/plugins/quill.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/plugins/spin.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/plugins/sweetalert2.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/plugins/tagging.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/plugins/toastr.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/apexAreaChart.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/apexBarChart.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/apexBubbleCHart.script.min.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/apexCandleStickChart.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/apexChart.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/apexColumnChart.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/apexMixChart.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/apexPieDonutChart.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/apexRadarChart.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/apexRadialbarChart.script.min.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/apexScatterChart.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/apexSparklineChart.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/apexcharts.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/card.metrics.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/chartjs.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/cropper.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/dashboard.v1.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/dashboard.v2.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/dashboard.v3.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/dashboard.v4.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/datatables.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/dropzone.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/echart.options.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/echarts.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/form.validation.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/hopscotch.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/ladda.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/nuslider.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/quill.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/sidebar.large.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/sidebar.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/smart.wizard.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/sweetalert.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/tagging.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/toastr.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/tooltip.script.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/dist-assets/js/scripts/widgets-statistics.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/accordion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/alerts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/badges.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/blank.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/buttons.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/card.metrics.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/cards.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/carousel.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/charts.apexAreaCharts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/charts.apexBarCharts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/charts.apexBubbleCharts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/charts.apexCandleStickCharts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/charts.apexColumnCharts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/charts.apexLineCharts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/charts.apexMixCharts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/charts.apexPieDonutCharts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/charts.apexRadarCharts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/charts.apexRadialBarCharts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/charts.apexScatterCharts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/charts.apexSparklineCharts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/charts.chartsjs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/charts.echarts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/chat.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/dashboard1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/dashboard2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/dashboard3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/dashboard4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/datatables.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/editor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/form.basic.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/form.input.group.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/form.layouts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/form.validation.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/href.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/image.cropper.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/inbox.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/invoice.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/ladda.button.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/lists.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/loaders.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/modals.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/nouislider.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/pagination.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/popover.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/progressbar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/signin.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/smart.wizard.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/sweet.alerts.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/tables.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/tabs.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/tag.input.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/toastr.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/tooltip.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/tour.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/upload.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/user.profile.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/weather-card.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/widget-app.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/widget-card.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/widget-list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gull/html/layout1/widget-statistics.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LockController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LockController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/gatein/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/gatein/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/gatein/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/gatein/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/gateout/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/gateout/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/gateout/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/gateout/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/lock/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/lock/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -361,19 +195,19 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Boossto\Desktop\Accounts\resources\views\unit" />
-      <recent name="C:\Users\Boossto\Desktop\Accounts" />
-      <recent name="C:\Users\Boossto\Desktop\Accounts\resources\views\liabilities" />
-      <recent name="C:\Users\Boossto\Desktop\Accounts\resources\views\incomes" />
-      <recent name="C:\Users\Boossto\Desktop\Accounts\resources\views\expenses" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Boossto\Desktop\nabeel\Accounts\app\Models" />
       <recent name="C:\Users\Boossto\Desktop\New folder\nabeel\Accounts\app\Models" />
       <recent name="C:\Users\Boossto\Desktop\New folder\Accounts\app\Models" />
       <recent name="C:\Users\Boossto\Desktop\New folder (2)\Accounts\app\Models" />
       <recent name="C:\Users\Boossto\Desktop\New folder\New folder\Accounts\app\Models" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Boossto\Desktop\Accounts\resources\views\unit" />
+      <recent name="C:\Users\Boossto\Desktop\Accounts" />
+      <recent name="C:\Users\Boossto\Desktop\Accounts\resources\views\liabilities" />
+      <recent name="C:\Users\Boossto\Desktop\Accounts\resources\views\incomes" />
+      <recent name="C:\Users\Boossto\Desktop\Accounts\resources\views\expenses" />
     </key>
   </component>
   <component name="RunManager">
@@ -426,6 +260,9 @@
       <workItem from="1615982392366" duration="7744000" />
       <workItem from="1615991395961" duration="8850000" />
       <workItem from="1616067104029" duration="2481000" />
+      <workItem from="1616071305021" duration="1602000" />
+      <workItem from="1616074409091" duration="11313000" />
+      <workItem from="1616085931102" duration="601000" />
     </task>
     <servers />
   </component>
@@ -469,6 +306,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="709" y="321" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1616072231109">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="709" y="321" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1616072231109" />
     <state x="690" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1615992582513">
       <screen x="0" y="0" width="1400" height="1010" />
     </state>
@@ -478,11 +319,11 @@
       <screen x="0" y="0" width="1400" height="1010" />
     </state>
     <state x="100" y="100" width="1200" height="810" key="DiffContextDialog/0.0.1400.1010@0.0.1400.1010" timestamp="1614778932913" />
-    <state x="658" y="268" key="FileChooserDialogImpl" timestamp="1615976451201">
+    <state x="658" y="268" key="FileChooserDialogImpl" timestamp="1616085983838">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="480" y="260" key="FileChooserDialogImpl/0.0.1400.1010@0.0.1400.1010" timestamp="1615278958490" />
-    <state x="658" y="268" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1615976451201" />
+    <state x="658" y="268" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1616085983838" />
     <state x="525" y="235" key="NewPhpClassDialog" timestamp="1614692500660">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

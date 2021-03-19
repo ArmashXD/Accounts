@@ -61,14 +61,15 @@
             <div class="card text-left">
                 <div class="card-body">
                     <h4 class="card-title mb-3">All
-                        GateIn @if(auth()->user()->hasRole('super-admin') || auth()->user()->hasPermissionTo('gatein-create'))
-                            <a href="{{route('gateIn.create')}}" class="btn btn-primary float-right">Add GateIn</a>
+                        Purchases @if(auth()->user()->hasRole('super-admin') || auth()->user()->hasPermissionTo('gatein-create'))
+                            <a href="{{route('gateIn.create')}}" class="btn btn-primary float-right">See Gate In Before PDF</a>
                         @endif
                     </h4>
                     <div class="table-responsive">
                         <table class="table">
                             <thead>
                             <tr>
+                                <th>#</th>
                                 <th scope="col">Purchase ID</th>
                                 <th scope="col">Invoice No.</th>
                                 <th scope="col">Purchase Name</th>
@@ -82,11 +83,17 @@
                             </tr>
                             </thead>
                             <tbody>
-
+                            @php
+                                $count = 1;
+                            @endphp
                             @foreach($purchase as $item)
                                 <form action="{{route('session.getIn')}}" method="POST">
+
                                     @csrf
                                     <tr>
+                                        <td><input type="number" value="{{$count++}}" style="border: hidden"
+                                                   name="id[]">
+                                        </td>
                                         <td><input type="text" value="{{$item->id}}" readonly style="border: hidden"
                                                    name="purchase_id">
                                         </td>
@@ -111,7 +118,7 @@
                                         <td><input type="text" value="{{$item->total}}" name="total"
                                                    style="border: hidden"></td>
                                         <td>
-                                            <button class="btn btn-primary" type="submit" {{$item->id == $id ? 'disabled' : ''}} >Add To Get In</button>
+                                            <button class="btn btn-primary" type="submit"  >Add To Get In</button>
                                         </td>
                                     </tr>
 

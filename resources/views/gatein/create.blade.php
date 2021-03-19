@@ -7,12 +7,14 @@
             <div class="card text-left">
                 <div class="card-body">
                     <h4 class="card-title mb-3">All GateIn </h4>
+                    <a class="btn btn-primary float-right mb-2" href="{{ url('download/pdf') }}">Export to PDF</a>
                     <div class="table-responsive">
                         <form method="POST" action="{{route('gateIn.store')}}">
                             @csrf
                             <table class="table">
                                 <thead>
                                 <tr>
+                                    <th>#</th>
                                     <th scope="col">Purchase Id</th>
                                     <th scope="col">Invoice No.</th>
                                     <th scope="col">Purchase Name</th>
@@ -32,8 +34,13 @@
                                         <td>No Gate ins</td>
                                     </tr>
                                     @else
+
                                         @forelse(Session::get('data') as $item)
                                             <tr>
+                                                <td>
+                                                    <input type="text" value="{{$item['id']}}" style="border: hidden"
+                                                           name="id[]">
+                                                </td>
                                                 <td>
                                                     <input type="text" value="{{$item['purchase_id']}}" style="border: hidden"
                                                            name="purchase_id[]">
@@ -64,8 +71,7 @@
                                         @empty
                                             <p>No Gate In</p>
                                         @endforelse
-
-                                        <button class="btn btn-primary float-right mb-2" type="submit">Add To Get In</button>
+                                        <button class="btn btn-primary float-right mb-2" type="submit">Add To Gate IN</button>
                                 </form>
                                     @endif
 

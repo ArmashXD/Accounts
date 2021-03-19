@@ -123,9 +123,9 @@
                                         <td><input type="text" value="{{$item->total}}" name="total"
                                                    style="border: hidden"></td>
                                         <td>
-                                            @foreach($gateout as $gate )
-                                            <button class="btn btn-primary" type="submit" {{$item->id == $gate->id ? 'disabled' : ''}}>Add To Get In</button>
-                                            @endforeach
+
+                                            <button class="btn btn-primary" type="submit" >Add To Get In</button>
+
                                         </td>
                                     </tr>
                             </form>

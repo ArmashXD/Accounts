@@ -71,5 +71,6 @@ Route::group(['middleware' => ['auth']], function () {
   });
     Route::get('login/locked', [LockController::class,'lockscreen'])->middleware('auth')->name('lock.index');
     Route::post('login/locked', [LockController::class,'unlock'])->name('lock.index-post');
-
+    Route::get('/download/pdf',[GateinController::class, 'downloadPDF']);
+    Route::get('/download/pdf',[GateoutController::class, 'downloadPDF']);
 });
