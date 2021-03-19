@@ -48,12 +48,12 @@ class GateoutController extends Controller
         Session::push('reset', $reset);
         return redirect()->route('gateOut.create');
     }
+
     public function downloadPDF(){
         set_time_limit(600);
         $pdf = PDF::loadview('gateOut.pdf');
         return $pdf->download('GateOut.pdf');
     }
-
     public function create()
     {
         return view('gateout.create');
@@ -67,6 +67,7 @@ class GateoutController extends Controller
      */
     public function store(Request $request)
     {
+
 //        $id = $request->get('id');
         $sale_id = $request->get('sale_id');
         $code = $request->get('code');
@@ -98,7 +99,7 @@ class GateoutController extends Controller
                 'created_at' => Carbon::now()
             ]);
         }
-        Session::remove('reset');
+        session()->forget('reset');
         return redirect()->back();
     }
 

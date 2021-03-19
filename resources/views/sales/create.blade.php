@@ -16,24 +16,47 @@
                     <div class="row">
                         <div class="col-md-6 form-group mb-3">
                             <label for="firstName1">Customer</label>
-                            <select name="customer_id" id="customer_id" class="form-control">
-                                <option value="">Please Select Cusomter</option>
+                            <select name="customer_id" id="customer_id" required class="form-control">
+                                <option value="">Please Select Customer</option>
                                 @foreach($customers as $item)
-                                    <option value="{{$item->id}}"
-                                            data-price="{{ $item->sale_price }}">{{$item->name}}</option>
+                                    <option value="{{$item->id}}">{{$item->name}}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="col-md-6 form-group mb-3">
                             <label for="firstName1">Date</label>
                             <input class="form-control" id="name" name="date" type="date"
-                                   placeholder="Enter date" required/>
+                                   placeholder="Enter date" {{old('date')}} required/>
                         </div>
                         <div class="col-md-6 form-group mb-3">
                             <label for="firstName1">Enter Details</label>
                             <input class="form-control" id="details" name="details" type="text"
                                    placeholder="Enter invoice details" required/>
                         </div>
+                        <div class="col-md-6 form-group mb-3">
+                            <label for="firstName1">Type</label>
+                            <select name="type" class="form-control" id="type"
+                                    onchange="document.getElementById('form-type').submit();">
+                                <option value="">Please Select Type</option>
+                                <option value="Asset">Asset</option>
+                                <option value="Liabilities">Liabilities</option>
+                                <option value="Equity">Equity</option>
+                                <option value="Income">Income</option>
+                                <option value="Expense">Expense</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 form-group mb-3">
+                            <label for="firstName1">Category Of Type</label>
+                            <select name="category_id" class="form-control" id="">
+                                <option value="">Please Select Type</option>
+                                @forelse(\App\Models\Category::all() ?? [] as $category)
+                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                                @empty
+                                    <option value=""></option>
+                                @endforelse
+                            </select>
+                        </div>
+
                         <table class="table" id="products_table">
                             <thead>
                             <tr>
@@ -65,8 +88,6 @@
                                     <input class="form-control" id="discount" name="discount[]" type="number"
                                            placeholder="Enter discount %" required/>
                                 </td>
-
-
                                 <td>
                                     <select name="tax_id[]" id="tax_id" class="form-control">
                                         <option value="">Please Select Tax</option>
@@ -132,7 +153,7 @@
             row_number++;
         });
         $('#product_id').on('change', function () {
-            var price = $(this).children('option:selected').data('price')
+            let price = $(this).children('option:selected').data('price')
             $('#rate').val(price)
         })
         $("#delete_row").click(function (e) {
@@ -146,8 +167,6 @@
             var tax = $(this).children('option:selected').data('price')
             $("#tax").val(tax)
         })
-
-
         // // $(function(){
         // //     $('#value1, #value2').keyup(function(){
         // //         var value1 = parseFloat($('#value1').val()) || 0;

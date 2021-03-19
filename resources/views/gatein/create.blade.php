@@ -2,12 +2,11 @@
 
 @section('content')
     <div class="row">
-
         <div class="col-md-12 mb-3">
             <div class="card text-left">
                 <div class="card-body">
                     <h4 class="card-title mb-3">All GateIn </h4>
-                    <a class="btn btn-primary float-right mb-2" href="{{ url('download/pdf') }}">Export to PDF</a>
+                    <a class="btn btn-primary float-right mb-2" href="{{ url('download/pdf-getin') }}">Export to PDF</a>
                     <div class="table-responsive">
                         <form method="POST" action="{{route('gateIn.store')}}">
                             @csrf
@@ -37,10 +36,6 @@
 
                                         @forelse(Session::get('data') as $item)
                                             <tr>
-                                                <td>
-                                                    <input type="text" value="{{$item['id']}}" style="border: hidden"
-                                                           name="id[]">
-                                                </td>
                                                 <td>
                                                     <input type="text" value="{{$item['purchase_id']}}" style="border: hidden"
                                                            name="purchase_id[]">

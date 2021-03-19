@@ -95,10 +95,10 @@
             </i></a>
 
             <script>
-                window.history.forward();
-                function noBack() {
-                    window.history.forward();
-                }
+                // window.history.forward();
+                // function noBack() {
+                //     window.history.forward();
+                // }
             </script>
             <!-- Full screen toggle -->
             <i class="i-Full-Screen header-icon d-none d-sm-inline-block" data-fullscreen></i>

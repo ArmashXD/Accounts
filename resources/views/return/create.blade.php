@@ -13,7 +13,7 @@
                             <label for="lastName1">Sale Number</label>
                             <select name="sale_id" id="" class="form-control" placeholder="select one" required>
                                 @foreach($sale as $item)
-                                    <option value="{{$sale->id}}">{{$item->code}}</option>
+                                    <option value="{{$item->id}}">{{$item->code}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -21,7 +21,7 @@
                             <label for="firstName1">product name</label>
                             <select name="product_id" id="product_name" class="form-control" placeholder="select one" required>
                                 @foreach($product as $item)
-                                    <option value="{{$product->id}}">{{$item->name}}</option>
+                                    <option value="{{$item->id}}">{{$item->name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -29,7 +29,7 @@
                             <label for="example-date-input">Sale ID</label>
                             <select name="sale_id" id="" class="form-control" placeholder="select one" required>
                                 @foreach($sale as $item)
-                                    <option value="{{$sale->id}}">{{$item->id}}</option>
+                                    <option value="{{$item->id}}">{{$item->id}}</option>
                                 @endforeach
                             </select>
                         </div>

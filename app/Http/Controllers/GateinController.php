@@ -32,8 +32,8 @@ class GateinController extends Controller
 
     public function storeInSession(Request $request)
     {
+
         $data = [
-            'id' => $request->get('id'),
             'purchase_id' => $request->get('purchase_id'),
             'invoice_number' => $request->get('invoice_number'),
             'purchase_date' => $request->get('purchase_date'),
@@ -45,7 +45,7 @@ class GateinController extends Controller
             'rate' => $request->get('rate'),
             'total' => $request->get('total')
         ];
-//dd($data);
+
         Session::push('data', $data);
         return redirect()->route('gateIn.create');
     }
@@ -68,7 +68,6 @@ class GateinController extends Controller
      */
     public function store(Request $request)
     {
-        $id = $request->get('id');
         $purchase_id = $request->get('purchase_id');
         $invoice_number = $request->get('invoice_number');
         $purchase_date = $request->get('purchase_date');
@@ -81,7 +80,6 @@ class GateinController extends Controller
         $total = $request->get('total');
         for ($i = 0; $i < collect($request->get('invoice_number'))->count(); $i++) {
             GateIn::insert([
-                'id' => $id[$i],
                 'purchase_id' => $purchase_id[$i],
                 'details' => $details[$i],
                 'invoice_number' => $invoice_number[$i],
@@ -96,7 +94,7 @@ class GateinController extends Controller
             ]);
         }
 
-        Session::remove('data');
+        \session()->forget('data');
         return redirect()->back();
     }
 

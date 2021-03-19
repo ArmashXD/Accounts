@@ -20,19 +20,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c1e45ab-02d6-4df6-9454-2ac2bda6cce4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/gatein/pdf.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/gateout/pdf.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/sales/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Controller.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GateinController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GateinController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GateoutController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GateoutController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LockController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LockController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReturnController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReturnController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SaleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SaleController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Sale.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Sale.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Observers/SaleObserver.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Observers/SaleObserver.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_08_130221_create_sales_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_03_08_130221_create_sales_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_03_17_130455_create_shoppingcart_table.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/gatein/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/gatein/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/gatein/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/gatein/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/gateout/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/gateout/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/gateout/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/gateout/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/lock/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/lock/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/liabilities/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/liabilities/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/return/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/return/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sales/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sales/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/sales/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sales/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/storage/logs/laravel.log" afterDir="false" />
     </list>
@@ -195,19 +202,19 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Boossto\Desktop\nabeel\Accounts\app\Models" />
-      <recent name="C:\Users\Boossto\Desktop\New folder\nabeel\Accounts\app\Models" />
-      <recent name="C:\Users\Boossto\Desktop\New folder\Accounts\app\Models" />
-      <recent name="C:\Users\Boossto\Desktop\New folder (2)\Accounts\app\Models" />
-      <recent name="C:\Users\Boossto\Desktop\New folder\New folder\Accounts\app\Models" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Boossto\Desktop\Accounts\resources\views\unit" />
       <recent name="C:\Users\Boossto\Desktop\Accounts" />
       <recent name="C:\Users\Boossto\Desktop\Accounts\resources\views\liabilities" />
       <recent name="C:\Users\Boossto\Desktop\Accounts\resources\views\incomes" />
       <recent name="C:\Users\Boossto\Desktop\Accounts\resources\views\expenses" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Boossto\Desktop\nabeel\Accounts\app\Models" />
+      <recent name="C:\Users\Boossto\Desktop\New folder\nabeel\Accounts\app\Models" />
+      <recent name="C:\Users\Boossto\Desktop\New folder\Accounts\app\Models" />
+      <recent name="C:\Users\Boossto\Desktop\New folder (2)\Accounts\app\Models" />
+      <recent name="C:\Users\Boossto\Desktop\New folder\New folder\Accounts\app\Models" />
     </key>
   </component>
   <component name="RunManager">
@@ -263,6 +270,7 @@
       <workItem from="1616071305021" duration="1602000" />
       <workItem from="1616074409091" duration="11313000" />
       <workItem from="1616085931102" duration="601000" />
+      <workItem from="1616153283658" duration="19354000" />
     </task>
     <servers />
   </component>
@@ -329,10 +337,11 @@
     </state>
     <state x="383" y="228" key="NewPhpClassDialog/0.0.1400.1010@0.0.1400.1010" timestamp="1614258766186" />
     <state x="525" y="235" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614692500660" />
-    <state x="305" y="115" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1614781404373">
-      <screen x="0" y="0" width="1400" height="1010" />
+    <state x="418" y="118" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1616156092164">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="305" y="115" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1400.1010@0.0.1400.1010" timestamp="1614781404373" />
+    <state x="418" y="118" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1616156092164" />
     <state x="697" y="327" key="com.jetbrains.php.test.PhpNewTestDialog" timestamp="1615822131713">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -342,10 +351,10 @@
     </state>
     <state x="356" y="235" key="run.anything.popup/0.0.1400.1010@0.0.1400.1010" timestamp="1615999675017" />
     <state x="488" y="242" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1615905094543" />
-    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1616067916514">
+    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup" timestamp="1616168179998">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1400.1010@0.0.1400.1010" timestamp="1615993633447" />
-    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1616067916514" />
+    <state x="616" y="173" width="672" height="676" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1616168179998" />
   </component>
 </project>

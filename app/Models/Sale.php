@@ -23,6 +23,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property Product $product
  * @property Tax $tax
  * @property Unit $unit
+ * @property string $type
  */
 class Sale extends Model
 {
@@ -42,7 +43,7 @@ class Sale extends Model
     /**
      * @var array
      */
-    protected $fillable = ['customer_id', 'product_id', 'tax_id','quantity', 'unit_id', 'total', 'rate', 'discount', 'date', 'code', 'details', 'created_at', 'updated_at'];
+    protected $fillable = ['customer_id', 'type' , 'product_id', 'tax_id','quantity', 'unit_id', 'total', 'rate', 'discount', 'date', 'code', 'details', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

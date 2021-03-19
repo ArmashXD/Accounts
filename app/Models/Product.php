@@ -75,4 +75,9 @@ class Product extends Model
     {
         return $this->hasMany(Media::class);
     }
+
+    public function sales()
+    {
+        return $this->hasMany(Sale::class);
+    }
 }

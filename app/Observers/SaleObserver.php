@@ -9,8 +9,6 @@ class SaleObserver
 {
     public function creating(Sale $sale)
     {
-//        $sale->code = "SL-" . str_pad($sale->id + 1, 8, "0", STR_PAD_LEFT);
-            $sale->code ="SL-" . Str::random(7);
     }
 
     /**

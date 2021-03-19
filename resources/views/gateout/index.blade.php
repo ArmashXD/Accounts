@@ -7,10 +7,9 @@
             <div class="card text-left">
                 <div class="card-body">
                     <h4 class="card-title mb-3">All
-                        GateOut @if(auth()->user()->hasRole('super-admin') || auth()->user()->hasPermissionTo('gateout-create'))
-                            <a href="{{route('gateOut.create')}}" class="btn btn-primary float-right">Add GateOut</a>
-                        @endif
+                        GateOut
                     </h4>
+
 
                     <div class="table-responsive">
                         <table class="table">
@@ -48,10 +47,7 @@
                                     <td>{{$item->discount}}</td>
                                     <td>{{$item->rate}}</td>
                                     <td>{{$item->total}}</td>
-                                    <td>
-                                        <button type="submit" class="btn btn-danger" href="#"><i
-                                                class="nav-icon i-Close-Window font-weight-bold"></i></button>
-                                    </td>
+
                                 </tr>
 
                             @endforeach
@@ -134,7 +130,7 @@
                             </tbody>
 
                             <div class="float-right">
-                                <button class="btn btn-primary" type="submit" >Export To PDF</button>
+                                <a class="btn btn-primary float-right mb-2" href="{{ route('gateOut.create') }}">Check GateOut</a>
                             </div>
 
                             </tbody>
